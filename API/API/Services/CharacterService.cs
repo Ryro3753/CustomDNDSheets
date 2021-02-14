@@ -11,6 +11,7 @@ namespace API.Services
     {
         public Task InsertCharacterAsync(string name);
         public IEnumerable<Character> GetCharacters();
+        public Task DeleteCharacter(int Ref);
     }
     public class CharacterService : ICharacterService
     {
@@ -23,10 +24,19 @@ namespace API.Services
 
         public async Task InsertCharacterAsync(string name)
         {
-            var character = new Character{
+            var character = new Character {
                 Name = name
             };
             await _context.Character.AddAsync(character);
+            await _context.SaveChangesAsync();
+        }
+
+
+        public async Task DeleteCharacter(int Ref)
+        {
+            var character = _context.Character.FirstOrDefault(i => i.Ref == Ref);
+            _context.Character.Remove(character);
+            await _context.SaveChangesAsync();
         }
 
         public IEnumerable<Character> GetCharacters()

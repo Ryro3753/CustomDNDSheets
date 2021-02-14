@@ -21,12 +21,17 @@ namespace API.Controllers
             _service = service;
         }
         [HttpPost("InsertCharacter")]
-        public async Task InsertCharactersAsync([FromBody]string name)
+        public async Task InsertCharactersAsync(string name)
         {
             await _service.InsertCharacterAsync(name);
         }
+        [HttpDelete("DeleteCharacter")]
+        public async Task DeleteCharacters(int Ref)
+        {
+            await _service.DeleteCharacter(Ref);
+        }
         [HttpGet("GetCharacters")]
-        public IEnumerable<Character> GetCharactersAsync()
+        public IEnumerable<Character> GetCharacters()
         {
             return _service.GetCharacters();
         }
