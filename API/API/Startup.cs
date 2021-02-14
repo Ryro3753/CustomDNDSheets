@@ -28,8 +28,9 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<DNDDbContext>(opt => opt.UseNpgsql("UserID=DNDUser;Password=123456;Server=localhost;Port=5432;Database=DND;Integrated Security=true;Pooling=true;"));
 
-            services.AddDbContext<DNDDbContext>(opt => opt.UseSqlite(Configuration.GetConnectionString("sqlite")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +51,8 @@ namespace API
             {
                 endpoints.MapControllers();
             });
+
+            
         }
     }
 }

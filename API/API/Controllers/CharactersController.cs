@@ -10,7 +10,7 @@ using API.Models;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class CharactersController : ControllerBase
     {
@@ -25,14 +25,14 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Characters>>> GetcharacterSet()
         {
-            return await _context.characterSet.ToListAsync();
+            return await _context.Characters.ToListAsync();
         }
 
         // GET: api/Characters/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Characters>> GetCharacters(int id)
         {
-            var characters = await _context.characterSet.FindAsync(id);
+            var characters = await _context.Characters.FindAsync(id);
 
             if (characters == null)
             {
@@ -48,7 +48,7 @@ namespace API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCharacters(int id, Characters characters)
         {
-            if (id != characters.Key)
+            if (id != characters.Ref)
             {
                 return BadRequest();
             }
@@ -80,23 +80,23 @@ namespace API.Controllers
         [HttpPost]
         public async Task<ActionResult<Characters>> PostCharacters(Characters characters)
         {
-            _context.characterSet.Add(characters);
+            _context.Characters.Add(characters);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCharacters", new { id = characters.Key }, characters);
+            return CreatedAtAction("GetCharacters", new { id = characters.Ref }, characters);
         }
 
         // DELETE: api/Characters/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Characters>> DeleteCharacters(int id)
         {
-            var characters = await _context.characterSet.FindAsync(id);
+            var characters = await _context.Characters.FindAsync(id);
             if (characters == null)
             {
                 return NotFound();
             }
 
-            _context.characterSet.Remove(characters);
+            _context.Characters.Remove(characters);
             await _context.SaveChangesAsync();
 
             return characters;
@@ -104,7 +104,7 @@ namespace API.Controllers
 
         private bool CharactersExists(int id)
         {
-            return _context.characterSet.Any(e => e.Key == id);
+            return _context.Characters.Any(e => e.Ref == id);
         }
     }
 }

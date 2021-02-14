@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Data.Sqlite;
 
 namespace API.Models
 {
@@ -13,7 +12,7 @@ namespace API.Models
     {
         [Key]
         [Required]
-        public int Key { get; set; }
+        public int Ref { get; set; }
 
         public string Name { get; set; }
     }
