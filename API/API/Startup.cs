@@ -9,8 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -30,8 +32,7 @@ namespace API
         {
             services.AddControllers();
             services.AddDbContext<DNDDbContext>(opt => opt.UseNpgsql("UserID=DNDUser;Password=123456;Server=localhost;Port=5432;Database=DND;Integrated Security=true;Pooling=true;"));
-
-            services.AddTransient<ICharacterService, CharacterService>();
+            services.AddScoped<ICharacterService, CharacterService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

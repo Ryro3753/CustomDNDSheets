@@ -15,18 +15,21 @@ namespace API.Controllers
     [ApiController]
     public class CharacterController : ControllerBase
     {
-        private CharacterService _service;
-        public CharacterController(CharacterService service )
+        private readonly ICharacterService _service;
+        public CharacterController(ICharacterService service )
         {
             _service = service;
         }
         [HttpPost("InsertCharacter")]
-        public async Task InsertCharactersAsync(string name)
+        public async Task InsertCharactersAsync([FromBody]string name)
         {
-            await _service.InsertCharacter(name);
+            await _service.InsertCharacterAsync(name);
         }
-
-        public async IEnumerable<Character> GetCharactersAsync
+        [HttpGet("GetCharacters")]
+        public IEnumerable<Character> GetCharactersAsync()
+        {
+            return _service.GetCharacters();
+        }
 
        
     }

@@ -8,7 +8,7 @@ namespace API.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Characters",
+                name: "Character",
                 columns: table => new
                 {
                     Ref = table.Column<int>(type: "integer", nullable: false)
@@ -17,14 +17,14 @@ namespace API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Characters", x => x.Ref);
+                    table.PrimaryKey("PK_Character", x => x.Ref);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Characters");
+                name: "Character");
         }
     }
 }

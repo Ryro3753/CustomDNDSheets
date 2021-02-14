@@ -30,7 +30,7 @@ namespace API.Migrations
 
                     b.HasKey("Ref");
 
-                    b.ToTable("Characters");
+                    b.ToTable("Character");
                 });
 #pragma warning restore 612, 618
         }

@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Migrations
 {
     [DbContext(typeof(DNDDbContext))]
-    [Migration("20210214180123_InitialCreate")]
+    [Migration("20210214181359_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,7 +32,7 @@ namespace API.Migrations
 
                     b.HasKey("Ref");
 
-                    b.ToTable("Characters");
+                    b.ToTable("Character");
                 });
 #pragma warning restore 612, 618
         }
