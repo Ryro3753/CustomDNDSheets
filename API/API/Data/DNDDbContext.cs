@@ -10,7 +10,7 @@ namespace API.Data
 {
     public class DNDDbContext : DbContext
     {
-        public DbSet<Characters> Characters { get; set; }
+        public DbSet<Character> Character { get; set; }
         public DNDDbContext(DbContextOptions<DNDDbContext> options) : base(options)
         {
         }

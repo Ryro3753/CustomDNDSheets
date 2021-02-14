@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Migrations
 {
     [DbContext(typeof(DNDDbContext))]
-    [Migration("20210214163930_InitialCreate")]
+    [Migration("20210214180123_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,7 +20,7 @@ namespace API.Migrations
                 .HasAnnotation("ProductVersion", "5.0.3")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("API.Models.Characters", b =>
+            modelBuilder.Entity("API.Models.Character", b =>
                 {
                     b.Property<int>("Ref")
                         .ValueGeneratedOnAdd()

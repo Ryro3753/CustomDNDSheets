@@ -18,7 +18,7 @@ namespace API.Migrations
                 .HasAnnotation("ProductVersion", "5.0.3")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("API.Models.Characters", b =>
+            modelBuilder.Entity("API.Models.Character", b =>
                 {
                     b.Property<int>("Ref")
                         .ValueGeneratedOnAdd()

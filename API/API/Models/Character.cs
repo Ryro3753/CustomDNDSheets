@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace API.Models
 {
     [Table("Characters")]
-    public class Characters
+    public class Character
     {
         [Key]
         [Required]
