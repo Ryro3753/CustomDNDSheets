@@ -33,6 +33,15 @@ namespace API
             services.AddControllers();
             services.AddDbContext<DNDDbContext>(opt => opt.UseNpgsql("UserID=DNDUser;Password=123456;Server=localhost;Port=5432;Database=DND;Integrated Security=true;Pooling=true;"));
             services.AddScoped<ICharacterService, CharacterService>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.WithOrigins("http://localhost:4200")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +53,8 @@ namespace API
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("CorsPolicy");
 
             app.UseRouting();
 

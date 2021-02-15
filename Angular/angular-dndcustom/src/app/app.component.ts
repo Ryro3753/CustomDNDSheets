@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CharacterService } from './services/character.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-dndcustom';
+
+  constructor(readonly service : CharacterService){
+
+  }
+
+  async ngOnInit(){
+    await this.service.getCharacter();
+  }
+
 }
