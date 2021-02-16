@@ -14,7 +14,8 @@ export class AppComponent {
   }
 
   async ngOnInit(){
-    await this.service.getCharacter();
+    let t =  await this.service.getCharacter();
+    console.log(t);
   }
 
 }
