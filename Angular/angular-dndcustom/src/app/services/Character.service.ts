@@ -14,10 +14,9 @@ export class CharacterService {
     constructor(readonly httpClient: HttpClient){
     }
 
+  async getCharacter() : Promise<Observable<Character[]>> {
+    return await this.httpClient.get<Character[]>(this.baseURL + "Character/GetCharacters");
 
-  getCharacter() : Observable<any> {
-    return this.httpClient.get(this.baseURL + "Character/GetCharacters");
-     
 }
 
 

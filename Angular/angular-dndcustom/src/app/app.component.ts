@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Character } from './models/character.model';
 import { CharacterService } from './services/character.service';
 
 @Component({
@@ -8,14 +9,18 @@ import { CharacterService } from './services/character.service';
 })
 export class AppComponent {
   title = 'angular-dndcustom';
-
+  Characters : Character[];
   constructor(readonly service : CharacterService){
 
   }
 
   async ngOnInit(){
-    let t =  await this.service.getCharacter();
-    console.log(t);
+    const _this = this;
+    let t =  await (await this.service.getCharacter()).subscribe(i => {
+      _this.Characters = i
+    });
   }
-
+  asd(){
+    console.log(this.Characters);
+  }
 }
