@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace API.Models
 {
+    [Table("CharacterSkills")]
     public class CharacterSkills
     {
+        public int CharacterRef { get; set; }
         public int Acrobatics { get; set; }
 
         public int AnimalHandling { get; set; }

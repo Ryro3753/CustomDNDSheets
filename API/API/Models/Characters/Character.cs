@@ -17,7 +17,6 @@ namespace API.Models
         public string CharacterName { get; set; }
         public string Class { get; set; }
         public string Race { get; set; }
-        public string Alignment { get; set; }
 
     }
 }
