@@ -14,6 +14,10 @@ namespace API.Models
         [Required]
         public int Ref { get; set; }
 
-        public string Name { get; set; }
+        public string CharacterName { get; set; }
+        public string Class { get; set; }
+        public string Race { get; set; }
+        public string Alignment { get; set; }
+
     }
 }
