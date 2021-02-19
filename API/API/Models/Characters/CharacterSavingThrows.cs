@@ -18,6 +18,5 @@ namespace API.Models
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
 
-
     }
 }

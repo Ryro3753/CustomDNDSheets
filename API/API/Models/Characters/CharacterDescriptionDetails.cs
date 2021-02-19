@@ -18,6 +18,7 @@ namespace API.Models
         public string Allies { get; set; }
         public string Backstory { get; set; }
         public string Alignment { get; set; }
+        public string Faith { get; set; }
 
 
     }
