@@ -9,7 +9,7 @@ namespace API.Services
 {
     public interface ICharacterService
     {
-        public Task InsertCharacterAsync(string name);
+        public Task InsertOrUpdateCharacterAsync(Character model);
         public IEnumerable<Character> GetCharacters();
         public Task DeleteCharacter(int Ref);
     }
@@ -22,12 +22,27 @@ namespace API.Services
             _context = context;
         }
 
-        public async Task InsertCharacterAsync(string name)
+        public async Task InsertOrUpdateCharacterAsync(Character model)
         {
-            var character = new Character {
-                CharacterName = name
-            };
-            await _context.Character.AddAsync(character);
+            //checking if Ref is zero, if so we understand it is a new character
+            if (model.Ref == 0)
+            {
+                var character = new Character
+                {
+                    CharacterName = model.CharacterName,
+                    Class = model.Class,
+                    Race = model.Race
+                };
+                await _context.Character.AddAsync(character);
+            }
+            else
+            {
+                var existingCharacter = _context.Character.FirstOrDefault(i => i.Ref == model.Ref);
+                existingCharacter.CharacterName = model.CharacterName;
+                existingCharacter.Class = model.Class;
+                existingCharacter.Race = model.Race;
+            }
+
             await _context.SaveChangesAsync();
         }
 
@@ -35,8 +50,16 @@ namespace API.Services
         public async Task DeleteCharacter(int Ref)
         {
             var character = _context.Character.FirstOrDefault(i => i.Ref == Ref);
-            _context.Character.Remove(character);
-            await _context.SaveChangesAsync();
+            //checking if character is null, if so we return exception
+            if (character == null)
+            {
+                throw new Exception("There is no character for that ref " + Ref.ToString());
+            }
+            else
+            {
+                _context.Character.Remove(character);
+                await _context.SaveChangesAsync();
+            }
         }
 
         public IEnumerable<Character> GetCharacters()

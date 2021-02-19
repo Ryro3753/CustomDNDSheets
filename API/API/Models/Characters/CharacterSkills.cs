@@ -11,7 +11,6 @@ namespace API.Models
     {
         public int CharacterRef { get; set; }
         public int Acrobatics { get; set; }
-
         public int AnimalHandling { get; set; }
         public int Arcana { get; set; }
         public int Athletics { get; set; }

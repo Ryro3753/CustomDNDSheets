@@ -20,10 +20,10 @@ namespace API.Controllers
         {
             _service = service;
         }
-        [HttpPost("InsertCharacter")]
-        public async Task InsertCharactersAsync(string name)
+        [HttpPost("InsertOrUpdateCharacters")]
+        public async Task InsertOrUpdateCharactersAsync(Character model)
         {
-            await _service.InsertCharacterAsync(name);
+            await _service.InsertOrUpdateCharacterAsync(model);
         }
         [HttpDelete("DeleteCharacter")]
         public async Task DeleteCharacters(int Ref)

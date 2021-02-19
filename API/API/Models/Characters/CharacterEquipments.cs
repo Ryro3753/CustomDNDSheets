@@ -12,7 +12,7 @@ namespace API.Models
     {
         public int CharacterRef { get; set; }
         public int EquipmentRef { get; set; }
-        public int Quanitity { get; set; }
+        public int Quantity { get; set; }
         public int Cost { get; set; }
         public string Notes { get; set; }
         public bool IsEquipped { get; set; }

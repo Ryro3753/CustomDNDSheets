@@ -13,7 +13,6 @@ namespace API.Models.Equipments
         [Key]
         [Required]
         public int Ref { get; set; }
-
         public string SpellName { get; set; }
         public int ActionTime { get; set; }
         public int Range { get; set; }

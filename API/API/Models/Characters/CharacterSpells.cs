@@ -10,9 +10,7 @@ namespace API.Models
     public class CharacterSpells
     {
         public int CharacterRef { get; set; }
-
         public int SpellRef { get; set; }
-
         public int Hit { get; set; }
         public int Damage { get; set; }
     }

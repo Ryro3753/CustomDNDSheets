@@ -10,7 +10,6 @@ namespace API.Models
     public class CharacterStats
     {
         public int CharacterRef { get; set; }
-
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Constitution { get; set; }
