@@ -25,7 +25,7 @@ namespace API.Services
         public async Task InsertCharacterAsync(string name)
         {
             var character = new Character {
-                Name = name
+                CharacterName = name
             };
             await _context.Character.AddAsync(character);
             await _context.SaveChangesAsync();

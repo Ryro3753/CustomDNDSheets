@@ -11,9 +11,11 @@ namespace API.Models
     public class CharacterEquipments
     {
         public int CharacterRef { get; set; }
-        public int Copper { get; set; }
-        public int Silver { get; set; }
-        public int Gold { get; set; }
+        public int EquipmentRef { get; set; }
+        public int Quanitity { get; set; }
+        public int Cost { get; set; }
+        public string Notes { get; set; }
+        public bool IsEquipped { get; set; }
 
 
 
