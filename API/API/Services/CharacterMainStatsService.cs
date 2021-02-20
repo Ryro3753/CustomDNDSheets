@@ -30,6 +30,7 @@ namespace API.Services
             {
                 var characterMainStats = new CharacterMainStats
                 {
+                    CharacterRef = model.CharacterRef,
                     Armor = model.Armor,
                     Experience = model.Experience,
                     Health = model.Health,
