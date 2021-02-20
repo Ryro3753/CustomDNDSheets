@@ -41,6 +41,7 @@ namespace API
             services.AddTransient<ICharacterSavingThrowsService, CharacterSavingThrowsService>();
             services.AddTransient<ICharacterSecondaryStatsService, CharacterSecondaryStatsService>();
             services.AddTransient<ICharacterSkillsService, CharacterSkillsService>();
+            services.AddTransient<ICharacterSpellsService, CharacterSpellsService>();
 
             services.AddCors(options =>
             {

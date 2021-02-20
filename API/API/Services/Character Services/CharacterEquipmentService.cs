@@ -44,7 +44,7 @@ namespace API.Services
             }
             else
             {
-                var existingEquipment = _context.CharacterDescriptionDetails.FirstOrDefault(i => i.CharacterRef == model.CharacterRef);
+                var existingEquipment = _context.CharacterEquipments.FirstOrDefault(i => i.CharacterRef == model.CharacterRef);
                 await _context.SaveChangesAsync();
                 return existingEquipment.Ref;
 
