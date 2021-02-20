@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CharacterService } from './services/character.service';
+import { CharacterService } from './services/CharacterServices/Character.service';
+import { HttpService } from './services/http.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CharacterService } from './services/character.service';
     HttpClientModule
   ],
   providers: [
-    CharacterService
+    CharacterService,
+    HttpService
   ],
   bootstrap: [AppComponent]
 })
