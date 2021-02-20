@@ -40,6 +40,7 @@ namespace API
             services.AddTransient<ICharacterMoneyService, CharacterMoneyService>();
             services.AddTransient<ICharacterSavingThrowsService, CharacterSavingThrowsService>();
             services.AddTransient<ICharacterSecondaryStatsService, CharacterSecondaryStatsService>();
+            services.AddTransient<ICharacterSkillsService, CharacterSkillsService>();
 
             services.AddCors(options =>
             {
