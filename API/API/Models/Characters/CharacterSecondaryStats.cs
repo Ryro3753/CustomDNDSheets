@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace API.Models
 {
-    [Table("CharacterStats")]
-    public class CharacterStats
+    [Table("CharacterSecondaryStats")]
+    public class CharacterSecondaryStats
     {
         [Key]
         [Required]
@@ -20,8 +20,5 @@ namespace API.Models
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
-        public int Speed { get; set; }
-        public int Armor { get; set; }
-        public int Initiative { get; set; }
     }
 }

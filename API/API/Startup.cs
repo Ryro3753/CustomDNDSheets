@@ -39,6 +39,7 @@ namespace API
             services.AddTransient<ICharacterMainStatsService, CharacterMainStatsService>();
             services.AddTransient<ICharacterMoneyService, CharacterMoneyService>();
             services.AddTransient<ICharacterSavingThrowsService, CharacterSavingThrowsService>();
+            services.AddTransient<ICharacterSecondaryStatsService, CharacterSecondaryStatsService>();
 
             services.AddCors(options =>
             {
