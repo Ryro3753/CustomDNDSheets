@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\Spells\" />
     <Folder Include="Services\Spells Services\" />
-    <Folder Include="Services\Equipment Services\" />
   </ItemGroup>
 
 

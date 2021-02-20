@@ -1,4 +1,5 @@
 ﻿using API.Models;
+using API.Models.Equipments;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using System;
@@ -20,6 +21,7 @@ namespace API.Data
         public DbSet<CharacterSecondaryStats> CharacterSecondaryStats { get; set; }
         public DbSet<CharacterSkills> CharacterSkills { get; set; }
         public DbSet<CharacterSpells> CharacterSpells { get; set; }
+        public DbSet<Equipment> Equipment { get; set; }
         public DNDDbContext(DbContextOptions<DNDDbContext> options) : base(options)
         {
         }
