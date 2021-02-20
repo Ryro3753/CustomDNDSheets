@@ -9,7 +9,7 @@ namespace API.Services
 {
     public interface ICharacterApperanceService
     {
-        public Task InsertOrUpdateCharacterApperanceAsync(CharacterApperance model);
+        public Task<int> InsertOrUpdateCharacterApperanceAsync(CharacterApperance model);
         public Task DeleteCharacterApperance(int Ref);
         public IEnumerable<CharacterApperance> GetCharacterApperances();
         public CharacterApperance GetCharacterApperance(int Ref);
@@ -23,7 +23,7 @@ namespace API.Services
             _context = context;
         }
 
-        public async Task InsertOrUpdateCharacterApperanceAsync(CharacterApperance model)
+        public async Task<int> InsertOrUpdateCharacterApperanceAsync(CharacterApperance model)
         {
             //checking if Ref is zero, if so we understand it is a new character apperance
             if (model.Ref == 0)
@@ -41,20 +41,25 @@ namespace API.Services
                     
                 };
                 await _context.CharacterApperance.AddAsync(characterApperance);
+                await _context.SaveChangesAsync();
+                return characterApperance.Ref;
+
             }
             else
             {
-                var existingCharacter = _context.CharacterApperance.FirstOrDefault(i => i.CharacterRef == model.CharacterRef);
-                existingCharacter.Eyes = model.Eyes;
-                existingCharacter.Hair = model.Hair;
-                existingCharacter.Size = model.Size;
-                existingCharacter.Height = model.Height;
-                existingCharacter.Skin = model.Skin;
-                existingCharacter.Weight = model.Weight;
-                existingCharacter.Age = model.Age;
+                var existingCharacterApperance = _context.CharacterApperance.FirstOrDefault(i => i.CharacterRef == model.CharacterRef);
+                existingCharacterApperance.Eyes = model.Eyes;
+                existingCharacterApperance.Hair = model.Hair;
+                existingCharacterApperance.Size = model.Size;
+                existingCharacterApperance.Height = model.Height;
+                existingCharacterApperance.Skin = model.Skin;
+                existingCharacterApperance.Weight = model.Weight;
+                existingCharacterApperance.Age = model.Age;
+                await _context.SaveChangesAsync();
+                return existingCharacterApperance.Ref;
+
             }
 
-            await _context.SaveChangesAsync();
         }
 
 

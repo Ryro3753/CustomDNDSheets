@@ -9,7 +9,7 @@ namespace API.Services
 {
     public interface ICharacterService
     {
-        public Task InsertOrUpdateCharacterAsync(Character model);
+        public Task<int> InsertOrUpdateCharacterAsync(Character model);
         public Task DeleteCharacter(int Ref);
         public IEnumerable<Character> GetCharacters();
         public Character GetCharacter(int Ref);
@@ -23,7 +23,7 @@ namespace API.Services
             _context = context;
         }
 
-        public async Task InsertOrUpdateCharacterAsync(Character model)
+        public async Task<int> InsertOrUpdateCharacterAsync(Character model)
         {
             //checking if Ref is zero, if so we understand it is a new character
             if (model.Ref == 0)
@@ -35,6 +35,8 @@ namespace API.Services
                     Race = model.Race
                 };
                 await _context.Character.AddAsync(character);
+                await _context.SaveChangesAsync();
+                return character.Ref;
             }
             else
             {
@@ -42,9 +44,11 @@ namespace API.Services
                 existingCharacter.CharacterName = model.CharacterName;
                 existingCharacter.Class = model.Class;
                 existingCharacter.Race = model.Race;
+                await _context.SaveChangesAsync();
+                return existingCharacter.Ref;
+
             }
 
-            await _context.SaveChangesAsync();
         }
 
 

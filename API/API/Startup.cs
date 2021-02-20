@@ -32,8 +32,10 @@ namespace API
         {
             services.AddControllers();
             services.AddDbContext<DNDDbContext>(opt => opt.UseNpgsql("UserID=DNDUser;Password=123456;Server=localhost;Port=5432;Database=DND;Integrated Security=true;Pooling=true;"));
-            services.AddScoped<ICharacterService, CharacterService>();
-            services.AddScoped<ICharacterApperanceService, CharacterApperanceService>();
+            services.AddTransient<ICharacterService, CharacterService>();
+            services.AddTransient<ICharacterApperanceService, CharacterApperanceService>();
+            services.AddTransient<ICharacterDescriptionDetailsService, CharacterDescriptionDetailsService>();
+            services.AddTransient<ICharacterEquipmentService, CharacterEquipmentService>();
 
             services.AddCors(options =>
             {

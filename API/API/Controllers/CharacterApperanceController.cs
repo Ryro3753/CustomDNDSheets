@@ -21,9 +21,9 @@ namespace API.Controllers
             _service = service;
         }
         [HttpPost("InsertOrUpdateCharacterApperance")]
-        public async Task InsertOrUpdateCharactersApperanceAsync(CharacterApperance model)
+        public async Task<int> InsertOrUpdateCharactersApperanceAsync(CharacterApperance model)
         {
-            await _service.InsertOrUpdateCharacterApperanceAsync(model);
+            return await _service.InsertOrUpdateCharacterApperanceAsync(model);
         }
         [HttpDelete("DeleteCharacterApperance")]
         public async Task DeleteCharacterApperance(int Ref)
