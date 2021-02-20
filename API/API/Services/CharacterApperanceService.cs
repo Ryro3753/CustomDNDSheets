@@ -10,9 +10,9 @@ namespace API.Services
     public interface ICharacterApperanceService
     {
         public Task<int> InsertOrUpdateCharacterApperanceAsync(CharacterApperance model);
-        public Task DeleteCharacterApperance(int Ref);
+        public Task DeleteCharacterApperance(int characterRef);
         public IEnumerable<CharacterApperance> GetCharacterApperances();
-        public CharacterApperance GetCharacterApperance(int Ref);
+        public CharacterApperance GetCharacterApperance(int characterRef);
     }
     public class CharacterApperanceService : ICharacterApperanceService
     {

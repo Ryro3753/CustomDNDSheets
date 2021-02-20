@@ -10,9 +10,9 @@ namespace API.Services
     public interface ICharacterDescriptionDetailsService
     {
         public Task<int> InsertOrUpdateCharacterDescriptionDetailsAsync(CharacterDescriptionDetails model);
-        public Task DeleteCharacterDescriptionDetail(int Ref);
+        public Task DeleteCharacterDescriptionDetail(int characterRef);
         public IEnumerable<CharacterDescriptionDetails> GetCharacterDescriptionDetails();
-        public CharacterDescriptionDetails GetCharacterDescriptionDetail(int Ref);
+        public CharacterDescriptionDetails GetCharacterDescriptionDetail(int characterRef);
     }
     public class CharacterDescriptionDetailsService : ICharacterDescriptionDetailsService
     {
