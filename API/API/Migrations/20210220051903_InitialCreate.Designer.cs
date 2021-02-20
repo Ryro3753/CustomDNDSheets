@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Migrations
 {
     [DbContext(typeof(DNDDbContext))]
-    [Migration("20210214181359_InitialCreate")]
+    [Migration("20210220051903_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,12 +27,47 @@ namespace API.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("CharacterName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Class")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Race")
                         .HasColumnType("text");
 
                     b.HasKey("Ref");
 
                     b.ToTable("Character");
+                });
+
+            modelBuilder.Entity("API.Models.CharacterApperance", b =>
+                {
+                    b.Property<string>("Age")
+                        .HasColumnType("text");
+
+                    b.Property<int>("CharacterRef")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Eyes")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Hair")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Height")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Size")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Skin")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Weight")
+                        .HasColumnType("text");
+
+                    b.ToTable("CharacterApperance");
                 });
 #pragma warning restore 612, 618
         }

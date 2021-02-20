@@ -11,6 +11,7 @@ namespace API.Data
     public class DNDDbContext : DbContext
     {
         public DbSet<Character> Character { get; set; }
+        public DbSet<CharacterApperance> CharacterApperance { get; set; }
         public DNDDbContext(DbContextOptions<DNDDbContext> options) : base(options)
         {
         }

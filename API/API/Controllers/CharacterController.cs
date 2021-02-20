@@ -20,13 +20,13 @@ namespace API.Controllers
         {
             _service = service;
         }
-        [HttpPost("InsertOrUpdateCharacters")]
+        [HttpPost("InsertOrUpdateCharacter")]
         public async Task InsertOrUpdateCharactersAsync(Character model)
         {
             await _service.InsertOrUpdateCharacterAsync(model);
         }
         [HttpDelete("DeleteCharacter")]
-        public async Task DeleteCharacters(int Ref)
+        public async Task DeleteCharacter(int Ref)
         {
             await _service.DeleteCharacter(Ref);
         }
@@ -36,6 +36,11 @@ namespace API.Controllers
             return _service.GetCharacters();
         }
 
-       
+        [HttpGet("GetCharacter")]
+        public Character GetCharacter(int Ref)
+        {
+            return _service.GetCharacter(Ref);
+        }
+
     }
 }

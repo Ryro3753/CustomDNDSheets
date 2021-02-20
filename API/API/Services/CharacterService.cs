@@ -10,8 +10,9 @@ namespace API.Services
     public interface ICharacterService
     {
         public Task InsertOrUpdateCharacterAsync(Character model);
-        public IEnumerable<Character> GetCharacters();
         public Task DeleteCharacter(int Ref);
+        public IEnumerable<Character> GetCharacters();
+        public Character GetCharacter(int Ref);
     }
     public class CharacterService : ICharacterService
     {
@@ -65,6 +66,11 @@ namespace API.Services
         public IEnumerable<Character> GetCharacters()
         {
             return _context.Character.OrderBy(i => i.Ref);
+        }
+
+        public Character GetCharacter(int Ref)
+        {
+            return _context.Character.FirstOrDefault(i => i.Ref == Ref);
         }
     }
 }
