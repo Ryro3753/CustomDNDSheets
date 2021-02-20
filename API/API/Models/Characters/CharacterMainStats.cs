@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +10,9 @@ namespace API.Models
     [Table("CharacterStats")]
     public class CharacterMainStats
     {
+        [Key]
+        [Required]
+        public int Ref { get; set; }
         public int CharacterRef { get; set; }
         public int Speed { get; set; }
         public int Armor { get; set; }

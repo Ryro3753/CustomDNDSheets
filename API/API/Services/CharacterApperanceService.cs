@@ -25,9 +25,8 @@ namespace API.Services
 
         public async Task InsertOrUpdateCharacterApperanceAsync(CharacterApperance model)
         {
-            var existingCharacter = _context.CharacterApperance.FirstOrDefault(i => i.CharacterRef == model.CharacterRef);
-            //checking if there are a character for that ref, if not create a new apperance value
-            if (existingCharacter == null)
+            //checking if Ref is zero, if so we understand it is a new character apperance
+            if (model.Ref == 0)
             {
                 var characterApperance = new CharacterApperance
                 {
@@ -45,6 +44,7 @@ namespace API.Services
             }
             else
             {
+                var existingCharacter = _context.CharacterApperance.FirstOrDefault(i => i.CharacterRef == model.CharacterRef);
                 existingCharacter.Eyes = model.Eyes;
                 existingCharacter.Hair = model.Hair;
                 existingCharacter.Size = model.Size;

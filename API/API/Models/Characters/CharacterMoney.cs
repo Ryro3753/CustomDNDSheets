@@ -10,6 +10,9 @@ namespace API.Models
     [Table("CharacterMoney")]
     public class CharacterMoney
     {
+        [Key]
+        [Required]
+        public int Ref { get; set; }
         public int CharacterRef { get; set; }
         public int Copper { get; set; }
         public int Silver { get; set; }

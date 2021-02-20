@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 namespace API.Models
 {
     [Table("CharacterApperance")]
-    [Keyless]
     public class CharacterApperance
     {
+        [Key]
+        [Required]
+        public int Ref { get; set; }
         public int CharacterRef { get; set; }
         public string Size { get; set; }
         public string Eyes { get; set; }

@@ -10,6 +10,9 @@ namespace API.Models
     [Table("CharacterDescriptionDetails")]
     public class CharacterDescriptionDetails
     {
+        [Key]
+        [Required]
+        public int Ref { get; set; }
         public int CharacterRef { get; set; }
         public string PersonalityTraits { get; set; }
         public string Ideals { get; set; }
