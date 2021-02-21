@@ -11,7 +11,7 @@ namespace API.Services
     {
         public Task<int> InsertOrUpdateCharacterDescriptionDetailsAsync(CharacterDescriptionDetails model);
         public Task DeleteCharacterDescriptionDetail(int characterRef);
-        public IEnumerable<CharacterDescriptionDetails> GetCharacterDescriptionDetails();
+        public IEnumerable<CharacterDescriptionDetails> GetCharactersDescriptionDetails();
         public CharacterDescriptionDetails GetCharacterDescriptionDetail(int characterRef);
     }
     public class CharacterDescriptionDetailsService : ICharacterDescriptionDetailsService
@@ -78,7 +78,7 @@ namespace API.Services
             }
         }
 
-        public IEnumerable<CharacterDescriptionDetails> GetCharacterDescriptionDetails()
+        public IEnumerable<CharacterDescriptionDetails> GetCharactersDescriptionDetails()
         {
             return _context.CharacterDescriptionDetails.OrderBy(i => i.CharacterRef);
         }

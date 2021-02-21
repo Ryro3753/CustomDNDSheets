@@ -14,7 +14,7 @@ export class CharacterDescriptionDetailsService extends BaseDataService {
   }
 
   public getCharactersDescriptionDetails(): Promise<CharacterDescriptionDetails[]> {
-    return this.get('GetCharactersDescriptionDetails');
+    return this.get('GetCharactersDescriptionsDetails');
   }
 
   public getCharacterDescriptionDetails(characterRef: number): Promise<CharacterDescriptionDetails> {

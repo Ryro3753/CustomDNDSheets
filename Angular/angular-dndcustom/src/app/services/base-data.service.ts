@@ -12,8 +12,8 @@ export class BaseDataService {
   private controller: string;
   private version: string;
   private readonly headers = { 'Content-Type': 'application/json' };
-  readonly apiTemplate: string = '/api/{{controller}}/{{method}}';
-  readonly apiTemplateVersion: string = '/api/v{{version}}/{{controller}}/{{method}}';
+  readonly apiTemplate: string = '/{{controller}}/{{method}}';
+  readonly apiTemplateVersion: string = '/v{{version}}/{{controller}}/{{method}}';
 
 
   constructor(public readonly httpClient: HttpClient, @Inject('') controller: string, @Inject('') version: string = '') {

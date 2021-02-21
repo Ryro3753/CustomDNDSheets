@@ -30,10 +30,10 @@ namespace API.Controllers
         {
             await _service.DeleteCharacterDescriptionDetail(Ref);
         }
-        [HttpGet("GetCharacterDescriptionDetails")]
-        public IEnumerable<CharacterDescriptionDetails> GetCharacterDescriptionDetails()
+        [HttpGet("GetCharactersDescriptionsDetails")]
+        public IEnumerable<CharacterDescriptionDetails> GetCharactersDescriptionsDetails()
         {
-            return _service.GetCharacterDescriptionDetails();
+            return _service.GetCharactersDescriptionDetails();
         }
 
         [HttpGet("GetCharacterDescriptionDetail")]

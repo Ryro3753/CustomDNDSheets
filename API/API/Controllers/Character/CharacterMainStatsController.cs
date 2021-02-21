@@ -30,7 +30,7 @@ namespace API.Controllers
         {
             await _service.DeleteCharacterMainStats(characterRef);
         }
-        [HttpGet("GetCharacters")]
+        [HttpGet("GetCharactersMainStats")]
         public IEnumerable<CharacterMainStats> GetCharactersMainStats()
         {
             return _service.GetCharactersMainStats();

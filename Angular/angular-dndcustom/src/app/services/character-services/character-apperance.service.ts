@@ -14,7 +14,7 @@ export class CharacterApperanceService extends BaseDataService {
   }
 
   public getCharactersApperance(): Promise<CharacterApperance[]> {
-    return this.get('GetCharactersApperance');
+    return this.get('GetCharactersApperances');
   }
 
   public getCharacterApperance(characterRef: number): Promise<CharacterApperance> {

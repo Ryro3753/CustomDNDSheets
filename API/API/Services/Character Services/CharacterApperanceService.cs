@@ -11,7 +11,7 @@ namespace API.Services
     {
         public Task<int> InsertOrUpdateCharacterApperanceAsync(CharacterApperance model);
         public Task DeleteCharacterApperance(int characterRef);
-        public IEnumerable<CharacterApperance> GetCharacterApperances();
+        public IEnumerable<CharacterApperance> GetCharactersApperances();
         public CharacterApperance GetCharacterApperance(int characterRef);
     }
     public class CharacterApperanceService : ICharacterApperanceService
@@ -78,7 +78,7 @@ namespace API.Services
             }
         }
 
-        public IEnumerable<CharacterApperance> GetCharacterApperances()
+        public IEnumerable<CharacterApperance> GetCharactersApperances()
         {
             return _context.CharacterApperance.OrderBy(i => i.CharacterRef);
         }

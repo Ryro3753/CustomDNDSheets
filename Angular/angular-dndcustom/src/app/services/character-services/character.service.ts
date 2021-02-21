@@ -10,7 +10,7 @@ import { BaseDataService } from "../base-data.service"
 })
 export class CharacterService extends BaseDataService {
   constructor(readonly httpClient: HttpClient) {
-    super(httpClient, 'CharacterSpells')
+    super(httpClient, 'Character')
   }
 public getCharacters(): Promise<Character[]> {
   return this.get('GetCharacters');

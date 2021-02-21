@@ -14,7 +14,7 @@ export class CharacterSpellsService extends BaseDataService {
   }
 
 public getCharactersSpells(): Promise<CharacterSpells[]> {
-  return this.get('GetCharactersSpells');
+  return this.get('GetEveryCharacterSpells');
 }
 
 public getCharacterSpells(characterRef : number): Promise<CharacterSpells> {

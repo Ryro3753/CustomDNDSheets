@@ -30,10 +30,10 @@ namespace API.Controllers
         {
             await _service.DeleteCharacterApperance(Ref);
         }
-        [HttpGet("GetCharacterApperances")]
-        public IEnumerable<CharacterApperance> GetCharacterApperances()
+        [HttpGet("GetCharactersApperances")]
+        public IEnumerable<CharacterApperance> GetCharactersApperances()
         {
-            return _service.GetCharacterApperances();
+            return _service.GetCharactersApperances();
         }
 
         [HttpGet("GetCharacterApperance")]

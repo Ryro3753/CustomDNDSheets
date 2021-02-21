@@ -43,6 +43,7 @@ namespace API
             services.AddTransient<ICharacterSkillsService, CharacterSkillsService>();
             services.AddTransient<ICharacterSpellsService, CharacterSpellsService>();
             services.AddTransient<IEquipmentService, EquipmentService>();
+            services.AddTransient<ISpellService, SpellService>();
 
             services.AddCors(options =>
             {
