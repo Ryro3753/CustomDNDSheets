@@ -19,9 +19,9 @@ public getCharactersDescriptionDetails(): Promise<CharacterDescriptionDetails[]>
   })
 }
 
-public getCharacterDescriptionDetails(ref : number): Promise<CharacterDescriptionDetails> {
+public getCharacterDescriptionDetails(characterRef : number): Promise<CharacterDescriptionDetails> {
   return  new Promise<CharacterDescriptionDetails>((resolve, reject) => {
-    this.httpService.get('CharacterDescriptionDetails', 'GetCharacterDescriptionDetails', {ref}).subscribe(data => {
+    this.httpService.get('CharacterDescriptionDetails', 'GetCharacterDescriptionDetails', {characterRef}).subscribe(data => {
       resolve(data)
     }, err => { reject(err) })
   })
