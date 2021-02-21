@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <nb-actions size="medium">
+      <nb-action icon="people-outline" title="Characters" ></nb-action>
+      <nb-action icon="book-outline" title="Skills" href="/SpellEditor"></nb-action>
+      <nb-action icon="archive-outline" title="Equipments" href="/EquipmentEditor"></nb-action>
+    </nb-actions>
+  </nb-layout-header>
+
+  <nb-layout-column>
+
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
