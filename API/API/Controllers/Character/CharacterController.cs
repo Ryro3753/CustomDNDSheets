@@ -21,7 +21,7 @@ namespace API.Controllers
             _service = service;
         }
         [HttpPost("InsertOrUpdateCharacter")]
-        public async Task<int> InsertOrUpdateCharactersAsync(Character model)
+        public async Task<int> InsertOrUpdateCharactersAsync([FromBody] Character model)
         {
             return await _service.InsertOrUpdateCharacterAsync(model);
         }
