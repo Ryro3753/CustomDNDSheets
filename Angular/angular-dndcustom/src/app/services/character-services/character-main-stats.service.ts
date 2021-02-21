@@ -1,45 +1,31 @@
+import { HttpClient } from "@angular/common/http"
 import { Injectable } from "@angular/core"
 import { CharacterMainStats } from "src/app/models/character/character-main-stats.model"
-import { HttpService } from "../http.service"
+import { BaseDataService } from "../base-data.service"
 
 
 
 @Injectable({
     providedIn: "root"
 })
-export class CharacterMainStatsService {
-constructor(readonly httpService: HttpService){
-}
+export class CharacterMainStatsService extends BaseDataService {
+  constructor(readonly httpClient: HttpClient) {
+    super(httpClient, 'CharacterMainStats')
+  }
 
 public getCharactersMainStats(): Promise<CharacterMainStats[]> {
-  return  new Promise<CharacterMainStats[]>((resolve, reject) => {
-    this.httpService.get('CharacterMainStats', 'GetCharactersMainStats').subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+return this.get('GetCharactersMainStats');
 }
 
 public getCharacterMainStats(characterRef : number): Promise<CharacterMainStats> {
-  return  new Promise<CharacterMainStats>((resolve, reject) => {
-    this.httpService.get('CharacterMainStats', 'GetCharacterMainStats', {characterRef}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.get('GetCharacterMainStats', {characterRef});
 }
 
 public deleteCharacterMainStats(ref : number): Promise<any> {
-  return  new Promise<any>((resolve, reject) => {
-    this.httpService.delete('CharacterMainStats', 'DeleteCharacterMainStats', {ref}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.delete('DeleteCharacterMainStats', {ref});
 }
 
 public insertOrUpdateCharacterMainStats(model : CharacterMainStats): Promise<number> {
-  return  new Promise<number>((resolve, reject) => {
-    this.httpService.post('CharacterMainStats', 'InsertOrUpdateCharacterMainStats',model).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.post('InsertOrUpdateCharacterMainStats',model)
 }
 }

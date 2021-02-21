@@ -1,45 +1,31 @@
+import { HttpClient } from "@angular/common/http"
 import { Injectable } from "@angular/core"
 import { CharacterSecondaryStats } from "src/app/models/character/character-secondary-stats.model"
-import { HttpService } from "../http.service"
+import { BaseDataService } from "../base-data.service"
 
 
 
 @Injectable({
     providedIn: "root"
 })
-export class CharacterSecondaryStatsService {
-constructor(readonly httpService: HttpService){
-}
+export class CharacterSecondaryStatsService extends BaseDataService {
+  constructor(readonly httpClient: HttpClient) {
+    super(httpClient, 'CharacterSecondaryStats')
+  }
 
 public getCharactersSecondaryStats(): Promise<CharacterSecondaryStats[]> {
-  return  new Promise<CharacterSecondaryStats[]>((resolve, reject) => {
-    this.httpService.get('CharacterSecondaryStats', 'GetCharactersSecondaryStats').subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.get('GetCharactersSecondaryStats');
 }
 
 public getCharacterSecondaryStats(characterRef : number): Promise<CharacterSecondaryStats> {
-  return  new Promise<CharacterSecondaryStats>((resolve, reject) => {
-    this.httpService.get('CharacterSecondaryStats', 'GetCharacterSecondaryStats', {characterRef}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.get('GetCharacterSecondaryStats', {characterRef});
 }
 
 public deleteCharacterSecondaryStats(ref : number): Promise<any> {
-  return  new Promise<any>((resolve, reject) => {
-    this.httpService.delete('CharacterSecondaryStats', 'DeleteCharacterSecondaryStats', {ref}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.delete('DeleteCharacterSecondaryStats', {ref});
 }
 
 public insertOrUpdateCharacterSecondaryStats(model : CharacterSecondaryStats): Promise<number> {
-  return  new Promise<number>((resolve, reject) => {
-    this.httpService.post('CharacterSecondaryStats', 'InsertOrUpdateCharacterSecondaryStats',model).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.post('InsertOrUpdateCharacterSecondaryStats',model);
 }
 }

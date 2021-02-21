@@ -1,45 +1,31 @@
+import { HttpClient } from "@angular/common/http"
 import { Injectable } from "@angular/core"
 import { Equipment } from "src/app/models/equipment/equipment.model"
-import { HttpService } from "../http.service"
+import { BaseDataService } from "../base-data.service"
 
 
 
 @Injectable({
-    providedIn: "root"
+  providedIn: "root"
 })
-export class EquipmentService {
-constructor(readonly httpService: HttpService){
-}
+export class EquipmentService extends BaseDataService {
+  constructor(readonly httpClient: HttpClient) {
+    super(httpClient, 'Equipment')
+  }
 
-public getEquipments(): Promise<Equipment[]> {
-  return  new Promise<Equipment[]>((resolve, reject) => {
-    this.httpService.get('Equipment', 'GetEquipments').subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
-}
+  public getEquipments(): Promise<Equipment[]> {
+    return this.get('GetEquipments')
+  }
 
-public getEquipment(ref : number): Promise<Equipment> {
-  return  new Promise<Equipment>((resolve, reject) => {
-    this.httpService.get('Equipment', 'GetEquipment', {ref}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
-}
+  public getEquipment(ref: number): Promise<Equipment> {
+    return this.get('GetEquipment', { ref })
+  }
 
-public deleteEquipment(ref : number): Promise<any> {
-  return  new Promise<any>((resolve, reject) => {
-    this.httpService.delete('Equipment', 'DeleteEquipment', {ref}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
-}
+  public deleteEquipment(ref: number): Promise<any> {
+    return this.delete('DeleteEquipment', { ref });
+  }
 
-public insertOrUpdateEquipment(model : Equipment): Promise<number> {
-  return  new Promise<number>((resolve, reject) => {
-    this.httpService.post('Equipment', 'InsertOrUpdateEquipment',model).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
-}
+  public insertOrUpdateEquipment(model: Equipment): Promise<number> {
+    return this.post('InsertOrUpdateEquipment', model)
+  }
 }

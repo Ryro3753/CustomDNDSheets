@@ -1,45 +1,31 @@
+import { HttpClient } from "@angular/common/http"
 import { Injectable } from "@angular/core"
 import { CharacterSpells } from "src/app/models/character/character-spells.model"
-import { HttpService } from "../http.service"
+import { BaseDataService } from "../base-data.service"
 
 
 
 @Injectable({
     providedIn: "root"
 })
-export class CharacterSpellsService {
-constructor(readonly httpService: HttpService){
-}
+export class CharacterSpellsService extends BaseDataService {
+  constructor(readonly httpClient: HttpClient) {
+    super(httpClient, 'CharacterSpells')
+  }
 
 public getCharactersSpells(): Promise<CharacterSpells[]> {
-  return  new Promise<CharacterSpells[]>((resolve, reject) => {
-    this.httpService.get('CharacterSpells', 'GetCharactersSpells').subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.get('GetCharactersSpells');
 }
 
 public getCharacterSpells(characterRef : number): Promise<CharacterSpells> {
-  return  new Promise<CharacterSpells>((resolve, reject) => {
-    this.httpService.get('CharacterSpells', 'GetCharacterSpells', {characterRef}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.get('GetCharacterSpells', {characterRef});
 }
 
 public deleteCharacterSpells(ref : number): Promise<any> {
-  return  new Promise<any>((resolve, reject) => {
-    this.httpService.delete('CharacterSpells', 'DeleteCharacterSpells', {ref}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.delete('DeleteCharacterSpells', {ref});
 }
 
 public insertOrUpdateCharacterSpells(model : CharacterSpells): Promise<number> {
-  return  new Promise<number>((resolve, reject) => {
-    this.httpService.post('CharacterSpells', 'InsertOrUpdateCharacterSpells',model).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.post('InsertOrUpdateCharacterSpells',model);
 }
 }

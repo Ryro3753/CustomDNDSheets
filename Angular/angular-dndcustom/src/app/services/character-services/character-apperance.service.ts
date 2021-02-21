@@ -1,45 +1,31 @@
+import { HttpClient } from "@angular/common/http"
 import { Injectable } from "@angular/core"
 import { CharacterApperance } from "src/app/models/character/character-apperance.model"
-import { HttpService } from "../http.service"
+import { BaseDataService } from "../base-data.service"
 
 
 
 @Injectable({
-    providedIn: "root"
+  providedIn: "root"
 })
-export class CharacterApperanceService {
-constructor(readonly httpService: HttpService){
-}
+export class CharacterApperanceService extends BaseDataService {
+  constructor(readonly httpClient: HttpClient) {
+    super(httpClient, 'CharacterApperance')
+  }
 
-public getCharactersApperance(): Promise<CharacterApperance[]> {
-  return  new Promise<CharacterApperance[]>((resolve, reject) => {
-    this.httpService.get('CharacterApperance', 'GetCharactersApperance').subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
-}
+  public getCharactersApperance(): Promise<CharacterApperance[]> {
+    return this.get('GetCharactersApperance');
+  }
 
-public getCharacterApperance(characterRef : number): Promise<CharacterApperance> {
-  return  new Promise<CharacterApperance>((resolve, reject) => {
-    this.httpService.get('CharacterApperance', 'GetCharacterApperance', {characterRef}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
-}
+  public getCharacterApperance(characterRef: number): Promise<CharacterApperance> {
+    return this.get('GetCharacterApperance', { characterRef });
+  }
 
-public deleteCharacterApperance(ref : number): Promise<any> {
-  return  new Promise<any>((resolve, reject) => {
-    this.httpService.delete('CharacterApperance', 'DeleteCharacterApperance', {ref}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
-}
+  public deleteCharacterApperance(ref: number): Promise<any> {
+    return this.delete('DeleteCharacterApperance', { ref });
+  }
 
-public insertOrUpdateCharacterApperance(model : CharacterApperance): Promise<number> {
-  return  new Promise<number>((resolve, reject) => {
-    this.httpService.post('CharacterApperance', 'InsertOrUpdateCharactersApperance',model).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
-}
+  public insertOrUpdateCharacterApperance(model: CharacterApperance): Promise<number> {
+    return this.post('InsertOrUpdateCharactersApperance', model);
+  }
 }
