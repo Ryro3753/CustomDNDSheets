@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Character } from './models/Character/Character.model';
-import { CharacterService } from './services/CharacterServices/Character.service';
 
 @Component({
   selector: 'app-root',
@@ -9,22 +7,7 @@ import { CharacterService } from './services/CharacterServices/Character.service
 })
 export class AppComponent {
   title = 'angular-dndcustom';
-  Characters : Character[];
-  constructor(public service : CharacterService){
+  constructor(){
 
   }
-
-  async ngOnInit(){
-    let t : Character;
-    t = {
-      Ref : 0,
-      CharacterName: 'modelDeneme',
-      Class : 'Warrior',
-      Race : 'Orc'
-    };
-    console.log(t);
-    console.log(await this.service.insertOrUpdateCharacter(t));
-    console.log(await this.service.getCharacters());
-
-}
 }
