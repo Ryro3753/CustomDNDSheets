@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
-import { EquipmentScreenComponent } from './screens/equipment-screen.component';
 import { RouterModule } from '@angular/router';
+import { SpellScreenComponent } from './screen/spell-screen.component';
 
 @NgModule({
   declarations: [
-      EquipmentScreenComponent
+    SpellScreenComponent
   ],
   imports: [
     RouterModule.forChild([{
         path: '',
         pathMatch: 'full',
-        component: EquipmentScreenComponent
+        component: SpellScreenComponent
       }]),   
   ],
   providers: [
   ],
 })
-export class EquipmentEditorModule { }
+export class SpellEditorModule { }
