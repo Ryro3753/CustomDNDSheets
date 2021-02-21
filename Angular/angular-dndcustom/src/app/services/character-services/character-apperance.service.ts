@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core"
-import { CharacterApperance } from "src/app/models/Character/CharacterApperance.model"
+import { CharacterApperance } from "src/app/models/character/character-apperance.model"
 import { HttpService } from "../http.service"
 
 

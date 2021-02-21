@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core"
-import { CharacterSavingThrows } from "src/app/models/Character/CharacterSavingThrows.model"
+import { CharacterSavingThrows } from "src/app/models/character/character-saving-throws.model"
 import { HttpService } from "../http.service"
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core"
-import { CharacterSpells } from "src/app/models/Character/CharacterSpells.model"
+import { CharacterSpells } from "src/app/models/character/character-spells.model"
 import { HttpService } from "../http.service"
 
 

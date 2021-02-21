@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { EquipmentScreenComponent } from './screens/equipment-screen.component';
 import { RouterModule } from '@angular/router';
+import { EquipmentScreenComponent } from './screens/equipment-screen.component';
 
 @NgModule({
   declarations: [

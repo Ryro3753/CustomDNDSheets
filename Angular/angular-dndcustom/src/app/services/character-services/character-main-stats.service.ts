@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core"
-import { CharacterMainStats } from "src/app/models/Character/CharacterMainStats.model"
+import { CharacterMainStats } from "src/app/models/character/character-main-stats.model"
 import { HttpService } from "../http.service"
 
 

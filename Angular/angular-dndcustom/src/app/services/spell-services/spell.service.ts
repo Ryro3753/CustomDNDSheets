@@ -1,5 +1,7 @@
+import { HttpClient } from "@angular/common/http"
 import { Injectable } from "@angular/core"
-import { Spell } from "src/app/models/Spell/Spell.model"
+import { Spell } from "src/app/models/spell/spell.model"
+import { BaseDataService } from "../base-data.service"
 import { HttpService } from "../http.service"
 
 
@@ -7,24 +9,17 @@ import { HttpService } from "../http.service"
 @Injectable({
     providedIn: "root"
 })
-export class SpellService {
-constructor(readonly httpService: HttpService){
+export class SpellService  extends BaseDataService {
+constructor(readonly httpService: HttpClient){
+  super(httpService, 'Spell')
 }
 
 public getSpells(): Promise<Spell[]> {
-  return  new Promise<Spell[]>((resolve, reject) => {
-    this.httpService.get('Spell', 'GetSpells').subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.get('GetSpells')
 }
 
 public getSpell(ref : number): Promise<Spell> {
-  return  new Promise<Spell>((resolve, reject) => {
-    this.httpService.get('Spell', 'GetSpell', {ref}).subscribe(data => {
-      resolve(data)
-    }, err => { reject(err) })
-  })
+  return this.get('GetSpell', { ref })
 }
 
 public deleteSpell(ref : number): Promise<any> {
