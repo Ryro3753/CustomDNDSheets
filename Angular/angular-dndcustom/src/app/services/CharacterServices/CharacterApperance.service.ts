@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core"
-import { CharacterApperance } from "src/app/models/Character/characterapperance.model"
+import { CharacterApperance } from "src/app/models/Character/CharacterApperance.model"
 import { HttpService } from "../http.service"
 
 
@@ -11,7 +11,7 @@ export class CharacterApperanceService {
 constructor(readonly httpService: HttpService){
 }
 
-public getCharacters(): Promise<CharacterApperance[]> {
+public getCharactersApperance(): Promise<CharacterApperance[]> {
   return  new Promise<CharacterApperance[]>((resolve, reject) => {
     this.httpService.get('CharacterApperance', 'GetCharactersApperance').subscribe(data => {
       resolve(data)
@@ -19,7 +19,7 @@ public getCharacters(): Promise<CharacterApperance[]> {
   })
 }
 
-public getCharacter(ref : number): Promise<CharacterApperance> {
+public getCharacterApperance(ref : number): Promise<CharacterApperance> {
   return  new Promise<CharacterApperance>((resolve, reject) => {
     this.httpService.get('CharacterApperance', 'GetCharacterApperance', {ref}).subscribe(data => {
       resolve(data)
@@ -27,7 +27,7 @@ public getCharacter(ref : number): Promise<CharacterApperance> {
   })
 }
 
-public deleteCharacter(ref : number): Promise<any> {
+public deleteCharacterApperance(ref : number): Promise<any> {
   return  new Promise<any>((resolve, reject) => {
     this.httpService.delete('CharacterApperance', 'DeleteCharacterApperance', {ref}).subscribe(data => {
       resolve(data)
@@ -35,7 +35,7 @@ public deleteCharacter(ref : number): Promise<any> {
   })
 }
 
-public InsertOrUpdateCharacter(model : CharacterApperance): Promise<number> {
+public insertOrUpdateCharacterApperance(model : CharacterApperance): Promise<number> {
   return  new Promise<number>((resolve, reject) => {
     this.httpService.post('CharacterApperance', 'InsertOrUpdateCharactersApperance',model).subscribe(data => {
       resolve(data)

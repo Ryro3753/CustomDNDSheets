@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core"
-import { Character } from "src/app/models/Character/character.model"
+import { Character } from "src/app/models/Character/Character.model"
 import { HttpService } from "../http.service"
 
 
@@ -35,7 +35,7 @@ public deleteCharacter(ref : number): Promise<any> {
   })
 }
 
-public InsertOrUpdateCharacter(model : Character): Promise<number> {
+public insertOrUpdateCharacter(model : Character): Promise<number> {
   return  new Promise<number>((resolve, reject) => {
     this.httpService.post('Character', 'InsertOrUpdateCharacter',model).subscribe(data => {
       resolve(data)

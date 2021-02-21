@@ -7,5 +7,5 @@ export interface CharacterApperance {
     Hair : string,
     Skin : string,
     Age : string,
-    Weight : string,
+    Weight : string
 };
