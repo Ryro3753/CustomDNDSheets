@@ -1,6 +1,6 @@
 export interface Character {
-    Ref : number,
-    CharacterName : string,
-    Class : string,
-    Race : string
+    ref : number,
+    characterName : string,
+    class : string,
+    race : string
 };

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Character } from 'src/app/models/Character/Character.model';
 import { CharacterApperanceService } from 'src/app/services/character-services/character-apperance.service';
 import { CharacterDescriptionDetailsService } from 'src/app/services/character-services/character-description-details.service';
 import { CharacterEquipmentService } from 'src/app/services/character-services/character-equipment.service';
@@ -16,7 +17,7 @@ import { SpellService } from 'src/app/services/spell-services/spell.service';
   selector: 'app-equipment-screen',
   templateUrl: './equipment-screen.component.html',
   styleUrls: ['./equipment-screen.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EquipmentScreenComponent implements OnInit {
 
@@ -36,9 +37,12 @@ export class EquipmentScreenComponent implements OnInit {
   ) {
 
   }
-
+  characters : Character[];
+  gridDataSource : Character[];
   async ngOnInit() {
-    console.log(await this.characterService.getCharacters());
+    this.characters = await this.characterService.getCharacters();
+    this.gridDataSource = this.characters;
+    console.log(this.characters);/*
     console.log(await this.characterApperanceService.getCharactersApperance());
     console.log(await this.characterDescriptionDetailsService.getCharactersDescriptionDetails());
     console.log(await this.characterEquipmentService.getEveryCharacterEquipment());
@@ -49,7 +53,12 @@ export class EquipmentScreenComponent implements OnInit {
     console.log(await this.characterSkillsService.getCharactersSkills());
     console.log(await this.characterSpellsService.getCharactersSpells());
     console.log(await this.spellService.getSpells());
-    console.log(await this.equipmentService.getEquipments());
+    console.log(await this.equipmentService.getEquipments());*/
+  }
+
+
+  asd(){
+    this.gridDataSource = this.characters.slice(2,9);
   }
 
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { EquipmentScreenComponent } from './screens/equipment-screen.component';
-
+import {TableModule} from 'primeng/table';
 @NgModule({
   declarations: [
       EquipmentScreenComponent
@@ -11,7 +11,8 @@ import { EquipmentScreenComponent } from './screens/equipment-screen.component';
         path: '',
         pathMatch: 'full',
         component: EquipmentScreenComponent
-      }]),   
+      }]),
+      TableModule,
   ],
   providers: [
   ],

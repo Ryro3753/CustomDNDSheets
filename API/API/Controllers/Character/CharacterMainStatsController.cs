@@ -36,7 +36,7 @@ namespace API.Controllers
             return _service.GetCharactersMainStats();
         }
 
-        [HttpGet("GetCharacter")]
+        [HttpGet("GetCharacterMainStats")]
         public CharacterMainStats GetCharacterMainStats(int characterRef)
         {
             return _service.GetCharacterMainStats(characterRef);
