@@ -1,14 +1,13 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Equipment } from 'src/app/models/equipment/equipment.model';
 import { EquipmentService } from 'src/app/services/equipment-services/equipment.service';
 
 @Component({
-  selector: 'app-equipment-screen',
-  templateUrl: './equipment-screen.component.html',
-  styleUrls: ['./equipment-screen.component.css'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-equipment-editor-table',
+  templateUrl: './equipment-editor-table.component.html',
+  styleUrls: ['./equipment-editor-table.component.css']
 })
-export class EquipmentScreenComponent implements OnInit {
+export class EquipmentEditorTableComponent implements OnInit {
 
   constructor(
     readonly equipmentService: EquipmentService

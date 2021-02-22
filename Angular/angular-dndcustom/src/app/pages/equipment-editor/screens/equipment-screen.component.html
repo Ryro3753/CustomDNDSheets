@@ -1,17 +1,1 @@
-<p-table [value]="gridDataSource" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Equipment Name</th>
-            <th>Description</th>
-            <th>Cost</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-character>
-        <tr>
-            <td>{{character.characterName}}</td>
-            <td>{{character.class}}</td>
-            <td>{{character.race}}</td>
-        </tr>
-    </ng-template>
-</p-table>
-
+<app-equipment-editor-table></app-equipment-editor-table>
