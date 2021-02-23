@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Equipment } from 'src/app/models/equipment/equipment.model';
 import { EquipmentService } from 'src/app/services/equipment-services/equipment.service';
+import { EquipmentEditorModalComponent } from '../equipment-editor-modal/equipment-editor-modal.component';
 
 @Component({
   selector: 'app-equipment-editor-table',
@@ -9,6 +10,8 @@ import { EquipmentService } from 'src/app/services/equipment-services/equipment.
 })
 export class EquipmentEditorTableComponent implements OnInit {
 
+  Equipment : Equipment;
+  @ViewChild('modal') equipmentModal: EquipmentEditorModalComponent;
   constructor(
     readonly equipmentService: EquipmentService
   ) {
@@ -17,11 +20,14 @@ export class EquipmentEditorTableComponent implements OnInit {
   equipments : Equipment[];
   gridDataSource : Equipment[];
   async ngOnInit() {
+
    this.equipments =  await this.equipmentService.getEquipments();
    this.gridDataSource = this.equipments;
+
   }
 asd(character){
-  console.log(character);
+  this.equipmentModal.EquipmentModal = true;
+  this.equipmentModal.Equipment = character;
 }
 
 }

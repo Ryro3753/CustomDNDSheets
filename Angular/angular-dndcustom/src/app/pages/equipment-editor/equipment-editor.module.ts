@@ -5,6 +5,7 @@ import { TableModule } from 'primeng/table';
 import { EquipmentEditorTableComponent } from './components/equipment-editor-table/equipment-editor-table.component';
 import { EquipmentEditorModalComponent } from './components/equipment-editor-modal/equipment-editor-modal.component';
 import { DialogModule } from 'primeng/dialog';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DialogModule } from 'primeng/dialog';
       component: EquipmentScreenComponent
     }]),
     TableModule,
-    DialogModule
+    DialogModule,
+    CommonModule
   ],
   providers: [
   ],
