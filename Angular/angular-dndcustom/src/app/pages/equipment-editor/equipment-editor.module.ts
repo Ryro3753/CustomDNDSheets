@@ -6,6 +6,9 @@ import { EquipmentEditorTableComponent } from './components/equipment-editor-tab
 import { EquipmentEditorModalComponent } from './components/equipment-editor-modal/equipment-editor-modal.component';
 import { DialogModule } from 'primeng/dialog';
 import { CommonModule } from '@angular/common';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextModule } from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { CommonModule } from '@angular/common';
     }]),
     TableModule,
     DialogModule,
-    CommonModule
+    CommonModule,
+    InputTextareaModule,
+    InputTextModule,
+    ButtonModule,
   ],
   providers: [
   ],

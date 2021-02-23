@@ -17,9 +17,10 @@ export class EquipmentEditorModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-asd(){
-  console.log(this.Equipment);
+cancelClick(){
   this.EquipmentModal = false;
 }
+
+
 
 }

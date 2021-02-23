@@ -1,6 +1,6 @@
 export interface Equipment {
-    Ref : number,
-    EquipmentName : string,
-    Description : string,
-    Cost : number
+    ref : number,
+    equipmentName : string,
+    description : string,
+    cost : number
 };
