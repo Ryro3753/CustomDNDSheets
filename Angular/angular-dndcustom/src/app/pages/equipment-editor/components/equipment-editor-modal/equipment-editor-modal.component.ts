@@ -28,4 +28,7 @@ export class EquipmentEditorModalComponent implements OnInit {
     this.EquipmentModal = false;
   }
 
+  Upload(e){
+    console.log(e);
+  }
 }

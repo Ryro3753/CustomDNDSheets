@@ -1,10 +1,25 @@
-<p-dialog visible="true" modal="true" *ngIf="EquipmentModal" [resizable]="false" [closable]="false" #modal>
+<div id="containerModal">
+
+    <p-dialog visible="true" showHeader="false" modal="true" *ngIf="EquipmentModal" [resizable]="false"
+        [closable]="false" #modal closeOnEscape="true">
+        <div class="row">
+            <p-avatar id="image"
+                image="https://static.wikia.nocookie.net/vanilla-wow/images/f/f1/Spell_ice_lament.png/revision/latest/smart/width/200/height/200?cb=20130708132835"
+                size="large"></p-avatar>
+            <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*"
+                maxFileSize="1000000" (onUpload)="Upload($event)" [auto]="true" chooseLabel="Upload Icon">
+            </p-fileUpload>
+        </div>
         <span class="p-float-label">
-            <input id="float-input" type="text"  [(ngModel)]="Equipment.equipmentName" pInputText>
+            <input id="float-input" type="text" [(ngModel)]="Equipment.equipmentName" pInputText>
         </span>
         <span class="p-float-label">
-            <textarea [rows]="5" [cols]="30" pInputTextarea [(ngModel)]="Equipment.description" autoResize="autoResize"></textarea>
+            <textarea [rows]="5" [cols]="30" pInputTextarea [(ngModel)]="Equipment.description"
+                autoResize="autoResize"></textarea>
         </span>
         <button pButton type="button" label="Save" icon="pi pi-check" iconPos="left" (click)="saveClick()"></button>
-        <button pButton type="button" label="Cancel" class="p-button-danger" icon="pi pi-times" iconPos="left" (click)="cancelClick()"></button>
-</p-dialog>
+        <button pButton type="button" label="Cancel" class="p-button-danger" icon="pi pi-times" iconPos="left"
+            (click)="cancelClick()"></button>
+    </p-dialog>
+
+</div>

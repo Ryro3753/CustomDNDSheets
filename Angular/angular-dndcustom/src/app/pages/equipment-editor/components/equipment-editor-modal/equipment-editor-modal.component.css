@@ -1,0 +1,10 @@
+::ng-deep #image{
+    margin-bottom: 20px;
+    margin-right: 8px;
+}
+::ng-deep #uploader{
+    margin-bottom: 20px;
+}
+::ng-deep #containerModal{
+    margin: 100px;
+}
