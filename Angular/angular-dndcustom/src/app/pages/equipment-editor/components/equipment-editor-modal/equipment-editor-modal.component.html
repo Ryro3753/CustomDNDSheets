@@ -1,10 +1,10 @@
 <p-dialog visible="true" modal="true" *ngIf="EquipmentModal" [resizable]="false" [closable]="false" #modal>
         <span class="p-float-label">
-            <input id="float-input" type="text" [value]="Equipment.equipmentName" pInputText>
+            <input id="float-input" type="text"  [(ngModel)]="Equipment.equipmentName" pInputText>
         </span>
         <span class="p-float-label">
-            <textarea [rows]="5" [cols]="30" pInputTextarea [value]="Equipment.description" autoResize="autoResize"></textarea>
+            <textarea [rows]="5" [cols]="30" pInputTextarea [(ngModel)]="Equipment.description" autoResize="autoResize"></textarea>
         </span>
-        <button pButton type="button" label="Save" icon="pi pi-check" iconPos="left"></button>
+        <button pButton type="button" label="Save" icon="pi pi-check" iconPos="left" (click)="saveClick()"></button>
         <button pButton type="button" label="Cancel" class="p-button-danger" icon="pi pi-times" iconPos="left" (click)="cancelClick()"></button>
 </p-dialog>

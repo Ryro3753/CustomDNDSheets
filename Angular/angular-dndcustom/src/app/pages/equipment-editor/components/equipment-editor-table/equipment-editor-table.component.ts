@@ -25,7 +25,7 @@ export class EquipmentEditorTableComponent implements OnInit {
    this.gridDataSource = this.equipments;
 
   }
-asd(character){
+itemDoubleClick(character){
   this.equipmentModal.EquipmentModal = true;
   this.equipmentModal.Equipment = character;
 }

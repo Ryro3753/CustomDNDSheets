@@ -7,7 +7,7 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-character>
-        <tr  (click)="asd(character)">
+        <tr  (dblclick)="itemDoubleClick(character)">
             <td>{{character.equipmentName}}</td>
             <td>{{character.description}}</td>
             <td>{{character.cost}}</td>

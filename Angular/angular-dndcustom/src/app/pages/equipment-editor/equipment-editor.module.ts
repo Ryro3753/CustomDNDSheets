@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {ButtonModule} from 'primeng/button';
     InputTextareaModule,
     InputTextModule,
     ButtonModule,
+    FormsModule
   ],
   providers: [
   ],
