@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Equipment } from 'src/app/models/equipment/equipment.model';
 import { EquipmentService } from 'src/app/services/equipment-services/equipment.service';
 
@@ -12,8 +12,9 @@ export class EquipmentEditorModalComponent implements OnInit {
   public Equipment: Equipment;
   public EquipmentModal: boolean = false;
 
+  @Output() NewEquipment : EventEmitter<Equipment> = new EventEmitter<Equipment>();
 
-  constructor(readonly service: EquipmentService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -22,13 +23,11 @@ export class EquipmentEditorModalComponent implements OnInit {
     this.EquipmentModal = false;
   }
 
-  async saveClick() {
-    console.log(this.Equipment);
-    console.log(await this.service.insertOrUpdateEquipment(this.Equipment));
+  public async saveClick() {
+    this.NewEquipment.emit(this.Equipment);
     this.EquipmentModal = false;
   }
 
   Upload(e){
-    console.log(e);
   }
 }
