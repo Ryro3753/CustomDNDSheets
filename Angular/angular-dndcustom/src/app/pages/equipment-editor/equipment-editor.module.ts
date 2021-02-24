@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { FileUploadModule } from 'primeng/fileupload';
 import { AvatarModule } from 'primeng/avatar';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AvatarModule } from 'primeng/avatar';
     ButtonModule,
     FormsModule,
     FileUploadModule,
-    AvatarModule
+    AvatarModule,
+    InputNumberModule
   ],
   providers: [
   ],

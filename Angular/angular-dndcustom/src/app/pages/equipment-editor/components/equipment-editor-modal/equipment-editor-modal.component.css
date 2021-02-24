@@ -1,10 +1,25 @@
 ::ng-deep #image{
     margin-bottom: 20px;
     margin-right: 8px;
+    margin-left: 110px;
 }
 ::ng-deep #uploader{
     margin-bottom: 20px;
 }
-::ng-deep #containerModal{
-    margin: 100px;
+::ng-deep #saveButton{
+    margin: 15px;
+    margin-left:80px;
+}
+::ng-deep #cancelButton{
+    margin: 15px;
+}
+::ng-deep #equipmentName{
+    margin: 15px;
+}
+::ng-deep #equipmentDescription{
+    margin: 15px;
+    margin-left: 80px;
+}
+::ng-deep #equipmentCost{
+    margin:15px;
 }
