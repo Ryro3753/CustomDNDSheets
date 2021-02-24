@@ -5,7 +5,7 @@
             image="https://static.wikia.nocookie.net/vanilla-wow/images/f/f1/Spell_ice_lament.png/revision/latest/smart/width/200/height/200?cb=20130708132835"
             size="large"></p-avatar>
         <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*" maxFileSize="1000000"
-            (onUpload)="Upload($event)" [auto]="true" chooseLabel="Upload Icon">
+            (uploadHandler)="Upload($event)" [auto]="true"  customUpload="true"  chooseLabel="Upload Icon">
         </p-fileUpload>
     </div>
     <div class="row">

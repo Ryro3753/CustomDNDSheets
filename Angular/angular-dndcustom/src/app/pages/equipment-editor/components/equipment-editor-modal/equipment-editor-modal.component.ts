@@ -11,7 +11,8 @@ export class EquipmentEditorModalComponent implements OnInit {
 
   public Equipment: Equipment;
   public EquipmentModal: boolean = false;
-
+  
+  @Output() UploadFile : EventEmitter<any> = new EventEmitter<any>();
   @Output() NewEquipment : EventEmitter<Equipment> = new EventEmitter<Equipment>();
 
   constructor() { }
@@ -29,5 +30,7 @@ export class EquipmentEditorModalComponent implements OnInit {
   }
 
   Upload(e){
+    console.log(e);
+    this.UploadFile.emit(e);
   }
 }

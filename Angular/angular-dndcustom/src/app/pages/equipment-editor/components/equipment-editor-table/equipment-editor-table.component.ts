@@ -48,4 +48,9 @@ export class EquipmentEditorTableComponent implements OnInit {
     }
   }
 
+  async emittedUploadIcon(e){
+    console.log("asd");
+    console.log(e);
+  }
+
 }
