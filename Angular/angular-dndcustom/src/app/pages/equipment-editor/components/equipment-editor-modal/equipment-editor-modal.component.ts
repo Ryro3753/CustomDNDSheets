@@ -15,7 +15,7 @@ export class EquipmentEditorModalComponent implements OnInit {
   @Output() UploadFile : EventEmitter<any> = new EventEmitter<any>();
   @Output() NewEquipment : EventEmitter<Equipment> = new EventEmitter<Equipment>();
 
-  constructor() { }
+  constructor(readonly service : EquipmentService) { }
 
   ngOnInit(): void {
   }
@@ -29,8 +29,13 @@ export class EquipmentEditorModalComponent implements OnInit {
     this.EquipmentModal = false;
   }
 
-  Upload(e){
-    console.log(e);
+  async Upload(e){
+    //Checking if this new equipment
+    if(this.Equipment.ref == 0){
+      const ref = await this.service.insertOrUpdateEquipment(this.Equipment);
+      this.Equipment.ref = ref;
+
+    }
     this.UploadFile.emit(e);
   }
 }

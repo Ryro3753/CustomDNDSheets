@@ -3,13 +3,19 @@
 <p-table  [value]="gridDataSource" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
     <ng-template  pTemplate="header">
         <tr>
-            <th style="width:25%;">Equipment Name</th>
-            <th style="width:65%;">Description</th>
-            <th style="width:10%;">Cost</th>
+            <th style="width:10%;"></th>
+            <th style="width:22%;">Equipment Name</th>
+            <th style="width:60%;">Description</th>
+            <th style="width:8%;">Cost</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-character>
         <tr  (dblclick)="itemDoubleClick(character)">
+            <td>
+            <p-avatar
+            image="https://static.wikia.nocookie.net/vanilla-wow/images/f/f1/Spell_ice_lament.png/revision/latest/smart/width/200/height/200?cb=20130708132835"
+            size="large"></p-avatar>
+            </td>
             <td>{{character.equipmentName}}</td>
             <td>{{character.description}}</td>
             <td>{{character.cost}}</td>

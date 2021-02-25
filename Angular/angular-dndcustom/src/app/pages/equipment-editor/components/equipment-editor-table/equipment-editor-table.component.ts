@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Equipment } from 'src/app/models/equipment/equipment.model';
+import { EquipmentIconService } from 'src/app/services/equipment-services/equipment-icon.service';
 import { EquipmentService } from 'src/app/services/equipment-services/equipment.service';
 import { servicesVersion } from 'typescript';
 import { EquipmentEditorModalComponent } from '../equipment-editor-modal/equipment-editor-modal.component';
@@ -14,8 +15,9 @@ export class EquipmentEditorTableComponent implements OnInit {
   Equipment: Equipment;
   @ViewChild('modal') equipmentModal: EquipmentEditorModalComponent;
   constructor(
-    readonly equipmentService: EquipmentService
-  ) {
+    readonly equipmentService: EquipmentService,
+    readonly equipmentIconService: EquipmentIconService
+    ) {
 
   }
   equipments: Equipment[];
@@ -41,6 +43,7 @@ export class EquipmentEditorTableComponent implements OnInit {
     if (e.ref == 0) {
       const ref = await this.equipmentService.insertOrUpdateEquipment(e);
       e.ref = ref;
+      this.equipmentModal.Equipment.ref = ref;
       this.equipments.push(e);
     }
     else {
@@ -49,8 +52,7 @@ export class EquipmentEditorTableComponent implements OnInit {
   }
 
   async emittedUploadIcon(e){
-    console.log("asd");
-    console.log(e);
+    this.equipmentIconService.uploadIcon(e.files[0],this.equipmentModal.Equipment.ref);
   }
 
 }

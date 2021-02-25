@@ -22,10 +22,12 @@ namespace API.Controllers
         {
             _service = service;
         }
-        [HttpPost("Upload")]
-        public void UploadIcon([FromBody]FileStream t)
+        [HttpPost("UploadIcon")]
+        public void UploadIcon(int EquipmentRef)
         {
-            _service.UploadIcon(t);
+
+            var file = Request.Form.Files;
+            //var fileExtension = Path.GetExtension(file.FileName);
         }
       
 
