@@ -70,6 +70,8 @@ namespace API
 
             app.UseCors("CorsPolicy");
 
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseAuthorization();

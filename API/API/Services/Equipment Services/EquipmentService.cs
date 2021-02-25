@@ -33,7 +33,7 @@ namespace API.Services
                     EquipmentName = model.EquipmentName,
                     Cost = model.Cost,
                     Description = model.Description,
-                    IconPath = model.IconPath
+                    HasIcon = false
                 };
                 await _context.Equipment.AddAsync(equipment);
                 await _context.SaveChangesAsync();
@@ -45,7 +45,7 @@ namespace API.Services
                 existingEquipment.EquipmentName = model.EquipmentName;
                 existingEquipment.Cost = model.Cost;
                 existingEquipment.Description = model.Description;
-                existingEquipment.IconPath = model.IconPath;
+                existingEquipment.HasIcon = model.HasIcon;
                 await _context.SaveChangesAsync();
                 return existingEquipment.Ref;
 

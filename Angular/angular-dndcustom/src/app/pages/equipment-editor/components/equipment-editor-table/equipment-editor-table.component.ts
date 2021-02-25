@@ -22,6 +22,8 @@ export class EquipmentEditorTableComponent implements OnInit {
   }
   equipments: Equipment[];
   gridDataSource: Equipment[];
+  imageurl: string = "../../../../assets/images/equipment-images/";
+  imagejpg: string = ".jpg";
   async ngOnInit() {
 
     this.equipments = await this.equipmentService.getEquipments();

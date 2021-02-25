@@ -9,16 +9,16 @@
             <th style="width:8%;">Cost</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-character>
-        <tr  (dblclick)="itemDoubleClick(character)">
+    <ng-template pTemplate="body" let-equipment>
+        <tr  (dblclick)="itemDoubleClick(equipment)">
             <td>
             <p-avatar
-            image="https://static.wikia.nocookie.net/vanilla-wow/images/f/f1/Spell_ice_lament.png/revision/latest/smart/width/200/height/200?cb=20130708132835"
+            image="https://localhost:44330/images/EquipmentImages/{{equipment.ref}}.jpg"
             size="large"></p-avatar>
             </td>
-            <td>{{character.equipmentName}}</td>
-            <td>{{character.description}}</td>
-            <td>{{character.cost}}</td>
+            <td>{{equipment.equipmentName}}</td>
+            <td>{{equipment.description}}</td>
+            <td>{{equipment.cost}}</td>
         </tr>
     </ng-template>
 </p-table>

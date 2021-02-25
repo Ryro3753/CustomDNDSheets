@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Equipment } from 'src/app/models/equipment/equipment.model';
+import { EquipmentIconService } from 'src/app/services/equipment-services/equipment-icon.service';
 import { EquipmentService } from 'src/app/services/equipment-services/equipment.service';
 
 @Component({
@@ -11,11 +12,13 @@ export class EquipmentEditorModalComponent implements OnInit {
 
   public Equipment: Equipment;
   public EquipmentModal: boolean = false;
+  public imageLocation : string;
   
   @Output() UploadFile : EventEmitter<any> = new EventEmitter<any>();
   @Output() NewEquipment : EventEmitter<Equipment> = new EventEmitter<Equipment>();
 
-  constructor(readonly service : EquipmentService) { }
+  constructor(readonly service : EquipmentService,
+    readonly iconService : EquipmentIconService) { }
 
   ngOnInit(): void {
   }

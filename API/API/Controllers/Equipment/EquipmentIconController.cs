@@ -23,13 +23,21 @@ namespace API.Controllers
             _service = service;
         }
         [HttpPost("UploadIcon")]
-        public void UploadIcon(int EquipmentRef)
+        public async Task UploadIcon(int EquipmentRef)
         {
+            var imageFolderPath = Path.Combine(_service.GetImageFolderPath(), EquipmentRef.ToString() + ".jpg");
 
-            var file = Request.Form.Files;
-            //var fileExtension = Path.GetExtension(file.FileName);
+            using var stream = System.IO.File.Create(imageFolderPath);
+
+            foreach (var item in Request.Form.Files)
+            {
+                await _service.UpdateHasIcon(EquipmentRef);
+                await item.CopyToAsync(stream);
+            } 
+
         }
       
+
 
     }
 }

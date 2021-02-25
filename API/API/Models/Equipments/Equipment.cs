@@ -16,6 +16,6 @@ namespace API.Models.Equipments
         public string EquipmentName { get; set; }
         public string Description { get; set; }
         public int Cost { get; set; }
-        public string IconPath { get; set; }
+        public bool HasIcon { get; set; }
     }
 }

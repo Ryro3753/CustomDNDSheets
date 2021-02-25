@@ -2,7 +2,7 @@
     #modal closeOnEscape="true">
     <div class="row">
         <p-avatar id="image"
-            image="https://static.wikia.nocookie.net/vanilla-wow/images/f/f1/Spell_ice_lament.png/revision/latest/smart/width/200/height/200?cb=20130708132835"
+            image="https://localhost:44330/images/EquipmentImages/{{Equipment.ref}}.jpg"
             size="large"></p-avatar>
         <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*" maxFileSize="1000000"
             (uploadHandler)="Upload($event)" [auto]="true"  customUpload="true"  chooseLabel="Upload Icon">
