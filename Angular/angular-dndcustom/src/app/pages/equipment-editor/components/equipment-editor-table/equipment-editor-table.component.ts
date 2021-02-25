@@ -15,18 +15,21 @@ export class EquipmentEditorTableComponent implements OnInit {
   Equipment: Equipment;
   @ViewChild('modal') equipmentModal: EquipmentEditorModalComponent;
   constructor(
-    readonly equipmentService: EquipmentService,
-    readonly equipmentIconService: EquipmentIconService
+    readonly service: EquipmentService,
+    readonly iconService: EquipmentIconService
     ) {
 
   }
   equipments: Equipment[];
   gridDataSource: Equipment[];
-  imageurl: string = "../../../../assets/images/equipment-images/";
-  imagejpg: string = ".jpg";
-  async ngOnInit() {
 
-    this.equipments = await this.equipmentService.getEquipments();
+  public iconPath : string;
+  public placeOverIconPath : string;
+
+  async ngOnInit() {
+    this.placeOverIconPath = EquipmentIconService.getPlaceOverIcon();
+    this.iconPath = this.iconService.getImagesPath();
+    this.equipments = await this.service.getEquipments();
     this.gridDataSource = this.equipments;
 
   }
@@ -43,18 +46,18 @@ export class EquipmentEditorTableComponent implements OnInit {
 
   async emittedEquipment(e) {
     if (e.ref == 0) {
-      const ref = await this.equipmentService.insertOrUpdateEquipment(e);
+      const ref = await this.service.insertOrUpdateEquipment(e);
       e.ref = ref;
       this.equipmentModal.Equipment.ref = ref;
       this.equipments.push(e);
     }
     else {
-      await this.equipmentService.insertOrUpdateEquipment(e)
+      await this.service.insertOrUpdateEquipment(e)
     }
   }
 
   async emittedUploadIcon(e){
-    this.equipmentIconService.uploadIcon(e.files[0],this.equipmentModal.Equipment.ref);
+    this.iconService.uploadIcon(e.files[0],this.equipmentModal.Equipment.ref);
   }
 
 }

@@ -26,5 +26,8 @@ export class EquipmentIconService {
    public getImagesPath():string{
      return environment.service + "/images/EquipmentImages/";
    }
+   static getPlaceOverIcon():string{
+    return environment.service + "/images/EquipmentImages/PlaceOver.jpg";
+  }
 
   }

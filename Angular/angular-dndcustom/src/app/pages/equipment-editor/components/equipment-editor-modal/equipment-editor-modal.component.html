@@ -2,7 +2,7 @@
     #modal closeOnEscape="true">
     <div class="row">
         <p-avatar id="image"
-            image="https://localhost:44330/images/EquipmentImages/{{Equipment.ref}}.jpg"
+            [image]="Equipment.hasIcon ? iconPath+Equipment.ref+'.jpg' : placeOverIconPath"
             size="large"></p-avatar>
         <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*" maxFileSize="1000000"
             (uploadHandler)="Upload($event)" [auto]="true"  customUpload="true"  chooseLabel="Upload Icon">

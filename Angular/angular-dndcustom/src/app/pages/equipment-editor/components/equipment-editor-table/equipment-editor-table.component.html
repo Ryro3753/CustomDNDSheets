@@ -13,7 +13,7 @@
         <tr  (dblclick)="itemDoubleClick(equipment)">
             <td>
             <p-avatar
-            image="https://localhost:44330/images/EquipmentImages/{{equipment.ref}}.jpg"
+            [image]="equipment.hasIcon ? iconPath+equipment.ref+'.jpg' : placeOverIconPath"
             size="large"></p-avatar>
             </td>
             <td>{{equipment.equipmentName}}</td>
