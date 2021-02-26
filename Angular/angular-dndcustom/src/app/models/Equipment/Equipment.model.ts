@@ -3,5 +3,5 @@ export interface Equipment {
     equipmentName : string,
     description : string,
     cost : number,
-    hasIcon : boolean
+    hasIcon : number
 };

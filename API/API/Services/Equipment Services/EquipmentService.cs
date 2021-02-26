@@ -13,6 +13,7 @@ namespace API.Services
         public Task DeleteEquipment(int Ref);
         public IEnumerable<Equipment> GetEquipments();
         public Equipment GetEquipment(int Ref);
+        public Task UpdateHasIcon(int Ref);
     }
     public class EquipmentService : IEquipmentService
     {
@@ -33,7 +34,7 @@ namespace API.Services
                     EquipmentName = model.EquipmentName,
                     Cost = model.Cost,
                     Description = model.Description,
-                    HasIcon = false
+                    HasIcon = 0
                 };
                 await _context.Equipment.AddAsync(equipment);
                 await _context.SaveChangesAsync();
@@ -77,6 +78,13 @@ namespace API.Services
         public Equipment GetEquipment(int Ref)
         {
             return _context.Equipment.FirstOrDefault(i => i.Ref == Ref);
+        }
+
+        public async Task UpdateHasIcon(int Ref)
+        {
+            var existingEquipment = _context.Equipment.FirstOrDefault(i => i.Ref == Ref);
+            existingEquipment.HasIcon = 1;
+            await _context.SaveChangesAsync();
         }
     }
 }

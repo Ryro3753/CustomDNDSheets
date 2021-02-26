@@ -42,7 +42,6 @@ export class EquipmentEditorModalComponent implements OnInit {
     if(this.Equipment.ref == 0){
       const ref = await this.service.insertOrUpdateEquipment(this.Equipment);
       this.Equipment.ref = ref;
-
     }
     this.UploadFile.emit(e);
   }

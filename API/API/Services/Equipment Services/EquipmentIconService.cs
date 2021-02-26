@@ -11,36 +11,23 @@ namespace API.Services
 {
     public interface IEquipmentIconService
     {
-        void UploadIcon(FileStream fs);
         string GetImageFolderPath();
-        Task UpdateHasIcon(int Ref);
     }
     public class EquipmentIconService : IEquipmentIconService
     {
-        private readonly DNDDbContext _context;
         private readonly IWebHostEnvironment _env;
 
-        public EquipmentIconService(DNDDbContext context, IWebHostEnvironment env)
+        public EquipmentIconService( IWebHostEnvironment env)
         {
-            _context = context;
             _env = env;
         }
 
-        public string GetImageFolderPath()
+        public  string GetImageFolderPath()
         {
             return Path.Combine(_env.WebRootPath, "images", "EquipmentImages");
             //return  Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, @"wwwroot\images\EquipmentImages\");
         }
-        public  void UploadIcon(FileStream fs)
-        {
-           _context.SaveChanges();
-        }
 
-        public async Task UpdateHasIcon(int Ref)
-        {
-            var existingEquipment = _context.Equipment.FirstOrDefault(i => i.Ref == Ref);
-            existingEquipment.HasIcon = true;
-            await _context.SaveChangesAsync();
-        }
+
     }
 }

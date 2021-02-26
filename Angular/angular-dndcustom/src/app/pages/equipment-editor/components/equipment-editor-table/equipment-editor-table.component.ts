@@ -33,9 +33,10 @@ export class EquipmentEditorTableComponent implements OnInit {
     this.gridDataSource = this.equipments;
 
   }
-  itemDoubleClick(character) {
+  itemDoubleClick(equipment) {
     this.equipmentModal.EquipmentModal = true;
-    this.equipmentModal.Equipment = character;
+    console.log(equipment);
+    this.equipmentModal.Equipment = equipment;
   }
 
   createButtonClicked(e) {
@@ -57,7 +58,9 @@ export class EquipmentEditorTableComponent implements OnInit {
   }
 
   async emittedUploadIcon(e){
-    this.iconService.uploadIcon(e.files[0],this.equipmentModal.Equipment.ref);
+    console.log(this.equipmentModal.Equipment.ref);
+    await this.service.hasIconChange(this.equipmentModal.Equipment.ref);
+   // await this.iconService.uploadIcon(e.files[0],this.equipmentModal.Equipment.ref);
   }
 
 }

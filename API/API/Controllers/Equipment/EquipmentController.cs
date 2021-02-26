@@ -42,6 +42,11 @@ namespace API.Controllers
         {
             return _service.GetEquipment(Ref);
         }
+        [HttpGet("HasIconChange")]
+        public async Task HasIconChange(int EquipmentRef)
+        {
+            await _service.UpdateHasIcon(EquipmentRef);
 
+        }
     }
 }

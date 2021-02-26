@@ -18,6 +18,7 @@ namespace API.Controllers
     public class EquipmentIconController : ControllerBase
     {
         private readonly IEquipmentIconService _service;
+
         public EquipmentIconController(IEquipmentIconService service )
         {
             _service = service;
@@ -29,14 +30,16 @@ namespace API.Controllers
 
             using var stream = System.IO.File.Create(imageFolderPath);
 
+
             foreach (var item in Request.Form.Files)
             {
-                await _service.UpdateHasIcon(EquipmentRef);
                 await item.CopyToAsync(stream);
             } 
 
         }
-      
+
+       
+
 
 
     }
