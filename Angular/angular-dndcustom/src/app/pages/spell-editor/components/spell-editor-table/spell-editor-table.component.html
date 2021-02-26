@@ -1,0 +1,22 @@
+<button id="newSpellButton" pButton type="button" label="New Spell" iconPos="left"></button>
+
+<p-table  [value]="gridDataSource" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
+    <ng-template  pTemplate="header">
+        <tr>
+            <th style="width:10%;"></th>
+            <th style="width:22%;">Equipment Name</th>
+            <th style="width:60%;">Description</th>
+            <th style="width:8%;">Cost</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-equipment>
+        <tr>
+            <td>
+            </td>
+            <td>{{equipment.equipmentName}}</td>
+            <td [title]="equipment.description" ><span class="description">{{equipment.description}}</span></td>
+            <td>{{equipment.cost}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+<app-spell-editor-modal></app-spell-editor-modal>

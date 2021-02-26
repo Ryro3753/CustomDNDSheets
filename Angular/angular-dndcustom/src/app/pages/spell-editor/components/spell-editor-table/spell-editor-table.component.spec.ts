@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpellScreenComponent } from './spell-screen.component';
+import { SpellEditorTableComponent } from './spell-editor-table.component';
 
-describe('SpellScreenComponent', () => {
-  let component: SpellScreenComponent;
-  let fixture: ComponentFixture<SpellScreenComponent>;
+describe('SpellEditorTableComponent', () => {
+  let component: SpellEditorTableComponent;
+  let fixture: ComponentFixture<SpellEditorTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpellScreenComponent ]
+      declarations: [ SpellEditorTableComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpellScreenComponent);
+    fixture = TestBed.createComponent(SpellEditorTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
