@@ -2,3 +2,11 @@
     margin-bottom: 50px;
     margin-top: 50px;
 }
+
+::ng-deep .description {
+    display: block;
+    width: 400px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }

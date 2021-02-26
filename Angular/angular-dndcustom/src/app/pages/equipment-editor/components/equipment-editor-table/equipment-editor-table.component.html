@@ -17,7 +17,7 @@
             size="large"></p-avatar>
             </td>
             <td>{{equipment.equipmentName}}</td>
-            <td>{{equipment.description}}</td>
+            <td [title]="equipment.description" ><span class="description">{{equipment.description}}</span></td>
             <td>{{equipment.cost}}</td>
         </tr>
     </ng-template>
