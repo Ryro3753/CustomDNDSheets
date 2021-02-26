@@ -1,7 +1,8 @@
 <button id="newEquipmentButton" pButton type="button" label="New Equipment" iconPos="left" (click)="createButtonClicked($event)"></button>
 
-<p-table  [value]="gridDataSource" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
+<p-table #table [value]="gridDataSource" [globalFilterFields]="['equipmentName','description','cost']" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
     <ng-template  pTemplate="header">
+        <input pInputText type="text" (input)="table.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
         <tr>
             <th style="width:10%;"></th>
             <th style="width:22%;">Equipment Name</th>

@@ -31,6 +31,7 @@ export class EquipmentEditorTableComponent implements OnInit {
     this.iconPath = this.iconService.getImagesPath();
     this.equipments = await this.service.getEquipments();
     this.gridDataSource = this.equipments;
+    console.log(this.gridDataSource);
 
   }
   itemDoubleClick(equipment) {
