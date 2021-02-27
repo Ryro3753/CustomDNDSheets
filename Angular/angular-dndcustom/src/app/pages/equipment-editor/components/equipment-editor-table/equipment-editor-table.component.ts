@@ -44,7 +44,7 @@ export class EquipmentEditorTableComponent implements OnInit {
   }
 
   async emittedEquipment(e) {
-    if (e.ref == 0) {
+    if (this.gridDataSource.filter(i => i.ref == e.ref).length == 0) {
       const ref = await this.service.insertOrUpdateEquipment(e);
       e.ref = ref;
       this.equipmentModal.Equipment.ref = ref;
@@ -56,8 +56,7 @@ export class EquipmentEditorTableComponent implements OnInit {
   }
 
   async emittedUploadIcon(e){
-    await this.service.hasIconChange(this.equipmentModal.Equipment.ref);
-    await this.iconService.uploadIcon(e.files[0],this.equipmentModal.Equipment.ref,1);
+    this.equipmentModal.Equipment.hasIcon =  await this.iconService.uploadIcon(e.files[0],this.equipmentModal.Equipment.ref,1);
   }
 
 }

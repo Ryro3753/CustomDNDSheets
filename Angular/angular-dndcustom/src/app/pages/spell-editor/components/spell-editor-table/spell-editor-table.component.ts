@@ -28,7 +28,21 @@ export class SpellEditorTableComponent implements OnInit {
     console.log(this.gridDataSource);
   }
   async emittedUploadIcon(e) {
-    await this.service.hasIconChange(this.spellModal.spell.ref);
     await this.iconService.uploadIcon(e.files[0], this.spellModal.spell.ref, 2);
+  }
+
+  spellClick(spell : Spell){
+    this.spellModal.spell.ref = spell.ref;
+    this.spellModal.spell.spellName = spell.spellName;
+    this.spellModal.spell.range = spell.range;
+    this.spellModal.spell.duration = spell.duration;
+    this.spellModal.spell.castType = spell.castType;
+    this.spellModal.spell.actionTime = spell.actionTime;
+    this.spellModal.spell.components = spell.components;
+    this.spellModal.spell.level = spell.level;
+    this.spellModal.spell.damageBase = spell.damageBase;
+    this.spellModal.spell.hitBase = spell.hitBase;
+    this.spellModal.spell.hasIcon = spell.hasIcon;
+
   }
 }

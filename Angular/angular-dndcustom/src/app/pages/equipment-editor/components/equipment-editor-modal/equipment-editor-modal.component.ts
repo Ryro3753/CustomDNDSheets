@@ -32,6 +32,7 @@ export class EquipmentEditorModalComponent implements OnInit {
   }
 
   public async saveClick() {
+    console.log(this.Equipment);
     this.NewEquipment.emit(this.Equipment);
     this.EquipmentModal = false;
   }
@@ -39,6 +40,8 @@ export class EquipmentEditorModalComponent implements OnInit {
   async Upload(e){
     //Checking if this new equipment
     if(this.Equipment.ref == 0){
+      let requestEquipment = this.Equipment;
+      requestEquipment.hasIcon = 1;
       const ref = await this.service.insertOrUpdateEquipment(this.Equipment);
       this.Equipment.ref = ref;
     }

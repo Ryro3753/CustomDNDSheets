@@ -27,9 +27,4 @@ export class SpellService extends BaseDataService {
     return this.post('InsertOrUpdateSpell', model)
 
   }
-
-  public hasIconChange(ref: number){
-    return this.get('HasIconChange', {ref})
-
-  }
 }

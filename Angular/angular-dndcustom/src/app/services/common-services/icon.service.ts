@@ -11,7 +11,7 @@ export class IconService {
   constructor(readonly httpClient: HttpClient) {
   }
 
-  public  uploadIcon(File : File, Ref : number, Type : number): Promise<string> {
+  public  uploadIcon(File : File, Ref : number, Type : number): Promise<number> {
     const formData = new FormData();
     formData.append('file',File);
     const url = environment.service+"/Icon/UploadIcon?Ref=" + Ref + "&Type=" + Type

@@ -28,7 +28,4 @@ export class EquipmentService extends BaseDataService {
   public insertOrUpdateEquipment(model: Equipment): Promise<number> {
     return this.post('InsertOrUpdateEquipment', model)
   }
-  public hasIconChange(EquipmentRef: number){
-    this.get('HasIconChange', { EquipmentRef })
-  }
 }

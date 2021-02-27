@@ -2,7 +2,7 @@
     #modal closeOnEscape="true">
     <div class="tt">
         <div class="row">
-            <p-avatar id="image" [image]="Equipment.hasIcon ? iconPath+Equipment.ref+'.jpg' : placeOverIconPath"
+            <p-avatar id="image" [image]="Equipment.hasIcon == 1 ? iconPath+Equipment.ref+'.jpg' : placeOverIconPath"
                 size="large"></p-avatar>
             <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*" maxFileSize="1000000"
                 (uploadHandler)="Upload($event)" [auto]="true" customUpload="true" chooseLabel="Upload Icon">

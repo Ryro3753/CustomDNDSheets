@@ -24,20 +24,26 @@ namespace API.Controllers
             _service = service;
         }
         [HttpPost("UploadIcon")]
-        public async Task UploadEquipmentIcon(int Ref, int Type) //Type 1 = Equipment, Type 2 = Spell
+        public async Task<int> UploadIcon(int Ref, int Type) //Type 1 = Equipment, Type 2 = Spell
         {
             var imageFolderPath = Ref.ToString() + ".jpg";
             if (Type == 1)
-                imageFolderPath = Path.Combine(_service.GetEquipmentImageFolderPath(),imageFolderPath);
+            {
+                imageFolderPath = Path.Combine(_service.GetEquipmentImageFolderPath(), imageFolderPath);
+            }
             else if (Type == 2)
+            {
                 imageFolderPath = Path.Combine(_service.GetSpellImageFolderPath(), imageFolderPath);
+            }
 
             using var stream = System.IO.File.Create(imageFolderPath);
 
             foreach (var item in Request.Form.Files)
             {
                 await item.CopyToAsync(stream);
-            } 
+            }
+            return await _service.UpdateHasIcon(Ref, Type);
+
         }
 
 

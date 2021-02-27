@@ -42,11 +42,5 @@ namespace API.Controllers
         {
             return _service.GetSpell(Ref);
         }
-        [HttpGet("HasIconChange")]
-        public async Task HasIconChange(int SpellRef)
-        {
-            await _service.UpdateHasIcon(SpellRef);
-
-        }
     }
 }

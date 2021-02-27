@@ -21,7 +21,7 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-spell>
-        <tr>
+        <tr (dblclick)="spellClick(spell)">
             <td>
                 <p-avatar [image]="spell.hasIcon ? iconPath+spell.ref+'.jpg' : placeOverIconPath" size="large">
                 </p-avatar>

@@ -42,9 +42,9 @@ namespace API
             services.AddTransient<ICharacterSecondaryStatsService, CharacterSecondaryStatsService>();
             services.AddTransient<ICharacterSkillsService, CharacterSkillsService>();
             services.AddTransient<ICharacterSpellsService, CharacterSpellsService>();
-            services.AddTransient<IIconService, IconService>();
-            services.AddTransient<IEquipmentService, EquipmentService>();
-            services.AddTransient<ISpellService, SpellService>();
+            services.AddScoped<IIconService, IconService>();
+            services.AddScoped<IEquipmentService, EquipmentService>();
+            services.AddScoped<ISpellService, SpellService>();
 
             services.AddCors(options =>
             {

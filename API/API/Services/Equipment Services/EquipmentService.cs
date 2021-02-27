@@ -1,4 +1,5 @@
 ﻿using API.Data;
+using API.Models;
 using API.Models.Equipments;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace API.Services
                     EquipmentName = model.EquipmentName,
                     Cost = model.Cost,
                     Description = model.Description,
-                    HasIcon = 0
+                    HasIcon = model.HasIcon
                 };
                 await _context.Equipment.AddAsync(equipment);
                 await _context.SaveChangesAsync();
