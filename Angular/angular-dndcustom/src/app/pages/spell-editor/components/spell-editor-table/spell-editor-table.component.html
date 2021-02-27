@@ -1,9 +1,13 @@
 <button id="newSpellButton" pButton type="button" label="New Spell" iconPos="left"></button>
 
-<p-table  [value]="gridDataSource" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
-    <ng-template  pTemplate="header">
+<p-table #table [value]="gridDataSource" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+    [globalFilterFields]="['spellname','description','components','castType','level','actionTime','range','damageBase','duration','hitBase']">
+    <ng-template pTemplate="header">
+            <input pInputText type="text" (input)="table.filterGlobal($event.target.value, 'contains')"
+                placeholder="Search keyword" />
         <tr>
-            <th style="width:7%;"></th><!--Avatar Table header-->
+            <th style="width:7%;"></th>
+            <!--Avatar Table header-->
             <th style="width:10%;">Spell Name</th>
             <th style="width:19%;">Description</th>
             <th style="width:11%;">Components</th>
@@ -19,15 +23,14 @@
     <ng-template pTemplate="body" let-spell>
         <tr>
             <td>
-                <p-avatar
-                [image]="spell.hasIcon ? iconPath+spell.ref+'.jpg' : placeOverIconPath"
-                size="large"></p-avatar>
+                <p-avatar [image]="spell.hasIcon ? iconPath+spell.ref+'.jpg' : placeOverIconPath" size="large">
+                </p-avatar>
             </td>
             <td>{{spell.spellName}}</td>
-            <td [title]="spell.description" ><span class="spellDescription">{{spell.description}}</span></td>
+            <td [title]="spell.description"><span class="spellDescription">{{spell.description}}</span></td>
             <td>{{spell.components}}</td>
             <td>{{spell.castType}}</td>
-            <td ><span class="numberTableValue">{{spell.level}}</span></td>
+            <td><span class="numberTableValue">{{spell.level}}</span></td>
             <td><span class="numberTableValue">{{spell.actionTime}}</span></td>
             <td><span class="numberTableValue">{{spell.range}}</span></td>
             <td>{{spell.damageBase}}</td>
@@ -36,4 +39,4 @@
         </tr>
     </ng-template>
 </p-table>
-<app-spell-editor-modal></app-spell-editor-modal>
+<app-spell-editor-modal #spellModal (UploadFile)="emittedUploadIcon($event)"></app-spell-editor-modal>

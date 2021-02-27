@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Spell } from 'src/app/models/spell/spell.model';
+import { IconService } from 'src/app/services/common-services/icon.service';
+import { SpellService } from 'src/app/services/spell-services/spell.service';
 
 @Component({
   selector: 'app-spell-editor-modal',
@@ -6,10 +9,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./spell-editor-modal.component.css']
 })
 export class SpellEditorModalComponent implements OnInit {
+  placeOverIconPath: string;
+  iconPath: string;
 
-  constructor() { }
+  @Output() UploadFile : EventEmitter<any> = new EventEmitter<any>();
+
+  spell : Spell;
+  spellEditorModal : boolean = false;
+
+  constructor(readonly service : SpellService) { }
 
   ngOnInit(): void {
+    this.placeOverIconPath = IconService.getPlaceOverIcon(2);
+    this.iconPath = IconService.getImagesPath(2);
   }
 
+  async Upload(e){
+    //Checking if this new equipment
+    if(this.spell.ref == 0){
+      const ref = await this.service.insertOrUpdateSpell(this.spell);
+      this.spell.ref = ref;
+    }
+    this.UploadFile.emit(e);
+  }
 }

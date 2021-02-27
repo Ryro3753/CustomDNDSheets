@@ -1,25 +1,33 @@
 <p-dialog visible="true" showHeader="false" modal="true" *ngIf="EquipmentModal" [resizable]="false" [closable]="false"
     #modal closeOnEscape="true">
-    <div class="row">
-        <p-avatar id="image"
-            [image]="Equipment.hasIcon ? iconPath+Equipment.ref+'.jpg' : placeOverIconPath"
-            size="large"></p-avatar>
-        <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*" maxFileSize="1000000"
-            (uploadHandler)="Upload($event)" [auto]="true"  customUpload="true"  chooseLabel="Upload Icon">
-        </p-fileUpload>
+    <div class="tt">
+        <div class="row">
+            <p-avatar id="image" [image]="Equipment.hasIcon ? iconPath+Equipment.ref+'.jpg' : placeOverIconPath"
+                size="large"></p-avatar>
+            <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*" maxFileSize="1000000"
+                (uploadHandler)="Upload($event)" [auto]="true" customUpload="true" chooseLabel="Upload Icon">
+            </p-fileUpload>
+        </div>
+        <div class="row" id="equipmentName">
+            <div class="col-sm-5">
+                <span>Name</span>
+                <input id="float-input" type="text" [(ngModel)]="Equipment.equipmentName" pInputText>
+            </div>
+            <div class="col-sm-3 equipmentCost">
+                <span>Cost</span>
+                <p-inputNumber id="equipmentCost" [(ngModel)]="Equipment.cost"></p-inputNumber>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <span class="p-float-label" id="equipmentDescription">
+                Description
+                <textarea [rows]="5" [cols]="30" pInputTextarea [(ngModel)]="Equipment.description"
+                    autoResize="autoResize"></textarea>
+            </span>
+        </div>
+        <button id="saveButton" pButton type="button" label="Save" icon="pi pi-check" iconPos="left"
+            (click)="saveClick()"></button>
+        <button id="cancelButton" pButton type="button" label="Cancel" class="p-button-danger" icon="pi pi-times"
+            iconPos="left" (click)="cancelClick()"></button>
     </div>
-    <div class="row">
-    <span class="p-float-label" id="equipmentName">
-        <input id="float-input" type="text" [(ngModel)]="Equipment.equipmentName" pInputText>
-    </span>
-    <p-inputNumber id="equipmentCost" [(ngModel)]="Equipment.cost"></p-inputNumber>
-    </div>
-    <span class="p-float-label" id="equipmentDescription">
-        <textarea [rows]="5" [cols]="30" pInputTextarea [(ngModel)]="Equipment.description"
-            autoResize="autoResize"></textarea>
-    </span>
-    <button id="saveButton" pButton type="button" label="Save" icon="pi pi-check" iconPos="left"
-        (click)="saveClick()"></button>
-    <button id="cancelButton" pButton type="button" label="Cancel" class="p-button-danger" icon="pi pi-times"
-        iconPos="left" (click)="cancelClick()"></button>
 </p-dialog>

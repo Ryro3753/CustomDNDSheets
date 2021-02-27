@@ -9,10 +9,11 @@ namespace API.Services
 {
     public interface ISpellService
     {
-        public Task<int> InsertOrUpdateSpellAsync(Spell model);
-        public Task DeleteSpell(int Ref);
-        public IEnumerable<Spell> GetSpells();
-        public Spell GetSpell(int Ref);
+        Task<int> InsertOrUpdateSpellAsync(Spell model);
+        Task DeleteSpell(int Ref);
+        IEnumerable<Spell> GetSpells();
+        Spell GetSpell(int Ref);
+        Task UpdateHasIcon(int Ref);
     }
     public class SpellService : ISpellService
     {

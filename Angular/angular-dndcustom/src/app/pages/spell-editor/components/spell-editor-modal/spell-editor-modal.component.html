@@ -1,0 +1,10 @@
+<p-dialog visible="true" showHeader="false" modal="true" *ngIf="spellEditorModal" [resizable]="false" [closable]="false">
+    <div class="row">
+        <p-avatar id="image"
+            [image]="spell.hasIcon ? iconPath+spell.ref+'.jpg' : placeOverIconPath"
+            size="large"></p-avatar>
+        <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*" maxFileSize="1000000"
+            (uploadHandler)="Upload($event)" [auto]="true"  customUpload="true"  chooseLabel="Upload Icon">
+        </p-fileUpload>
+    </div>
+</p-dialog>

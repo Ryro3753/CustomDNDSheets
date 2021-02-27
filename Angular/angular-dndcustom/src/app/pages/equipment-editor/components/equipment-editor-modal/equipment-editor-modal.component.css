@@ -7,19 +7,25 @@
     margin-bottom: 20px;
 }
 ::ng-deep #saveButton{
-    margin: 15px;
-    margin-left:80px;
+    margin-top: 15px;
+    margin-left:90px;
 }
 ::ng-deep #cancelButton{
-    margin: 15px;
+    margin-top: 15px;
+    margin-left:60px;
+    margin-right: 0px;
 }
 ::ng-deep #equipmentName{
-    margin: 15px;
+    margin-left: 15px;
+}
+
+::ng-deep #equipmentCost{
+    padding-right: 35px;
 }
 ::ng-deep #equipmentDescription{
     margin: 15px;
     margin-left: 80px;
 }
-::ng-deep #equipmentCost{
-    margin:15px;
+::ng-deep .tt{
+    margin-left: 70px;
 }

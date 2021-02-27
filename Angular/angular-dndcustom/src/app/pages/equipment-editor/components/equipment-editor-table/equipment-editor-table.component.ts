@@ -12,7 +12,7 @@ import { EquipmentEditorModalComponent } from '../equipment-editor-modal/equipme
 export class EquipmentEditorTableComponent implements OnInit {
 
   Equipment: Equipment;
-  @ViewChild('modal') equipmentModal: EquipmentEditorModalComponent;
+  @ViewChild('equipmentModal') equipmentModal: EquipmentEditorModalComponent;
   constructor(
     readonly service: EquipmentService,
     readonly iconService: IconService
