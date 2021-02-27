@@ -23,22 +23,22 @@ namespace API.Controllers
         {
             _service = service;
         }
-        [HttpPost("UploadEquipmentIcon")]
-        public async Task UploadEquipmentIcon(int EquipmentRef)
+        [HttpPost("UploadIcon")]
+        public async Task UploadEquipmentIcon(int Ref, int Type) //Type 1 = Equipment, Type 2 = Spell
         {
-            var imageFolderPath = Path.Combine(_service.GetEquipmentImageFolderPath(), EquipmentRef.ToString() + ".jpg");
+            var imageFolderPath = "";
+            if (Type == 1)
+                imageFolderPath = Path.Combine(_service.GetEquipmentImageFolderPath(), Ref.ToString() + ".jpg");
+            else if (Type == 2)
+                imageFolderPath = Path.Combine(_service.GetSpellImageFolderPath(), Ref.ToString() + ".jpg");
 
             using var stream = System.IO.File.Create(imageFolderPath);
-
 
             foreach (var item in Request.Form.Files)
             {
                 await item.CopyToAsync(stream);
             } 
         }
-
-       
-
 
 
     }

@@ -12,6 +12,7 @@ namespace API.Services
     public interface IIconService
     {
         string GetEquipmentImageFolderPath();
+        string GetSpellImageFolderPath();
     }
     public class IconService : IIconService
     {
@@ -25,10 +26,11 @@ namespace API.Services
         public  string GetEquipmentImageFolderPath()
         {
             return Path.Combine(_env.WebRootPath, "images", "EquipmentImages");
-            //return  Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, @"wwwroot\images\EquipmentImages\");
         }
-
-
+        public string GetSpellImageFolderPath()
+        {
+            return Path.Combine(_env.WebRootPath, "images", "SpellImages");
+        }
 
     }
 }

@@ -24,8 +24,8 @@ export class EquipmentEditorModalComponent implements OnInit {
     readonly iconService : IconService) { }
 
   ngOnInit(): void {
-    this.placeOverIconPath = IconService.getPlaceOverIcon();
-    this.iconPath = this.iconService.getImagesPath();
+    this.placeOverIconPath = IconService.getPlaceOverIcon(1);
+    this.iconPath = IconService.getImagesPath(1);
   }
 
   cancelClick() {

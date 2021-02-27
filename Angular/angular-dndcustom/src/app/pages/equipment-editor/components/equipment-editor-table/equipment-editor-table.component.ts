@@ -27,16 +27,14 @@ export class EquipmentEditorTableComponent implements OnInit {
   public placeOverIconPath : string;
 
   async ngOnInit() {
-    this.placeOverIconPath = IconService.getPlaceOverIcon();
-    this.iconPath = this.iconService.getImagesPath();
+    this.placeOverIconPath = IconService.getPlaceOverIcon(1);
+    this.iconPath = IconService.getImagesPath(1);
     this.equipments = await this.service.getEquipments();
     this.gridDataSource = this.equipments;
-    console.log(this.gridDataSource);
 
   }
   itemDoubleClick(equipment) {
     this.equipmentModal.EquipmentModal = true;
-    console.log(equipment);
     this.equipmentModal.Equipment = equipment;
   }
 
@@ -59,9 +57,8 @@ export class EquipmentEditorTableComponent implements OnInit {
   }
 
   async emittedUploadIcon(e){
-    console.log(this.equipmentModal.Equipment.ref);
     await this.service.hasIconChange(this.equipmentModal.Equipment.ref);
-    await this.iconService.uploadEquipmentIcon(e.files[0],this.equipmentModal.Equipment.ref);
+    await this.iconService.uploadIcon(e.files[0],this.equipmentModal.Equipment.ref,1);
   }
 
 }

@@ -10,19 +10,11 @@ import { EquipmentService } from 'src/app/services/equipment-services/equipment.
 })
 export class EquipmentScreenComponent implements OnInit {
 
-  constructor(
-    readonly equipmentService: EquipmentService
-  ) {
+  constructor() 
+  {}
 
-  }
-  equipments : Equipment[];
-  gridDataSource : Equipment[];
-  async ngOnInit() {
-   this.equipments =  await this.equipmentService.getEquipments();
-   this.gridDataSource = this.equipments;
-  }
-asd(character){
-  console.log(character);
-}
+  
+  async ngOnInit() {}
+  
 
 }
