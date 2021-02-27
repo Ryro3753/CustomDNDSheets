@@ -7,11 +7,11 @@ import { environment } from '../../../environments/environment'
 @Injectable({
   providedIn: "root"
 })
-export class EquipmentIconService {
+export class IconService {
   constructor(readonly httpClient: HttpClient) {
   }
 
-  public  uploadIcon(File : File, EquipmentRef): Promise<string> {
+  public  uploadEquipmentIcon(File : File, EquipmentRef): Promise<string> {
     const formData = new FormData();
     formData.append('file',File);
     const url = environment.service+"/EquipmentIcon/UploadIcon?EquipmentRef=" + EquipmentRef

@@ -15,18 +15,18 @@ namespace API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class EquipmentIconController : ControllerBase
+    public class IconController : ControllerBase
     {
-        private readonly IEquipmentIconService _service;
+        private readonly IIconService _service;
 
-        public EquipmentIconController(IEquipmentIconService service )
+        public IconController(IIconService service )
         {
             _service = service;
         }
-        [HttpPost("UploadIcon")]
-        public async Task UploadIcon(int EquipmentRef)
+        [HttpPost("UploadEquipmentIcon")]
+        public async Task UploadEquipmentIcon(int EquipmentRef)
         {
-            var imageFolderPath = Path.Combine(_service.GetImageFolderPath(), EquipmentRef.ToString() + ".jpg");
+            var imageFolderPath = Path.Combine(_service.GetEquipmentImageFolderPath(), EquipmentRef.ToString() + ".jpg");
 
             using var stream = System.IO.File.Create(imageFolderPath);
 
@@ -35,7 +35,6 @@ namespace API.Controllers
             {
                 await item.CopyToAsync(stream);
             } 
-
         }
 
        

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Equipment } from 'src/app/models/equipment/equipment.model';
-import { EquipmentIconService } from 'src/app/services/equipment-services/equipment-icon.service';
+import { IconService } from 'src/app/services/common-services/icon.service';
 import { EquipmentService } from 'src/app/services/equipment-services/equipment.service';
 import { servicesVersion } from 'typescript';
 import { EquipmentEditorModalComponent } from '../equipment-editor-modal/equipment-editor-modal.component';
@@ -16,7 +16,7 @@ export class EquipmentEditorTableComponent implements OnInit {
   @ViewChild('modal') equipmentModal: EquipmentEditorModalComponent;
   constructor(
     readonly service: EquipmentService,
-    readonly iconService: EquipmentIconService
+    readonly iconService: IconService
     ) {
 
   }
@@ -27,7 +27,7 @@ export class EquipmentEditorTableComponent implements OnInit {
   public placeOverIconPath : string;
 
   async ngOnInit() {
-    this.placeOverIconPath = EquipmentIconService.getPlaceOverIcon();
+    this.placeOverIconPath = IconService.getPlaceOverIcon();
     this.iconPath = this.iconService.getImagesPath();
     this.equipments = await this.service.getEquipments();
     this.gridDataSource = this.equipments;
@@ -61,7 +61,7 @@ export class EquipmentEditorTableComponent implements OnInit {
   async emittedUploadIcon(e){
     console.log(this.equipmentModal.Equipment.ref);
     await this.service.hasIconChange(this.equipmentModal.Equipment.ref);
-   // await this.iconService.uploadIcon(e.files[0],this.equipmentModal.Equipment.ref);
+    await this.iconService.uploadEquipmentIcon(e.files[0],this.equipmentModal.Equipment.ref);
   }
 
 }

@@ -9,24 +9,25 @@ using System.Threading.Tasks;
 
 namespace API.Services
 {
-    public interface IEquipmentIconService
+    public interface IIconService
     {
-        string GetImageFolderPath();
+        string GetEquipmentImageFolderPath();
     }
-    public class EquipmentIconService : IEquipmentIconService
+    public class IconService : IIconService
     {
         private readonly IWebHostEnvironment _env;
 
-        public EquipmentIconService( IWebHostEnvironment env)
+        public IconService( IWebHostEnvironment env)
         {
             _env = env;
         }
 
-        public  string GetImageFolderPath()
+        public  string GetEquipmentImageFolderPath()
         {
             return Path.Combine(_env.WebRootPath, "images", "EquipmentImages");
             //return  Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, @"wwwroot\images\EquipmentImages\");
         }
+
 
 
     }

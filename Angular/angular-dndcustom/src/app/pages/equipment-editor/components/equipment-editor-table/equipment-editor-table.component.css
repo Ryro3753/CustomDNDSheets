@@ -5,7 +5,7 @@
 
 ::ng-deep .description {
     display: block;
-    width: 400px;
+    width: 500px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

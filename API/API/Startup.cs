@@ -42,7 +42,7 @@ namespace API
             services.AddTransient<ICharacterSecondaryStatsService, CharacterSecondaryStatsService>();
             services.AddTransient<ICharacterSkillsService, CharacterSkillsService>();
             services.AddTransient<ICharacterSpellsService, CharacterSpellsService>();
-            services.AddTransient<IEquipmentIconService, EquipmentIconService>();
+            services.AddTransient<IIconService, IconService>();
             services.AddTransient<IEquipmentService, EquipmentService>();
             services.AddTransient<ISpellService, SpellService>();
 

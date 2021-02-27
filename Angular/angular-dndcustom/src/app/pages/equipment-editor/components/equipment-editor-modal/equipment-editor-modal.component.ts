@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Avatar } from 'primeng/avatar';
 import { Equipment } from 'src/app/models/equipment/equipment.model';
-import { EquipmentIconService } from 'src/app/services/equipment-services/equipment-icon.service';
+import { IconService } from 'src/app/services/common-services/icon.service';
 import { EquipmentService } from 'src/app/services/equipment-services/equipment.service';
 
 @Component({
@@ -21,10 +21,10 @@ export class EquipmentEditorModalComponent implements OnInit {
 
   
   constructor(readonly service : EquipmentService,
-    readonly iconService : EquipmentIconService) { }
+    readonly iconService : IconService) { }
 
   ngOnInit(): void {
-    this.placeOverIconPath = EquipmentIconService.getPlaceOverIcon();
+    this.placeOverIconPath = IconService.getPlaceOverIcon();
     this.iconPath = this.iconService.getImagesPath();
   }
 
