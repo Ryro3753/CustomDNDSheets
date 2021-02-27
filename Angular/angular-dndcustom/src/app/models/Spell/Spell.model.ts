@@ -4,7 +4,7 @@ export interface Spell {
     actionTime : number,
     range : number,
     level : number,
-    castType : string,
+    school : string,
     duration : number,
     components : string,
     description : string,

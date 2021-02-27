@@ -8,6 +8,30 @@
                 (uploadHandler)="Upload($event)" [auto]="true" customUpload="true" chooseLabel="Upload Icon">
             </p-fileUpload>
         </div>
+        <div class="row">
+            <div class="col-4">
+                <label for="spellNameInput">Name</label>
+                <input id="spellNameInput" type="text" [(ngModel)]="spell.spellName" pInputText>
+            </div>
+            <div class="col-2">
+                <label for="rangeInput">Level</label>
+                <input id="levelInput" style="width: 80px;" type="number" [(ngModel)]="spell.level" pInputText>
+            </div>
+            <div class="col-2">
+                <label for="rangeInput">Range</label>
+                <input id="rangeInput" style="width: 80px;" type="number" [(ngModel)]="spell.range" pInputText>
+            </div>
+            <div class="col-2">
+                <label for="rangeInput">Action Time</label>
+                <input id="actionTimeInput" style="width: 80px;" type="number" [(ngModel)]="spell.actionTime"
+                    pInputText>
+            </div>
+        </div>
+                <label for="spellDescription">Description</label>
+                <textarea id="spellDescription" [rows]="5" [cols]="30" pInputTextarea [(ngModel)]="spell.description"
+                autoResize="autoResize"></textarea>
+
+
         <button id="saveButton" pButton type="button" label="Save" icon="pi pi-check" iconPos="left"
             (click)="saveClick()"></button>
         <button id="cancelButton" pButton type="button" label="Cancel" class="p-button-danger" icon="pi pi-times"

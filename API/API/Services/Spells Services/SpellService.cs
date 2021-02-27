@@ -33,7 +33,7 @@ namespace API.Services
                 {
                     SpellName = model.SpellName,
                     ActionTime = model.ActionTime,
-                    CastType = model.CastType,
+                    School = model.School,
                     Components = model.Components,
                     DamageBase = model.DamageBase,
                     Description = model.Description,
@@ -41,7 +41,7 @@ namespace API.Services
                     HitBase = model.HitBase,
                     Level = model.Level,
                     Range = model.Range,
-                    HasIcon = 0
+                    HasIcon = model.HasIcon
                 };
                 await _context.Spell.AddAsync(spell);
                 await _context.SaveChangesAsync();
@@ -52,7 +52,7 @@ namespace API.Services
                 var existingSpell = _context.Spell.FirstOrDefault(i => i.Ref == model.Ref);
                 existingSpell.SpellName = model.SpellName;
                 existingSpell.ActionTime = model.ActionTime;
-                existingSpell.CastType = model.CastType;
+                existingSpell.School = model.School;
                 existingSpell.Components = model.Components;
                 existingSpell.DamageBase = model.DamageBase;
                 existingSpell.Description = model.Description;

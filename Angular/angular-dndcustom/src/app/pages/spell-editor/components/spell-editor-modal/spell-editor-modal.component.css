@@ -15,6 +15,9 @@
     margin-left:60px;
     margin-right: 0px;
 }
-::ng-deep .modalWindow{
-    margin-left: 70px;
+::ng-deep .firstRow{
+    margin-left:120px;
+}
+::ng-deep #levelInput{
+    width: 10px;
 }

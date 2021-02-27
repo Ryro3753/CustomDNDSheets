@@ -10,8 +10,8 @@
             <!--Avatar Table header-->
             <th style="width:10%;">Spell Name</th>
             <th style="width:19%;">Description</th>
-            <th style="width:16%;">Components</th>
-            <th style="width:5%;">Cast Type</th>
+            <th style="width:16%;">Comp</th>
+            <th style="width:5%;">School</th>
             <th style="width:5%;">Level</th>
             <th style="width:8%;">Action Time</th>
             <th style="width:7%;">Range</th>
@@ -27,7 +27,7 @@
                 <p-avatar [image]="spell.hasIcon ? iconPath+spell.ref+'.jpg' : placeOverIconPath" size="large">
                 </p-avatar>
             </td>
-            <td>{{spell.spellName}}</td>
+            <td class="spellName">{{spell.spellName}}</td>
             <td [title]="spell.description"><span class="spellDescription">{{spell.description}}</span></td>
             <td>{{spell.components}}</td>
             <td>{{spell.castType}}</td>

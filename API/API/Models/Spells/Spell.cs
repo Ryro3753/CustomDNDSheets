@@ -17,7 +17,7 @@ namespace API.Models.Equipments
         public int ActionTime { get; set; }
         public int Range { get; set; }
         public int Level { get; set; }
-        public string CastType { get; set; }
+        public string School { get; set; }
         public double Duration { get; set; }
         public string Components { get; set; }
         public string Description { get; set; }
