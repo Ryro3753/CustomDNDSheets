@@ -1,8 +1,7 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Equipment } from 'src/app/models/equipment/equipment.model';
 import { IconService } from 'src/app/services/common-services/icon.service';
 import { EquipmentService } from 'src/app/services/equipment-services/equipment.service';
-import { servicesVersion } from 'typescript';
 import { EquipmentEditorModalComponent } from '../equipment-editor-modal/equipment-editor-modal.component';
 
 @Component({

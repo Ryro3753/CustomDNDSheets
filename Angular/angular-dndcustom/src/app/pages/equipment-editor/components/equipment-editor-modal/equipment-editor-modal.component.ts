@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { Avatar } from 'primeng/avatar';
+import { Component, EventEmitter,OnInit, Output } from '@angular/core';
 import { Equipment } from 'src/app/models/equipment/equipment.model';
 import { IconService } from 'src/app/services/common-services/icon.service';
 import { EquipmentService } from 'src/app/services/equipment-services/equipment.service';

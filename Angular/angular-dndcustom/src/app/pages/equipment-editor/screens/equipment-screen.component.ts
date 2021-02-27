@@ -1,6 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Equipment } from 'src/app/models/equipment/equipment.model';
-import { EquipmentService } from 'src/app/services/equipment-services/equipment.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-equipment-screen',
