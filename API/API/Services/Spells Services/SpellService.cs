@@ -39,7 +39,8 @@ namespace API.Services
                     Duration = model.Duration,
                     HitBase = model.HitBase,
                     Level = model.Level,
-                    Range = model.Range
+                    Range = model.Range,
+                    HasIcon = 0
                 };
                 await _context.Spell.AddAsync(spell);
                 await _context.SaveChangesAsync();
@@ -58,6 +59,7 @@ namespace API.Services
                 existingSpell.HitBase = model.HitBase;
                 existingSpell.Level = model.Level;
                 existingSpell.Range = model.Range;
+                existingSpell.HasIcon = model.HasIcon;
                 await _context.SaveChangesAsync();
                 return existingSpell.Ref;
 
@@ -89,6 +91,13 @@ namespace API.Services
         public Spell GetSpell(int Ref)
         {
             return _context.Spell.FirstOrDefault(i => i.Ref == Ref);
+        }
+
+        public async Task UpdateHasIcon(int Ref)
+        {
+            var existingSpell = _context.Spell.FirstOrDefault(i => i.Ref == Ref);
+            existingSpell.HasIcon = 1;
+            await _context.SaveChangesAsync();
         }
     }
 }

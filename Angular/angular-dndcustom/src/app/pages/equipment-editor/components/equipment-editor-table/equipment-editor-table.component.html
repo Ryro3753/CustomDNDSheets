@@ -4,7 +4,7 @@
     <ng-template  pTemplate="header">
         <input pInputText type="text" (input)="table.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
         <tr>
-            <th style="width:10%;"></th>
+            <th style="width:10%;"></th><!--Avatar Table header-->
             <th style="width:22%;">Equipment Name</th>
             <th style="width:60%;">Description</th>
             <th style="width:8%;">Cost</th>
@@ -18,7 +18,7 @@
             size="large"></p-avatar>
             </td>
             <td>{{equipment.equipmentName}}</td>
-            <td [title]="equipment.description" ><span class="description">{{equipment.description}}</span></td>
+            <td [title]="equipment.description" ><span class="equipmentDescription">{{equipment.description}}</span></td>
             <td>{{equipment.cost}}</td>
         </tr>
     </ng-template>

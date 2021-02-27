@@ -3,7 +3,7 @@
     margin-top: 50px;
 }
 
-::ng-deep .description {
+::ng-deep .equipmentDescription {
     display: block;
     width: 500px;
     overflow: hidden;

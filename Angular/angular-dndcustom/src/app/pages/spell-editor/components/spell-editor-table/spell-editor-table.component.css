@@ -1,0 +1,12 @@
+::ng-deep .spellDescription {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+::ng-deep .numberTableValue{
+    text-align: right;
+    vertical-align: right;
+}

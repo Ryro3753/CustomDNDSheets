@@ -3,19 +3,36 @@
 <p-table  [value]="gridDataSource" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
     <ng-template  pTemplate="header">
         <tr>
-            <th style="width:10%;"></th>
-            <th style="width:22%;">Equipment Name</th>
-            <th style="width:60%;">Description</th>
-            <th style="width:8%;">Cost</th>
+            <th style="width:7%;"></th><!--Avatar Table header-->
+            <th style="width:10%;">Spell Name</th>
+            <th style="width:19%;">Description</th>
+            <th style="width:11%;">Components</th>
+            <th style="width:8%;">Cast Type</th>
+            <th style="width:5%;">Level</th>
+            <th style="width:8%;">Action Time</th>
+            <th style="width:8%;">Range</th>
+            <th style="width:8%;">Damage Base</th>
+            <th style="width:8%;">Duration</th>
+            <th style="width:8%;">Hit Base</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-equipment>
+    <ng-template pTemplate="body" let-spell>
         <tr>
             <td>
+                <p-avatar
+                [image]="spell.hasIcon ? iconPath+spell.ref+'.jpg' : placeOverIconPath"
+                size="large"></p-avatar>
             </td>
-            <td>{{equipment.equipmentName}}</td>
-            <td [title]="equipment.description" ><span class="description">{{equipment.description}}</span></td>
-            <td>{{equipment.cost}}</td>
+            <td>{{spell.spellName}}</td>
+            <td [title]="spell.description" ><span class="spellDescription">{{spell.description}}</span></td>
+            <td>{{spell.components}}</td>
+            <td>{{spell.castType}}</td>
+            <td ><span class="numberTableValue">{{spell.level}}</span></td>
+            <td><span class="numberTableValue">{{spell.actionTime}}</span></td>
+            <td><span class="numberTableValue">{{spell.range}}</span></td>
+            <td>{{spell.damageBase}}</td>
+            <td><span class="numberTableValue">{{spell.duration}}</span></td>
+            <td>{{spell.hitBase}}</td>
         </tr>
     </ng-template>
 </p-table>

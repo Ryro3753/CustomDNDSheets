@@ -26,11 +26,11 @@ namespace API.Controllers
         [HttpPost("UploadIcon")]
         public async Task UploadEquipmentIcon(int Ref, int Type) //Type 1 = Equipment, Type 2 = Spell
         {
-            var imageFolderPath = "";
+            var imageFolderPath = Ref.ToString() + ".jpg";
             if (Type == 1)
-                imageFolderPath = Path.Combine(_service.GetEquipmentImageFolderPath(), Ref.ToString() + ".jpg");
+                imageFolderPath = Path.Combine(_service.GetEquipmentImageFolderPath(),imageFolderPath);
             else if (Type == 2)
-                imageFolderPath = Path.Combine(_service.GetSpellImageFolderPath(), Ref.ToString() + ".jpg");
+                imageFolderPath = Path.Combine(_service.GetSpellImageFolderPath(), imageFolderPath);
 
             using var stream = System.IO.File.Create(imageFolderPath);
 

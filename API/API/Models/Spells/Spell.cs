@@ -23,5 +23,6 @@ namespace API.Models.Equipments
         public string Description { get; set; }
         public int HitBase { get; set; }
         public int DamageBase { get; set; }
+        public int HasIcon { get; set; }
     }
 }
