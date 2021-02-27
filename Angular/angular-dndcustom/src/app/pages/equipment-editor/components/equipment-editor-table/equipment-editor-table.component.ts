@@ -59,7 +59,8 @@ export class EquipmentEditorTableComponent implements OnInit {
   }
 
   async emittedUploadIcon(e) {
-    this.equipmentModal.Equipment.hasIcon = await this.iconService.uploadIcon(e.files[0], this.equipmentModal.Equipment.ref, 1);
+    await this.iconService.uploadIcon(e.files[0], this.equipmentModal.Equipment.ref, 1);
+
   }
 
 }

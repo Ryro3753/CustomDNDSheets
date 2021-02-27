@@ -29,13 +29,16 @@ export class SpellEditorModalComponent implements OnInit {
     this.NewSpell.emit(this.spell);
     this.spellEditorModal = false;
   }
-
+  cancelClick() {
+    this.spellEditorModal = false;
+  }
   async Upload(e){
     //Checking if this new equipment
-    if(this.spell.ref == 0){
-      let requestEquipment = this.spell;
-      requestEquipment.hasIcon = 1;
-      const ref = await this.service.insertOrUpdateSpell(this.spell);
+      this.spell.hasIcon = 1;
+      if(this.spell.ref == 0){
+      let requestSpell = this.spell;
+      requestSpell.hasIcon = 1;
+      const ref = await this.service.insertOrUpdateSpell(requestSpell);
       this.spell.ref = ref;
     }
     this.UploadFile.emit(e);

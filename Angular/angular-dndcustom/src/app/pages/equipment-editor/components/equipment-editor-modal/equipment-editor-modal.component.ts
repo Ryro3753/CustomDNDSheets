@@ -38,10 +38,11 @@ export class EquipmentEditorModalComponent implements OnInit {
 
   async Upload(e){
     //Checking if this new equipment
-    if(this.Equipment.ref == 0){
+      this.Equipment.hasIcon = 1;
+      if(this.Equipment.ref == 0){
       let requestEquipment = this.Equipment;
       requestEquipment.hasIcon = 1;
-      const ref = await this.service.insertOrUpdateEquipment(this.Equipment);
+      const ref = await this.service.insertOrUpdateEquipment(requestEquipment);
       this.Equipment.ref = ref;
     }
     this.UploadFile.emit(e);

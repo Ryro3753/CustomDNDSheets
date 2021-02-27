@@ -1,0 +1,20 @@
+::ng-deep #image{
+    margin-bottom: 20px;
+    margin-right: 8px;
+    margin-left: 110px;
+}
+::ng-deep #uploader{
+    margin-bottom: 20px;
+}
+::ng-deep #saveButton{
+    margin-top: 15px;
+    margin-left:90px;
+}
+::ng-deep #cancelButton{
+    margin-top: 15px;
+    margin-left:60px;
+    margin-right: 0px;
+}
+::ng-deep .modalWindow{
+    margin-left: 70px;
+}

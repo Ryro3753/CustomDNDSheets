@@ -1,4 +1,4 @@
-<button id="newSpellButton" pButton type="button" label="New Spell" iconPos="left"></button>
+<button id="newSpellButton" pButton type="button" label="New Spell" iconPos="left" (click)="createButtonClicked($event)"></button>
 
 <p-table #table [value]="gridDataSource"  [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
     [globalFilterFields]="['spellname','description','components','castType','level','actionTime','range','damageBase','duration','hitBase']">
@@ -6,12 +6,12 @@
             <input pInputText type="text" (input)="table.filterGlobal($event.target.value, 'contains')"
                 placeholder="Search keyword" />
         <tr>
-            <th style="width:7%;"></th>
+            <th style="width:5%;"></th>
             <!--Avatar Table header-->
             <th style="width:10%;">Spell Name</th>
             <th style="width:19%;">Description</th>
-            <th style="width:11%;">Components</th>
-            <th style="width:8%;">Cast Type</th>
+            <th style="width:16%;">Components</th>
+            <th style="width:5%;">Cast Type</th>
             <th style="width:5%;">Level</th>
             <th style="width:8%;">Action Time</th>
             <th style="width:7%;">Range</th>

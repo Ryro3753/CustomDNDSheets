@@ -1,10 +1,16 @@
-<p-dialog visible="true" showHeader="false" modal="true" *ngIf="spellEditorModal" [resizable]="false" [closable]="false">
-    <div class="row">
-        <p-avatar id="image"
-            [image]="spell.hasIcon ? iconPath+spell.ref+'.jpg' : placeOverIconPath"
-            size="large"></p-avatar>
-        <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*" maxFileSize="1000000"
-            (uploadHandler)="Upload($event)" [auto]="true"  customUpload="true"  chooseLabel="Upload Icon">
-        </p-fileUpload>
+<p-dialog visible="true" showHeader="false" modal="true" *ngIf="spellEditorModal" [resizable]="false"
+    [closable]="false">
+    <div class="modalWindow">
+        <div class="row">
+            <p-avatar id="image" [image]="spell.hasIcon ? iconPath+spell.ref+'.jpg' : placeOverIconPath" size="large">
+            </p-avatar>
+            <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*" maxFileSize="1000000"
+                (uploadHandler)="Upload($event)" [auto]="true" customUpload="true" chooseLabel="Upload Icon">
+            </p-fileUpload>
+        </div>
+        <button id="saveButton" pButton type="button" label="Save" icon="pi pi-check" iconPos="left"
+            (click)="saveClick()"></button>
+        <button id="cancelButton" pButton type="button" label="Cancel" class="p-button-danger" icon="pi pi-times"
+            iconPos="left" (click)="cancelClick()"></button>
     </div>
 </p-dialog>

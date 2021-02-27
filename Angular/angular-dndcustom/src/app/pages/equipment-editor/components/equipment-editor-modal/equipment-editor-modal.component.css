@@ -26,6 +26,6 @@
     margin: 15px;
     margin-left: 80px;
 }
-::ng-deep .tt{
+::ng-deep .modalWindow{
     margin-left: 70px;
 }

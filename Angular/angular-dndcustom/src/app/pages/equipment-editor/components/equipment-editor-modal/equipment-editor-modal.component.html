@@ -1,6 +1,6 @@
 <p-dialog visible="true" showHeader="false" modal="true" *ngIf="EquipmentModal" [resizable]="false" [closable]="false"
     #modal closeOnEscape="true">
-    <div class="tt">
+    <div class="modalWindow">
         <div class="row">
             <p-avatar id="image" [image]="Equipment.hasIcon == 1 ? iconPath+Equipment.ref+'.jpg' : placeOverIconPath"
                 size="large"></p-avatar>
