@@ -15,21 +15,19 @@ export class EquipmentEditorTableComponent implements OnInit {
   @ViewChild('equipmentModal') equipmentModal: EquipmentEditorModalComponent;
   constructor(
     readonly service: EquipmentService,
-    readonly iconService: IconService
-    ) {
+    readonly iconService: IconService,
+  ) {
 
   }
-  equipments: Equipment[];
   gridDataSource: Equipment[];
 
-  public iconPath : string;
-  public placeOverIconPath : string;
+  public iconPath: string;
+  public placeOverIconPath: string;
 
   async ngOnInit() {
     this.placeOverIconPath = IconService.getPlaceOverIcon(1);
     this.iconPath = IconService.getImagesPath(1);
-    this.equipments = await this.service.getEquipments();
-    this.gridDataSource = this.equipments;
+    this.gridDataSource = await this.service.getEquipments();
 
   }
   itemDoubleClick(equipment) {
@@ -43,20 +41,25 @@ export class EquipmentEditorTableComponent implements OnInit {
 
   }
 
+  deleteButtonClicked(e) {
+    this.service.deleteEquipment(e.ref);
+    this.gridDataSource = this.gridDataSource.filter(i => i.ref !== e.ref);
+  }
+
   async emittedEquipment(e) {
     if (this.gridDataSource.filter(i => i.ref == e.ref).length == 0) {
       const ref = await this.service.insertOrUpdateEquipment(e);
       e.ref = ref;
       this.equipmentModal.Equipment.ref = ref;
-      this.equipments.push(e);
+      this.gridDataSource.push(e);
     }
     else {
       await this.service.insertOrUpdateEquipment(e)
     }
   }
 
-  async emittedUploadIcon(e){
-    this.equipmentModal.Equipment.hasIcon =  await this.iconService.uploadIcon(e.files[0],this.equipmentModal.Equipment.ref,1);
+  async emittedUploadIcon(e) {
+    this.equipmentModal.Equipment.hasIcon = await this.iconService.uploadIcon(e.files[0], this.equipmentModal.Equipment.ref, 1);
   }
 
 }

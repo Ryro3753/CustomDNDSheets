@@ -5,9 +5,10 @@
         <input pInputText type="text" (input)="table.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
         <tr>
             <th style="width:10%;"></th><!--Avatar Table header-->
-            <th style="width:22%;">Equipment Name</th>
-            <th style="width:60%;">Description</th>
+            <th style="width:20%;">Equipment Name</th>
+            <th style="width:57%;">Description</th>
             <th style="width:8%;">Cost</th>
+            <th style="width:5%"></th><!--Delete Button-->
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-equipment>
@@ -20,6 +21,9 @@
             <td>{{equipment.equipmentName}}</td>
             <td [title]="equipment.description" ><span class="equipmentDescription">{{equipment.description}}</span></td>
             <td>{{equipment.cost}}</td>
+            <td>
+                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteButtonClicked(equipment)"></button>
+            </td>
         </tr>
     </ng-template>
 </p-table>

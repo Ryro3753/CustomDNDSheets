@@ -1,6 +1,6 @@
 <button id="newSpellButton" pButton type="button" label="New Spell" iconPos="left"></button>
 
-<p-table #table [value]="gridDataSource" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+<p-table #table [value]="gridDataSource"  [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
     [globalFilterFields]="['spellname','description','components','castType','level','actionTime','range','damageBase','duration','hitBase']">
     <ng-template pTemplate="header">
             <input pInputText type="text" (input)="table.filterGlobal($event.target.value, 'contains')"
@@ -14,10 +14,11 @@
             <th style="width:8%;">Cast Type</th>
             <th style="width:5%;">Level</th>
             <th style="width:8%;">Action Time</th>
-            <th style="width:8%;">Range</th>
+            <th style="width:7%;">Range</th>
             <th style="width:8%;">Damage Base</th>
-            <th style="width:8%;">Duration</th>
+            <th style="width:7%;">Duration</th>
             <th style="width:8%;">Hit Base</th>
+            <th style="width:2%;"></th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-spell>
@@ -36,7 +37,10 @@
             <td>{{spell.damageBase}}</td>
             <td><span class="numberTableValue">{{spell.duration}}</span></td>
             <td>{{spell.hitBase}}</td>
+            <td>
+                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteButtonClicked(spell)"></button>
+            </td>
         </tr>
     </ng-template>
 </p-table>
-<app-spell-editor-modal #spellModal (UploadFile)="emittedUploadIcon($event)"></app-spell-editor-modal>
+<app-spell-editor-modal #spellModal (NewSpell)="emittedEquipment($event)" (UploadFile)="emittedUploadIcon($event)"></app-spell-editor-modal>

@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { FileUploadModule } from 'primeng/fileupload';
 import { AvatarModule } from 'primeng/avatar';
 import { InputNumberModule } from 'primeng/inputnumber';
-
 @NgModule({
   declarations: [
     EquipmentScreenComponent,

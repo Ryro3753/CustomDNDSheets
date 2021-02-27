@@ -31,6 +31,22 @@ export class SpellEditorTableComponent implements OnInit {
     await this.iconService.uploadIcon(e.files[0], this.spellModal.spell.ref, 2);
   }
 
+  async emittedEquipment(e) {
+    if (this.gridDataSource.filter(i => i.ref == e.ref).length == 0) {
+      const ref = await this.service.insertOrUpdateSpell(e);
+      e.ref = ref;
+      this.spellModal.spell.ref = ref;
+      this.gridDataSource.push(e);
+    }
+    else {
+      await this.service.insertOrUpdateSpell(e)
+    }
+  }
+
+  deleteButtonClicked(e) {
+    this.service.deleteSpell(e.ref);
+    this.gridDataSource = this.gridDataSource.filter(i => i.ref !== e.ref);
+  }
   spellClick(spell : Spell){
     this.spellModal.spell.ref = spell.ref;
     this.spellModal.spell.spellName = spell.spellName;

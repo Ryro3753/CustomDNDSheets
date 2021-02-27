@@ -13,6 +13,7 @@ export class SpellEditorModalComponent implements OnInit {
   iconPath: string;
 
   @Output() UploadFile : EventEmitter<any> = new EventEmitter<any>();
+  @Output() NewSpell : EventEmitter<any> = new EventEmitter<any>();
 
   spell : Spell;
   spellEditorModal : boolean = false;
@@ -24,9 +25,16 @@ export class SpellEditorModalComponent implements OnInit {
     this.iconPath = IconService.getImagesPath(2);
   }
 
+  public async saveClick() {
+    this.NewSpell.emit(this.spell);
+    this.spellEditorModal = false;
+  }
+
   async Upload(e){
     //Checking if this new equipment
     if(this.spell.ref == 0){
+      let requestEquipment = this.spell;
+      requestEquipment.hasIcon = 1;
       const ref = await this.service.insertOrUpdateSpell(this.spell);
       this.spell.ref = ref;
     }

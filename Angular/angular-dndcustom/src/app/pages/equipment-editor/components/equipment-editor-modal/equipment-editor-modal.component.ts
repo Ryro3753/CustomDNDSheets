@@ -32,7 +32,6 @@ export class EquipmentEditorModalComponent implements OnInit {
   }
 
   public async saveClick() {
-    console.log(this.Equipment);
     this.NewEquipment.emit(this.Equipment);
     this.EquipmentModal = false;
   }
