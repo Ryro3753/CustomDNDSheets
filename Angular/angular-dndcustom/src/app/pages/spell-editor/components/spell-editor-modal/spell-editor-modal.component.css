@@ -6,9 +6,12 @@
 ::ng-deep #uploader{
     margin-bottom: 20px;
 }
+::ng-deep .imageArea{
+    margin-left: 85px;
+}
 ::ng-deep #saveButton{
     margin-top: 15px;
-    margin-left:90px;
+    margin-left:175px;
 }
 ::ng-deep #cancelButton{
     margin-top: 15px;
@@ -20,4 +23,17 @@
 }
 ::ng-deep #levelInput{
     width: 10px;
+}
+::ng-deep .spellDescriptionArea{
+    margin-top: 10px;
+    margin-left: 75px;
+}
+::ng-deep .thirdRow{
+    margin-top: 10px;
+}
+::ng-deep .fourtRow{
+    margin-left: 60px;
+}
+::ng-deep .modalWindow{
+    margin-left: 150px;
 }

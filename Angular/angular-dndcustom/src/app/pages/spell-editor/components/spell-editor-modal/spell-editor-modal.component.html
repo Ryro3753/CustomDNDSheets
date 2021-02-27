@@ -1,7 +1,7 @@
 <p-dialog visible="true" showHeader="false" modal="true" *ngIf="spellEditorModal" [resizable]="false"
     [closable]="false">
     <div class="modalWindow">
-        <div class="row">
+        <div class="row imageArea">
             <p-avatar id="image" [image]="spell.hasIcon ? iconPath+spell.ref+'.jpg' : placeOverIconPath" size="large">
             </p-avatar>
             <p-fileUpload id="uploader" mode="basic" method="post" name="demo[]" accept="image/*" maxFileSize="1000000"
@@ -9,7 +9,7 @@
             </p-fileUpload>
         </div>
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <label for="spellNameInput">Name</label>
                 <input id="spellNameInput" type="text" [(ngModel)]="spell.spellName" pInputText>
             </div>
@@ -22,15 +22,42 @@
                 <input id="rangeInput" style="width: 80px;" type="number" [(ngModel)]="spell.range" pInputText>
             </div>
             <div class="col-2">
-                <label for="rangeInput">Action Time</label>
+                <label for="actionTimeInput">Action Time</label>
                 <input id="actionTimeInput" style="width: 80px;" type="number" [(ngModel)]="spell.actionTime"
                     pInputText>
             </div>
         </div>
+        <div class="row spellDescriptionArea">
+            <div class="col-sm-6">
                 <label for="spellDescription">Description</label>
-                <textarea id="spellDescription" [rows]="5" [cols]="30" pInputTextarea [(ngModel)]="spell.description"
-                autoResize="autoResize"></textarea>
-
+                <textarea id="spellDescription" [rows]="5" [cols]="60" pInputTextarea [(ngModel)]="spell.description"
+                    autoResize="autoResize"></textarea>
+            </div>
+        </div>
+        <div class="row thirdRow">
+            <div class="col-3">
+                <label for="spellComponents">Components</label>
+                <input id="spellComponents" type="text" [(ngModel)]="spell.components" pInputText>
+            </div>
+            <div class="col-3">
+                <label for="spellSchool">School</label>
+                <input id="spellSchool" type="text" [(ngModel)]="spell.school" pInputText>
+            </div>
+            <div class="col-3">
+                <label for="spellDurations">Duration</label>
+                <input id="spellDurations" type="text" [(ngModel)]="spell.duration" pInputText>
+            </div>
+        </div>
+        <div class="row fourtRow">
+            <div class="col-4">
+                <label for="spellDamageBase">Damage Base</label>
+                <input id="spellDamageBase" type="text" [(ngModel)]="spell.damageBase" pInputText>
+            </div>
+            <div class="col-3">
+                <label for="spellHitBase">Hit Base</label>
+                <input id="spellHitBase" type="text" [(ngModel)]="spell.hitBase" pInputText>
+            </div>
+        </div>
 
         <button id="saveButton" pButton type="button" label="Save" icon="pi pi-check" iconPos="left"
             (click)="saveClick()"></button>
