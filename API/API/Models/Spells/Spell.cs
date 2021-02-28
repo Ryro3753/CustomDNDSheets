@@ -14,15 +14,15 @@ namespace API.Models.Equipments
         [Required]
         public int Ref { get; set; }
         public string SpellName { get; set; }
-        public int ActionTime { get; set; }
+        public string ActionTime { get; set; }
         public int Range { get; set; }
         public int Level { get; set; }
         public string School { get; set; }
-        public double Duration { get; set; }
+        public string Duration { get; set; }
         public string Components { get; set; }
         public string Description { get; set; }
-        public int HitBase { get; set; }
-        public int DamageBase { get; set; }
+        public string HitBase { get; set; }
+        public string DamageBase { get; set; }
         public int HasIcon { get; set; }
     }
 }

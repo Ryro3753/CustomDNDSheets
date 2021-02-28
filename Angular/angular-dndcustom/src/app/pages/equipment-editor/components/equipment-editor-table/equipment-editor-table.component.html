@@ -1,30 +1,43 @@
-<button id="newEquipmentButton" pButton type="button" label="New Equipment" iconPos="left" (click)="createButtonClicked($event)"></button>
+<div class="d-flex justify-content-between mb-2">
+    <div class="p-2">
+        <button pButton type="button" label="New Equipment" iconPos="left"
+            (click)="createButtonClicked($event)"></button>
+    </div>
+    <div class="p-2">
+        <input  pInputText type="text" (input)="table.filterGlobal($event.target.value, 'contains')"
+            placeholder="Search keyword" />
+    </div>
+</div>
+<p-table #table [value]="gridDataSource" [globalFilterFields]="['equipmentName','description','cost']"
+    [showCurrentPageReport]="true" [virtualScroll]="true" [virtualRowHeight]="34" scrollHeight="1000px"
+    [scrollable]="true" [rows]="10">
+    <ng-template pTemplate="header">
 
-<p-table #table [value]="gridDataSource" [globalFilterFields]="['equipmentName','description','cost']" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
-    <ng-template  pTemplate="header">
-        <input pInputText type="text" (input)="table.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
         <tr>
-            <th style="width:10%;"></th><!--Avatar Table header-->
+            <th style="width:10%;"></th>
+            <!--Avatar Table header-->
             <th style="width:20%;">Equipment Name</th>
             <th style="width:57%;">Description</th>
             <th style="width:8%;">Cost</th>
-            <th style="width:5%"></th><!--Delete Button-->
+            <th style="width:5%"></th>
+            <!--Delete Button-->
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-equipment>
-        <tr  (dblclick)="itemDoubleClick(equipment)">
+        <tr (dblclick)="itemDoubleClick(equipment)">
             <td>
-            <p-avatar
-            [image]="equipment.hasIcon ? iconPath+equipment.ref+'.jpg' : placeOverIconPath"
-            size="large"></p-avatar>
+                <p-avatar [image]="equipment.hasIcon ? iconPath+equipment.ref+'.jpg' : placeOverIconPath" size="large">
+                </p-avatar>
             </td>
             <td>{{equipment.equipmentName}}</td>
-            <td [title]="equipment.description" ><span class="equipmentDescription">{{equipment.description}}</span></td>
+            <td [title]="equipment.description"><span class="equipmentDescription">{{equipment.description}}</span></td>
             <td>{{equipment.cost}}</td>
             <td>
-                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteButtonClicked(equipment)"></button>
+                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                    (click)="deleteButtonClicked(equipment)"></button>
             </td>
         </tr>
     </ng-template>
 </p-table>
-<app-equipment-editor-modal #equipmentModal (NewEquipment)="emittedEquipment($event)" (UploadFile)="emittedUploadIcon($event)"></app-equipment-editor-modal>
+<app-equipment-editor-modal #equipmentModal (NewEquipment)="emittedEquipment($event)"
+    (UploadFile)="emittedUploadIcon($event)"></app-equipment-editor-modal>
