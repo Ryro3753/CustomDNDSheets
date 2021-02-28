@@ -1,26 +1,33 @@
-<div class="row"  *ngIf="cardDataSource != undefined">
-    <p-card class="secondaryStatCard" >
-        <p>Strength</p>
-        <p>{{cardDataSource.strength}}</p>
+<div *ngIf="cardDataSource != undefined">
+    <p-card styleClass="secondaryStatCard p-shadow-24 " >
+        <p class="cardStat">Strength</p>
+        <p class="cardStatValues">{{cardDataSource.strength}}</p>
+        <p class="cardStatModifier">0</p>
     </p-card>
-    <p-card class="secondaryStatCard" >
-        <p>Dexterity</p>
-        <p>{{cardDataSource.dexterity}}</p>
+    <p-card styleClass="secondaryStatCard p-shadow-24" >
+        <p class="cardStat">Dexterity</p>
+        <p class="cardStatValues">{{cardDataSource.dexterity}}</p>
+        <p class="cardStatModifier">0</p>
     </p-card>
-    <p-card class="secondaryStatCard" >
-        <p>Constitution</p>
-        <p>{{cardDataSource.constitution}}</p>
+    <p-card styleClass="secondaryStatCard p-shadow-24" >
+        <p class="cardStat">Constitution</p>
+        <p class="cardStatValues">{{cardDataSource.constitution}}</p>
+        <p class="cardStatModifier">0</p>
     </p-card>
-    <p-card class="secondaryStatCard" >
-        <p>Intelligence</p>
-        <p>{{cardDataSource.intelligence}}</p>
+    <p-card styleClass="secondaryStatCard p-shadow-24" >
+        <p class="cardStat">Intelligence</p>
+        <p class="cardStatValues">{{cardDataSource.intelligence}}</p>
+        <p class="cardStatModifier">0</p>
     </p-card>
-    <p-card class="secondaryStatCard" >
-        <p>Wisdom</p>
-        <p>{{cardDataSource.wisdom}}</p>
+    <p-card styleClass="secondaryStatCard p-shadow-24" >
+        <p class="cardStat">Wisdom</p>
+        <p class="cardStatValues">{{cardDataSource.wisdom}}</p>
+        <p class="cardStatModifier">0</p>
     </p-card>
-    <p-card class="secondaryStatCard" >
-        <p>Charisma</p>
-        <p>{{cardDataSource.charisma}}</p>
+    <p-card styleClass="secondaryStatCard p-shadow-24" >
+        <p class="cardStat">Charisma</p>
+        <p class="cardStatValues">{{cardDataSource.charisma}}</p>
+        <p class="cardStatModifier">0</p>
     </p-card>
+    
 </div>

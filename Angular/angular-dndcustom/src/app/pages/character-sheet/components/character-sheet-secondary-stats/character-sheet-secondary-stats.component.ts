@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CharacterSecondaryStats } from 'src/app/models/character/character-secondary-stats.model';
 import { CharacterSecondaryStatsService } from 'src/app/services/character-services/character-secondary-stats.service';
 
@@ -20,11 +20,7 @@ export class CharacterSheetSecondaryStatsComponent implements OnInit {
   }
 
   characterFilter(){
-    console.log(this.allStats.filter(i => i.characterRef == this.characterRef)[0]);
     this.cardDataSource = this.allStats.filter(i => i.characterRef == this.characterRef)[0];
   }
-  asd(){
-    console.log(this.cardDataSource);
-    console.log(this.allStats);
-  }
+
 }

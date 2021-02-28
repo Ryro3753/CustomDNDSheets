@@ -15,7 +15,7 @@ export class AppComponent {
   }
   ngOnInit(){
     this.menuItems = [
-      {label: 'Home' },
+      {label: 'Characters Sheet', url:"/CharacterSheets" },
       {label: 'Spell Editor' , url:"/SpellEditor"},
       {label: 'Equipment Editor', url:"/EquipmentEditor"},
   ];

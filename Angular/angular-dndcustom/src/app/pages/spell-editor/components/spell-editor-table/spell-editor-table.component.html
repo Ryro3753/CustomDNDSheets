@@ -8,8 +8,8 @@
             placeholder="Search keyword" />
     </div>
 </div>
-<p-table #table [value]="gridDataSource" [showCurrentPageReport]="true" [virtualScroll]="true" [virtualRowHeight]="34"
-    scrollHeight="1000px" [scrollable]="true" [rows]="10"
+<p-table styleClass="table" #table [value]="gridDataSource" [showCurrentPageReport]="true"  [virtualRowHeight]="34"
+    scrollHeight="1000px" [scrollable]="true" [rows]="10" 
     [globalFilterFields]="['spellname','description','components','castType','level','actionTime','range','damageBase','duration','hitBase']">
     <ng-template pTemplate="header">
         <tr>
@@ -17,8 +17,8 @@
             <!--Avatar Table header-->
             <th style="width:10%;">Spell Name</th>
             <th style="width:19%;">Description</th>
-            <th style="width:16%;">Comp</th>
-            <th style="width:5%;">School</th>
+            <th style="width:10%;">Comp</th>
+            <th style="width:11%;">School</th>
             <th style="width:5%;">Level</th>
             <th style="width:8%;">Action Time</th>
             <th style="width:7%;">Range</th>
