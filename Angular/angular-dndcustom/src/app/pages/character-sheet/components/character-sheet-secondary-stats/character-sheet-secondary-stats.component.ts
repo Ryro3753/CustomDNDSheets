@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CharacterSecondaryStats } from 'src/app/models/character/character-secondary-stats.model';
+import { CharacterSecondaryStatsService } from 'src/app/services/character-services/character-secondary-stats.service';
 
 @Component({
   selector: 'app-character-sheet-secondary-stats',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterSheetSecondaryStatsComponent implements OnInit {
 
-  constructor() { }
+  constructor(readonly service : CharacterSecondaryStatsService) { }
 
-  ngOnInit(): void {
+  public characterRef : number = 4;
+  cardDataSource : CharacterSecondaryStats;
+  allStats : CharacterSecondaryStats[];
+  async ngOnInit(): Promise<void> {
+    this.allStats = await this.service.getCharactersSecondaryStats();
+    this.characterFilter();
   }
 
+  characterFilter(){
+    console.log(this.allStats.filter(i => i.characterRef == this.characterRef)[0]);
+    this.cardDataSource = this.allStats.filter(i => i.characterRef == this.characterRef)[0];
+  }
+  asd(){
+    console.log(this.cardDataSource);
+    console.log(this.allStats);
+  }
 }

@@ -1,1 +1,26 @@
-<p>character-sheet-secondary-stats works!</p>
+<div class="row"  *ngIf="cardDataSource != undefined">
+    <p-card class="secondaryStatCard" >
+        <p>Strength</p>
+        <p>{{cardDataSource.strength}}</p>
+    </p-card>
+    <p-card class="secondaryStatCard" >
+        <p>Dexterity</p>
+        <p>{{cardDataSource.dexterity}}</p>
+    </p-card>
+    <p-card class="secondaryStatCard" >
+        <p>Constitution</p>
+        <p>{{cardDataSource.constitution}}</p>
+    </p-card>
+    <p-card class="secondaryStatCard" >
+        <p>Intelligence</p>
+        <p>{{cardDataSource.intelligence}}</p>
+    </p-card>
+    <p-card class="secondaryStatCard" >
+        <p>Wisdom</p>
+        <p>{{cardDataSource.wisdom}}</p>
+    </p-card>
+    <p-card class="secondaryStatCard" >
+        <p>Charisma</p>
+        <p>{{cardDataSource.charisma}}</p>
+    </p-card>
+</div>

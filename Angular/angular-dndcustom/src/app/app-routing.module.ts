@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'SpellEditor',
     loadChildren: () => import('./pages/spell-editor/spell-editor.module').then(m => m.SpellEditorModule)
   },
+  {
+    path: 'CharacterSheets',
+    loadChildren: () => import('./pages/character-sheet/character-sheet.module').then(m => m.CharacterSheetModule)
+  },
 ];
 
 @NgModule({
