@@ -6,6 +6,7 @@ import { CharacterSheetSecondaryStatsComponent } from './components/character-sh
 import { CharacterSheetSavingThrowsComponent } from './components/character-sheet-saving-throws/character-sheet-saving-throws.component';
 import { CardModule, } from 'primeng/card';
 import { FormsModule } from '@angular/forms';
+import { CharacterSheetCalculator } from './character-sheet.calculator';
 @NgModule({
   declarations: [
   CharacterSheetScreenComponent,
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
   ],
   providers: [
+    CharacterSheetCalculator
   ],
 })
 export class CharacterSheetModule { }

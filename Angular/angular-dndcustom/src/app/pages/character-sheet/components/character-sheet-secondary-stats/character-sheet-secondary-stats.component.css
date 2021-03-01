@@ -15,10 +15,21 @@
     text-align: center;
     position: relative;
     bottom:50px;
+    
 }
 ::ng-deep .cardStat{
     text-align: center;
     position: relative;
     bottom:25px;
     font-weight: 500;
+}
+::ng-deep .cardStatModifierBorder{
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-color:blueviolet;
+    border-radius: 50%;
+}
+::ng-deep .firstCard{
+    margin-top: 25px;
 }
