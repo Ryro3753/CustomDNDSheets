@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Character } from 'src/app/models/Character/Character.model';
+import { CharacterService } from 'src/app/services/character-services/character.service';
+import { CharacterSheetSavingThrowsComponent } from '../components/character-sheet-saving-throws/character-sheet-saving-throws.component';
 
 @Component({
   selector: 'app-character-sheet-screen',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterSheetScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(readonly service : CharacterService) { }
 
-  ngOnInit(): void {
+  characters : Character[];
+  character : Character;
+
+  @ViewChild('characterSavingThrows') savingThrowComponent: CharacterSheetSavingThrowsComponent;
+
+  async ngOnInit(): Promise<void> {
+  this.characters = await this.service.getCharacters();
+  this.character = this.characters.filter(i => i.ref == 4)[0];
+  console.log(this.character);
+  this.savingThrowComponent.characterProfiency = this.character.profiencyValues;
   }
 
 }

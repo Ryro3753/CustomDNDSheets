@@ -32,7 +32,8 @@ namespace API.Services
                 {
                     CharacterName = model.CharacterName,
                     Class = model.Class,
-                    Race = model.Race
+                    Race = model.Race,
+                    ProfiencyValues = model.ProfiencyValues
                 };
                 await _context.Character.AddAsync(character);
                 await _context.SaveChangesAsync();
@@ -44,6 +45,7 @@ namespace API.Services
                 existingCharacter.CharacterName = model.CharacterName;
                 existingCharacter.Class = model.Class;
                 existingCharacter.Race = model.Race;
+                existingCharacter.ProfiencyValues = model.ProfiencyValues;
                 await _context.SaveChangesAsync();
                 return existingCharacter.Ref;
 

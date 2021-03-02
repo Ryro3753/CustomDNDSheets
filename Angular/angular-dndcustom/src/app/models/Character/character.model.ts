@@ -3,4 +3,5 @@ export interface Character {
     characterName : string,
     class : string,
     race : string
+    profiencyValues : string;
 };
