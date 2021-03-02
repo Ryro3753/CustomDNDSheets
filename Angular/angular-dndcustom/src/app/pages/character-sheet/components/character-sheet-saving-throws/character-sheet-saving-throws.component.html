@@ -1,4 +1,12 @@
-<p-card>
-    <!-- <div class="row"><span>strength<span><span
-                    *ngIf="cardDataSource.strength >= 0">+</span>{{cardDataSource.strength}}</span></span> </div> -->
-</p-card>
+<div *ngIf="cardDataSource != undefined">
+    <p-card class="card">
+        <div class="row">
+            <span class="savingThrowStatsLeft">Strength<span><span class="savingThrowStatsLeftValue"><span
+                        *ngIf="cardDataSource.strength >= 0">+</span>{{cardDataSource.strength}}</span></span></span>
+            <i class="pi pi-circle-off savingThrowProfiency"></i>
+            <i class="pi pi-circle-off savingThrowProfiency" ></i>
+            <span class="savingThrowStatsRight"><span class="savingThrowStatsRightValue"><span
+                *ngIf="cardDataSource.strength >= 0">+</span>{{cardDataSource.dexterity}}</span>Dexterity<span></span></span>
+        </div>
+    </p-card>
+</div>

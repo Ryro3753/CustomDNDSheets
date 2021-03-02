@@ -17,6 +17,7 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.allSavingThrows = await this.service.getCharactersSavingThrows();
+    this.characterFilter();
   }
 
   async characterFilter(){
