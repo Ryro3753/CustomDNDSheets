@@ -1,12 +1,28 @@
 <div *ngIf="cardDataSource != undefined">
     <p-card class="card">
-        <div class="row">
+        <div class="row FirstRow">
             <span class="savingThrowStatsLeft">Strength<span><span class="savingThrowStatsLeftValue"><span
                         *ngIf="cardDataSource.strength >= 0">+</span>{{cardDataSource.strength}}</span></span></span>
             <i class="pi pi-circle-off savingThrowProfiency"></i>
             <i class="pi pi-circle-off savingThrowProfiency" ></i>
             <span class="savingThrowStatsRight"><span class="savingThrowStatsRightValue"><span
                 *ngIf="cardDataSource.strength >= 0">+</span>{{cardDataSource.dexterity}}</span>Dexterity<span></span></span>
+        </div>
+        <div class="row SecondRow">
+            <span class="savingThrowStatsLeft">Wisdom<span><span class="savingThrowStatsLeftValue"><span
+                        *ngIf="cardDataSource.wisdom >= 0">+</span>{{cardDataSource.wisdom}}</span></span></span>
+            <i class="pi pi-circle-off savingThrowProfiency"></i>
+            <i class="pi pi-circle-off savingThrowProfiency" ></i>
+            <span class="savingThrowStatsRight"><span class="savingThrowStatsRightValue"><span
+                *ngIf="cardDataSource.intelligence >= 0">+</span>{{cardDataSource.intelligence}}</span>Intelligence<span></span></span>
+        </div>
+        <div class="row ThirdRow">
+            <span class="savingThrowStatsLeft">Charisma<span><span class="savingThrowStatsLeftValue"><span
+                        *ngIf="cardDataSource.charisma >= 0">+</span>{{cardDataSource.charisma}}</span></span></span>
+            <i class="pi pi-circle-off savingThrowProfiency"></i>
+            <i class="pi pi-circle-off savingThrowProfiency" ></i>
+            <span class="savingThrowStatsRight"><span class="savingThrowStatsRightValue"><span
+                *ngIf="cardDataSource.constitution >= 0">+</span>{{cardDataSource.constitution}}</span>Constitution<span></span></span>
         </div>
     </p-card>
 </div>

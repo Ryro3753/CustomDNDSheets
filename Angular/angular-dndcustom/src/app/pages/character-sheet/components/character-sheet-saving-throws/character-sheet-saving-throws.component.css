@@ -1,12 +1,16 @@
 ::ng-deep .savingThrowStatsLeft{
+    float:right;
+    text-align: center;
     border-style: solid;
     border-color: blueviolet;
     border-radius: 40%;
     margin: 10px;
     margin-right: 3px;
     padding: 2px;
+    width: 150px;
 }
 ::ng-deep .savingThrowStatsLeftValue{
+    float:right;
     border-left-style: solid;
     border-color: blueviolet;
     border-radius: 80%;
@@ -17,13 +21,16 @@
 
 ::ng-deep .savingThrowStatsRight{
     border-style: solid;
+    text-align: center;
     border-color: blueviolet;
     border-radius: 40%;
     margin: 10px;
     margin-left: 5px;
     padding: 2px;
+    width: 150px;
 }
 ::ng-deep .savingThrowStatsRightValue{
+    float:left;
     border-right-style: solid;
     border-color: blueviolet;
     border-radius: 80%;
@@ -32,10 +39,10 @@
     font-weight: 700;
 }
 ::ng-deep .card{
-    width: 275px;
+    width: 375px;
 }
 
 ::ng-deep .savingThrowProfiency{
     margin:2px;
-    margin-top: 18px;
+    margin-top: 20px;
 }
