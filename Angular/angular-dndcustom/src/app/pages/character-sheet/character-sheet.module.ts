@@ -7,11 +7,13 @@ import { CharacterSheetSavingThrowsComponent } from './components/character-shee
 import { CardModule, } from 'primeng/card';
 import { FormsModule } from '@angular/forms';
 import { CharacterSheetCalculator } from './character-sheet.calculator';
+import { CarouselModule } from 'primeng/carousel';
+
 @NgModule({
   declarations: [
-  CharacterSheetScreenComponent,
-  CharacterSheetSecondaryStatsComponent,
-  CharacterSheetSavingThrowsComponent],
+    CharacterSheetScreenComponent,
+    CharacterSheetSecondaryStatsComponent,
+    CharacterSheetSavingThrowsComponent],
   imports: [
     RouterModule.forChild([{
       path: '',
@@ -21,6 +23,7 @@ import { CharacterSheetCalculator } from './character-sheet.calculator';
     CommonModule,
     CardModule,
     FormsModule,
+    CarouselModule,
   ],
   providers: [
     CharacterSheetCalculator

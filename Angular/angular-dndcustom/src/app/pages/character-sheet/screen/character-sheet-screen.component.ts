@@ -23,4 +23,13 @@ export class CharacterSheetScreenComponent implements OnInit {
   this.savingThrowComponent.characterProfiency = this.character.profiencyValues;
   }
 
+  characterClick(clickedCharacter){
+    console.log(clickedCharacter);
+    this.ReOrderTheCards(clickedCharacter);
+  }
+
+  ReOrderTheCards(clickedCharacter){
+    this.characters = this.characters.filter(i => i.ref != clickedCharacter.ref);
+    this.characters.unshift(clickedCharacter);
+  }
 }

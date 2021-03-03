@@ -1,0 +1,8 @@
+::ng-deep .characterScreen{
+    position: relative;
+    right: 100px;
+}
+
+::ng-deep .charactersCarousel{
+    height: 500px;
+}

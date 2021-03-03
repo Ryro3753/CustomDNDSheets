@@ -1,4 +1,12 @@
-<div class="row">
+<div class="row characterScreen">
+    <p-carousel class="charactersCarousel" circular="true" verticalViewPortHeight="700px" [value]="characters" [numVisible]="7" [numScroll]="1" orientation="vertical">
+        <ng-template let-character pTemplate="item">
+            <p-card (dblclick)="characterClick(character)" >
+                {{character.characterName}}
+
+            </p-card>
+        </ng-template>
+    </p-carousel>
     <div class="col-sm-2">
         <app-character-sheet-secondary-stats></app-character-sheet-secondary-stats>
     </div>
