@@ -26,7 +26,6 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
 
   async characterFilter(){
     this.cardDataSource = this.allSavingThrows.filter(i => i.characterRef == this.characterRef)[0];
-    console.log(this.characterProfiency);
     this.characterSavingThrowProfiency = await this.calculator.savingThrowsProfiencyCalculate(this.characterProfiency);
   }
 }

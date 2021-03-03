@@ -1,6 +1,5 @@
 ::ng-deep .savingThrowStatsLeft{
     float:right;
-    text-align: center;
     border-style: solid;
     border-color: blueviolet;
     border-radius: 40%;
@@ -21,7 +20,6 @@
 
 ::ng-deep .savingThrowStatsRight{
     border-style: solid;
-    text-align: center;
     border-color: blueviolet;
     border-radius: 40%;
     margin: 10px;
@@ -39,6 +37,7 @@
     font-weight: 700;
 }
 ::ng-deep .card{
+    text-align: center;
     width: 375px;
 }
 

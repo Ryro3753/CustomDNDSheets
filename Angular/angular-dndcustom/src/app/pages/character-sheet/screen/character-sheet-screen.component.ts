@@ -20,7 +20,6 @@ export class CharacterSheetScreenComponent implements OnInit {
   async ngOnInit(): Promise<void> {
   this.characters = await this.service.getCharacters();
   this.character = this.characters.filter(i => i.ref == 4)[0];
-  console.log(this.character);
   this.savingThrowComponent.characterProfiency = this.character.profiencyValues;
   }
 

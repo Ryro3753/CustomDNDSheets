@@ -17,13 +17,18 @@ export class CharacterSheetCalculator{
   }
 
   async savingThrowsProfiencyCalculate(characterProfiency : string) : Promise<CharacterSavingThrowsProfiency>{
-    let profiencies = {} as CharacterSavingThrowsProfiency;
-    console.log(characterProfiency);
-    const keys = Object.getOwnPropertyNames(typeof profiencies);
+    let profiencies = {
+      strength : false,
+      dexterity : false,
+      charisma : false,
+      constitution : false,
+      wisdom : false,
+      intelligence : false
+    } as CharacterSavingThrowsProfiency;
+    let keys = Object.keys(profiencies);
     keys.forEach(i => {
-      profiencies[i] = characterProfiency.includes(profiencies[i]) ? true : false;
+      profiencies[i] = characterProfiency.includes(i) ? true : false;
     })
-    console.log(profiencies)
     return profiencies
   }
 

@@ -11,10 +11,10 @@ export interface CharacterSavingThrows {
 
 
 export interface CharacterSavingThrowsProfiency {
-    strength : boolean;
-    dexterity : boolean;
-    constitution : boolean;
-    intelligence : boolean;
-    wisdom : boolean;
-    charisma : boolean;
+    strength? : boolean;
+    dexterity? : boolean;
+    constitution? : boolean;
+    intelligence? : boolean;
+    wisdom? : boolean;
+    charisma? : boolean;
 }
