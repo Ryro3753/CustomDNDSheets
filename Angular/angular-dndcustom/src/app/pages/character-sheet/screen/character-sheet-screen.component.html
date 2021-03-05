@@ -1,16 +1,36 @@
-<div class="row characterScreen">
-    <p-carousel class="charactersCarousel" circular="true" verticalViewPortHeight="700px" [value]="characters" [numVisible]="7" [numScroll]="1" orientation="vertical">
-        <ng-template let-character pTemplate="item">
-            <p-card (dblclick)="characterClick(character)" >
-                {{character.characterName}}
-
-            </p-card>
-        </ng-template>
-    </p-carousel>
-    <div class="col-sm-2">
-        <app-character-sheet-secondary-stats></app-character-sheet-secondary-stats>
-    </div>
-    <div class="col-sm-2">
+    <div class="row characterScreen" *ngIf="charactersCardData != undefined">
+        <p-carousel class="charactersCarousel" circular="true" verticalViewPortHeight="700px"
+            [value]="charactersCardData" [numVisible]="7" [numScroll]="1" orientation="vertical">
+            <ng-template let-character pTemplate="item">
+                <p-card styleClass="characterCards" (dblclick)="characterClick(character)">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p-avatar shape="circle" size="large"></p-avatar>
+                        </div>
+                        <div class="col-sm-9" >
+                            <div class="row justify-content-md-center">
+                                <span>{{character.characterName}}</span>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                <span>{{character.level}} level {{character.race}} {{character.class}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    size:{{character.size}}
+                    eyes:{{character.eyes}}
+                    height:{{character.height}}
+                    hair:{{character.hair}}
+                    skin:{{character.skin}}
+                    age:{{character.age}}
+                    weight:{{character.weight}}
+                </p-card>
+            </ng-template>
+        </p-carousel>
+        <div class="col-sm-2">
+            <app-character-sheet-secondary-stats></app-character-sheet-secondary-stats>
+        </div>
+        <!-- <div class="col-sm-2">
         <app-character-sheet-saving-throws #characterSavingThrows></app-character-sheet-saving-throws>
     </div>
+    -->
 </div>

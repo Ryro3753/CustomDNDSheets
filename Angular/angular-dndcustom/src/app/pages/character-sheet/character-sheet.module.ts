@@ -8,6 +8,8 @@ import { CardModule, } from 'primeng/card';
 import { FormsModule } from '@angular/forms';
 import { CharacterSheetCalculator } from './character-sheet.calculator';
 import { CarouselModule } from 'primeng/carousel';
+import { SkeletonModule } from 'primeng/skeleton';
+import { AvatarModule } from 'primeng/avatar';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { CarouselModule } from 'primeng/carousel';
     CardModule,
     FormsModule,
     CarouselModule,
+    SkeletonModule,
+    AvatarModule
   ],
   providers: [
     CharacterSheetCalculator

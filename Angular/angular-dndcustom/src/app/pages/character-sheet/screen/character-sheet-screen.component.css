@@ -5,4 +5,8 @@
 
 ::ng-deep .charactersCarousel{
     height: 500px;
+    margin-right: 50px;
+}
+::ng-deep .characterCards{
+    width: 250px;
 }

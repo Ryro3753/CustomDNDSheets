@@ -19,5 +19,6 @@ namespace API.Models
         public int Level { get; set; }
         public string ProfiencyValues { get; set; }
 
+
     }
 }
