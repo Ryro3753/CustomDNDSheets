@@ -16,21 +16,16 @@
                             </div>
                         </div>
                     </div>
-                    size:{{character.size}}
-                    eyes:{{character.eyes}}
-                    height:{{character.height}}
-                    hair:{{character.hair}}
-                    skin:{{character.skin}}
-                    age:{{character.age}}
-                    weight:{{character.weight}}
+                    <div class="row">{{character.age}} years old, has {{character.eyes}} eyes with {{character.hair}} hair.
+                        {{character.height}} tall and weighs {{character.weight}}. Has {{character.skin}} skin </div>
                 </p-card>
             </ng-template>
         </p-carousel>
         <div class="col-sm-2">
-            <app-character-sheet-secondary-stats></app-character-sheet-secondary-stats>
+            <app-character-sheet-secondary-stats *ngIf="SecondaryStatComponentEnable"></app-character-sheet-secondary-stats>
         </div>
-        <!-- <div class="col-sm-2">
-        <app-character-sheet-saving-throws #characterSavingThrows></app-character-sheet-saving-throws>
+        <div class="col-sm-2">
+        <app-character-sheet-saving-throws *ngIf="SavingThrowComponentEnable" [characterProfiency]="character.profiencyValues" #characterSavingThrows></app-character-sheet-saving-throws>
     </div>
-    -->
+    
 </div>

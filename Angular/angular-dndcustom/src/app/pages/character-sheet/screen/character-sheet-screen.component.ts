@@ -22,16 +22,19 @@ export class CharacterSheetScreenComponent implements OnInit {
   charactersCardData : CharacterCard[];
   character : Character;
 
+  SecondaryStatComponentEnable : boolean = false;
+  SavingThrowComponentEnable : boolean = false;
+
   @ViewChild('characterSavingThrows') savingThrowComponent: CharacterSheetSavingThrowsComponent;
 
   async ngOnInit(): Promise<void> {
   this.characters = await this.service.getCharacters();
   this.charactersApperances = await this.serviceApperance.getCharactersApperance();
-  this.charactersCardData =  await this.calculator.readDataFromService(this.characters, this.charactersApperances);
- 
-  console.log(this.charactersCardData);
+  this.charactersCardData =  await CharacterSheetCalculator.readDataFromService(this.characters, this.charactersApperances);
   this.character = this.characters.filter(i => i.ref == 4)[0];
-  //this.savingThrowComponent.characterProfiency = this.character.profiencyValues;
+  this.SecondaryStatComponentEnable = true;
+  this.SavingThrowComponentEnable = true;
+
   }
 
   characterClick(clickedCharacter){

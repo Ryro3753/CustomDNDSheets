@@ -5,11 +5,11 @@ import { CharacterSecondaryStats } from "src/app/models/character/character-seco
 import { Character, CharacterCard } from "src/app/models/Character/Character.model";
 
 @Injectable()
-export class CharacterSheetCalculator{
+export  class  CharacterSheetCalculator{
 
   constructor() { }
 
-  async secondaryStatModifierCalculate(secondaryStats : CharacterSecondaryStats) : Promise<CharacterSecondaryStats>{
+  static async secondaryStatModifierCalculate(secondaryStats : CharacterSecondaryStats) : Promise<CharacterSecondaryStats>{
     let modifiers = {} as CharacterSecondaryStats;
     const keys = Object.getOwnPropertyNames(secondaryStats);
     keys.forEach(i => {
@@ -18,7 +18,7 @@ export class CharacterSheetCalculator{
     return modifiers;
   }
 
-  async savingThrowsProfiencyCalculate(characterProfiency : string) : Promise<CharacterSavingThrowsProfiency>{
+  static async savingThrowsProfiencyCalculate(characterProfiency : string) : Promise<CharacterSavingThrowsProfiency>{
     let profiencies = {
       strength : false,
       dexterity : false,
@@ -31,10 +31,10 @@ export class CharacterSheetCalculator{
     keys.forEach(i => {
       profiencies[i] = characterProfiency.includes(i) ? true : false;
     })
-    return profiencies
+      return profiencies
   }
 
-  async readDataFromService(characters : Character[], apeerances : CharacterApperance[]){
+  static async readDataFromService(characters : Character[], apeerances : CharacterApperance[]){
     let cards = [] as CharacterCard[];
     characters.forEach(e => {
       let apperance = apeerances.filter(i => i.characterRef == e.ref);

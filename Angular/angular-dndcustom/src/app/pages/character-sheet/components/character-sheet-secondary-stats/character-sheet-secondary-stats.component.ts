@@ -10,8 +10,8 @@ import { CharacterSheetCalculator } from '../../character-sheet.calculator';
 })
 export class CharacterSheetSecondaryStatsComponent implements OnInit {
 
-  constructor(readonly service : CharacterSecondaryStatsService,
-              readonly calculator : CharacterSheetCalculator) { }
+  constructor(readonly service : CharacterSecondaryStatsService
+              ) { }
 
   public characterRef : number = 4;
   cardDataSource : CharacterSecondaryStats;
@@ -24,7 +24,7 @@ export class CharacterSheetSecondaryStatsComponent implements OnInit {
 
   async characterFilter(){
     this.cardDataSource = this.allStats.filter(i => i.characterRef == this.characterRef)[0];
-    this.cardModifierDataSource = await this.calculator.secondaryStatModifierCalculate(this.cardDataSource);
+    this.cardModifierDataSource = await CharacterSheetCalculator.secondaryStatModifierCalculate(this.cardDataSource);
   }
 
 }
