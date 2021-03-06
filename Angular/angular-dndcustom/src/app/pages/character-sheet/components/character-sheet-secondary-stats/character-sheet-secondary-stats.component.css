@@ -5,6 +5,9 @@
     border-style: solid;
     border-color: blueviolet;
 }
+::ng-deep .secondaryStatCard:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
 
 ::ng-deep .cardStatValues{
     text-align: center;
