@@ -31,10 +31,9 @@ export class CharacterSheetScreenComponent implements OnInit {
   this.characters = await this.service.getCharacters();
   this.charactersApperances = await this.serviceApperance.getCharactersApperance();
   this.charactersCardData =  await CharacterSheetCalculator.readDataFromService(this.characters, this.charactersApperances);
-  this.selectedCharacter = this.characters.filter(i => i.ref == 4)[0];
+  this.selectedCharacter = {ref:0} as Character;
   this.SecondaryStatComponentEnable = true;
   this.SavingThrowComponentEnable = true;
-
   }
 
   characterClick(clickedCharacter){

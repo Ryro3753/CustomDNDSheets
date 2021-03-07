@@ -9,7 +9,7 @@ export  class  CharacterSheetCalculator{
 
   constructor() { }
 
-  static async secondaryStatModifierCalculate(secondaryStats : CharacterSecondaryStats) : Promise<CharacterSecondaryStats>{
+  static secondaryStatModifierCalculate(secondaryStats : CharacterSecondaryStats) : CharacterSecondaryStats{
     let modifiers = {} as CharacterSecondaryStats;
     const keys = Object.getOwnPropertyNames(secondaryStats);
     keys.forEach(i => {

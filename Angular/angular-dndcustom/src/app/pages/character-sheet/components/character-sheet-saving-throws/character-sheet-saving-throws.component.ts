@@ -33,6 +33,7 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
   }
 
   @Input() set character(character: Character) {
+    if (character.ref == 0) { return }
     this.cardDataSource = this.cardDataSourceFilter(character.ref);
     this.characterSavingThrowProfiency = this.characterProfiencyFilter(character.profiencyValues);
   }

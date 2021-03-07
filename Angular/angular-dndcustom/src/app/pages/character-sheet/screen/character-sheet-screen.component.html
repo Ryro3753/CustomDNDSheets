@@ -1,6 +1,6 @@
 <div class="row characterScreen" *ngIf="charactersCardData != undefined">
     <p-carousel class="charactersCarousel" circular="true" verticalViewPortHeight="700px" [value]="charactersCardData"
-        [numVisible]="7" [numScroll]="1" orientation="vertical">
+        [numVisible]="3" [numScroll]="1" orientation="vertical">
         <ng-template let-character pTemplate="item">
             <p-card [styleClass]="selectedCharacter.ref == character.ref ? 'characterCardsSelected' : 'characterCards'">
                 <div class="row">
@@ -22,11 +22,11 @@
         </ng-template>
     </p-carousel>
     <div class="col-sm-2">
-        <app-character-sheet-secondary-stats *ngIf="SecondaryStatComponentEnable"></app-character-sheet-secondary-stats>
+        <app-character-sheet-secondary-stats  *ngIf="SecondaryStatComponentEnable" [character]="selectedCharacter"></app-character-sheet-secondary-stats>
     </div>
     <div class="col-sm-2">
         <app-character-sheet-saving-throws *ngIf="SavingThrowComponentEnable"
-            [characterProfiency]="selectedCharacter.profiencyValues" [character]="selectedCharacter" #characterSavingThrows>
+             [character]="selectedCharacter" #characterSavingThrows>
         </app-character-sheet-saving-throws>
     </div>
 

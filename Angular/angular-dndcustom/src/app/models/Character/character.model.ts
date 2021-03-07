@@ -1,6 +1,6 @@
 export interface Character {
     ref : number,
-    characterName : string,
+    characterName? : string,
     class? : string,
     level? : string,
     race? : string,
