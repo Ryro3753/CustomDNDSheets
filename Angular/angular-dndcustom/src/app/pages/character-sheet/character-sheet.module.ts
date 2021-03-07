@@ -12,12 +12,14 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import { CharacterSheetSkillsComponent } from './components/character-sheet-skills/character-sheet-skills.component';
 
 @NgModule({
   declarations: [
     CharacterSheetScreenComponent,
     CharacterSheetSecondaryStatsComponent,
-    CharacterSheetSavingThrowsComponent],
+    CharacterSheetSavingThrowsComponent,
+    CharacterSheetSkillsComponent],
   imports: [
     RouterModule.forChild([{
       path: '',
