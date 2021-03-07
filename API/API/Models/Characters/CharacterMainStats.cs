@@ -22,6 +22,6 @@ namespace API.Models
         public int Health { get; set; }
         public int MaxHealth { get; set; }
         public int Experience { get; set; }
-
+        public int TempHealth { get; set; }
     }
 }

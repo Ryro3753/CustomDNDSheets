@@ -38,7 +38,8 @@ namespace API.Services
                     Inspiration = model.Inspiration,
                     MaxHealth = model.MaxHealth,
                     Speed = model.Speed,
-                    Profiency = model.Profiency
+                    Profiency = model.Profiency,
+                    TempHealth = model.TempHealth
                     
                 };
                 await _context.CharacterMainStats.AddAsync(characterMainStats);
@@ -56,6 +57,7 @@ namespace API.Services
                 existingCharacterMainStats.MaxHealth = model.MaxHealth;
                 existingCharacterMainStats.Speed = model.Speed;
                 existingCharacterMainStats.Profiency = model.Profiency;
+                existingCharacterMainStats.TempHealth = model.TempHealth;
                 await _context.SaveChangesAsync();
                 return existingCharacterMainStats.Ref;
 

@@ -41,7 +41,10 @@ namespace API.Services
                     HitBase = model.HitBase,
                     Level = model.Level,
                     Range = model.Range,
-                    HasIcon = model.HasIcon
+                    HasIcon = model.HasIcon,
+                    Area = model.Area,
+                    Concentration = model.Concentration,
+                    DamageType = model.DamageType
                 };
                 await _context.Spell.AddAsync(spell);
                 await _context.SaveChangesAsync();
@@ -61,6 +64,9 @@ namespace API.Services
                 existingSpell.Level = model.Level;
                 existingSpell.Range = model.Range;
                 existingSpell.HasIcon = model.HasIcon;
+                existingSpell.Area = model.Area;
+                existingSpell.Concentration = model.Concentration;
+                existingSpell.DamageType = model.DamageType;
                 await _context.SaveChangesAsync();
                 return existingSpell.Ref;
 

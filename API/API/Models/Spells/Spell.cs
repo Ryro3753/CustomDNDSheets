@@ -24,5 +24,9 @@ namespace API.Models.Equipments
         public string HitBase { get; set; }
         public string DamageBase { get; set; }
         public int HasIcon { get; set; }
+        public string DamageType { get; set; }
+        public int Area { get; set; }
+        public bool Concentration { get; set; }
+
     }
 }
