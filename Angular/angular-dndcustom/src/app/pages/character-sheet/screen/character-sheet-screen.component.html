@@ -1,27 +1,5 @@
-<div class="row characterScreen" *ngIf="charactersCardData != undefined">
-    <p-carousel class="charactersCarousel" verticalViewPortHeight="650px" [value]="charactersCardData" [numVisible]="2"
-        [numScroll]="1" orientation="vertical">
-        <ng-template let-character pTemplate="item">
-            <p-card [styleClass]="selectedCharacter.ref == character.ref ? 'characterCardsSelected' : 'characterCards'">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p-avatar styleClass="characterAvatar" (click)="characterClick(character)" shape="circle"
-                            size="large"></p-avatar>
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="row justify-content-md-center">
-                            <span>{{character.characterName}}</span>
-                        </div>
-                        <div class="row justify-content-md-center">
-                            <span>{{character.level}} level {{character.race}} {{character.class}}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">{{character.age}} years old, has {{character.eyes}} eyes with {{character.hair}} hair.
-                    {{character.height}} tall and weighs {{character.weight}}. Has {{character.skin}} skin </div>
-            </p-card>
-        </ng-template>
-    </p-carousel>
+<div class="row characterScreen" >
+    <app-character-sheet-selection (CharacterClick)="emittedCharacterClicked($event)"></app-character-sheet-selection>
     <div class="col-sm-2">
         <app-character-sheet-secondary-stats *ngIf="SecondaryStatComponentEnable" [character]="selectedCharacter">
         </app-character-sheet-secondary-stats>

@@ -48,6 +48,10 @@ export class CharacterSheetScreenComponent implements OnInit {
     this.charactersCardData.unshift(clickedCharacter);
   }
 
+  emittedCharacterClicked(e){
+    this.selectedCharacter = e;
+  }
+
 
 
 }
