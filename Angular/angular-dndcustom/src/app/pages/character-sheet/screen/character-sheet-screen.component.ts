@@ -13,21 +13,24 @@ export class CharacterSheetScreenComponent implements OnInit {
 
   selectedCharacter: Character;
 
-  SecondaryStatComponentEnable: boolean = false;
+  SecondaryStatsComponentEnable: boolean = false;
   SavingThrowComponentEnable: boolean = false;
   SkillsComponentEnable: boolean = false;
+  MainStatsComponentEnable: boolean = false;
 
-  @ViewChild('characterSavingThrows') savingThrowComponent: CharacterSheetSavingThrowsComponent;
 
   async ngOnInit(): Promise<void> {
+    this.selectedCharacter = { ref: 0 } as Character;
     this.activateTheComponent();
+
   }
 
   activateTheComponent() {
-    this.SecondaryStatComponentEnable = true;
+    this.SecondaryStatsComponentEnable = true;
     this.SavingThrowComponentEnable = true;
     this.SkillsComponentEnable = true;
-  }
+    this.MainStatsComponentEnable = true;
+}
 
   emittedCharacterClicked(e) {
     this.selectedCharacter = e;

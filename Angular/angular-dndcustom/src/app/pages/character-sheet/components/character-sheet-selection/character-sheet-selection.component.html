@@ -1,10 +1,10 @@
 <p-carousel *ngIf="charactersCardData != undefined" class="charactersCarousel" verticalViewPortHeight="650px" [value]="charactersCardData" [numVisible]="2"
-        [numScroll]="1" orientation="vertical">
+        [numScroll]="1" orientation="vertical" #CharacterCarousel>
         <ng-template let-character pTemplate="item">
             <p-card [styleClass]="selectedCharacter.ref == character.ref ? 'characterCardsSelected' : 'characterCards'">
                 <div class="row">
                     <div class="col-sm-3">
-                        <p-avatar styleClass="characterAvatar" (click)="characterClick(character)" shape="circle"
+                        <p-avatar styleClass="characterAvatar" (click)="characterClick(character)" shape="circle" [image]="ImagePath + character.ref + '.jpg'"
                             size="large"></p-avatar>
                     </div>
                     <div class="col-sm-9">

@@ -22,12 +22,15 @@ export class IconService {
     });
    }
 
-   static getImagesPath(Type:number):string{ //Type = 1 Equipment, Type = 2 Spell
+   static getImagesPath(Type:number):string{ //Type = 1 Equipment, Type = 2 Spell, Type = 3 Character
      if(Type == 1){
       return environment.service + "/images/EquipmentImages/";
      }
-     else{
+     else if(Type == 2){
       return environment.service + "/images/SpellImages/";
+     }
+     else if(Type == 3){
+      return environment.service + "/images/CharacterImages/";
      }
    }
    static getPlaceOverIcon(Type:number):string{

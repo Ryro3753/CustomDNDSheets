@@ -1,15 +1,15 @@
-<div class="row characterScreen" >
+<div class="row characterScreen">
     <app-character-sheet-selection (CharacterClick)="emittedCharacterClicked($event)"></app-character-sheet-selection>
     <div class="col-sm-2">
-        <app-character-sheet-secondary-stats *ngIf="SecondaryStatComponentEnable" [character]="selectedCharacter">
+        <app-character-sheet-secondary-stats *ngIf="SecondaryStatsComponentEnable" [character]="selectedCharacter">
         </app-character-sheet-secondary-stats>
     </div>
     <div class="col-sm-2">
-        <app-character-sheet-saving-throws *ngIf="SavingThrowComponentEnable" [character]="selectedCharacter"
-            #characterSavingThrows>
+        <app-character-sheet-saving-throws *ngIf="SavingThrowComponentEnable" [character]="selectedCharacter">
         </app-character-sheet-saving-throws>
     </div>
     <div class="col-sm-3">
+        <app-character-sheet-main-stats *ngIf="MainStatsComponentEnable"></app-character-sheet-main-stats>
     </div>
     <div class="col-sm-2">
         <app-character-sheet-skills *ngIf="SkillsComponentEnable" [character]="selectedCharacter">
