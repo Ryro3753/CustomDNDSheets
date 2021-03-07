@@ -1,6 +1,6 @@
 <div class="row characterScreen" *ngIf="charactersCardData != undefined">
-    <p-carousel class="charactersCarousel" circular="true" verticalViewPortHeight="700px" [value]="charactersCardData"
-        [numVisible]="3" [numScroll]="1" orientation="vertical">
+    <p-carousel class="charactersCarousel"  verticalViewPortHeight="650px" [value]="charactersCardData"
+        [numVisible]="2" [numScroll]="1" orientation="vertical">
         <ng-template let-character pTemplate="item">
             <p-card [styleClass]="selectedCharacter.ref == character.ref ? 'characterCardsSelected' : 'characterCards'">
                 <div class="row">
