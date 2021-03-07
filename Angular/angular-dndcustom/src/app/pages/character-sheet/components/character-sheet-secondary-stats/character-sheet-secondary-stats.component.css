@@ -9,23 +9,23 @@
     box-shadow: 10px 10px 5px #aaaaaa;
 }
 
-::ng-deep .cardStatValues{
+::ng-deep .secondaryStatCardStatValues{
     text-align: center;
     position: relative;
     bottom:40px;
 }
-::ng-deep .cardStatModifier{
+::ng-deep .secondaryStatCardStatModifier{
     text-align: center;
     position: relative;
     bottom:50px;
 }
-::ng-deep .cardStat{
+::ng-deep .secondaryStatCardStat{
     text-align: center;
     position: relative;
     bottom:25px;
     font-weight: 500;
 }
-::ng-deep .cardStatModifierBorder{
+::ng-deep .secondaryStatCardStatModifierBorder{
     border-bottom-style: solid;
     border-right-style: solid;
     border-left-style: solid;

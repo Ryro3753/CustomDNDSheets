@@ -1,11 +1,12 @@
 <div class="row characterScreen" *ngIf="charactersCardData != undefined">
-    <p-carousel class="charactersCarousel"  verticalViewPortHeight="650px" [value]="charactersCardData"
-        [numVisible]="2" [numScroll]="1" orientation="vertical">
+    <p-carousel class="charactersCarousel" verticalViewPortHeight="650px" [value]="charactersCardData" [numVisible]="2"
+        [numScroll]="1" orientation="vertical">
         <ng-template let-character pTemplate="item">
             <p-card [styleClass]="selectedCharacter.ref == character.ref ? 'characterCardsSelected' : 'characterCards'">
                 <div class="row">
                     <div class="col-sm-3">
-                        <p-avatar styleClass="characterAvatar" (click)="characterClick(character)" shape="circle" size="large"></p-avatar>
+                        <p-avatar styleClass="characterAvatar" (click)="characterClick(character)" shape="circle"
+                            size="large"></p-avatar>
                     </div>
                     <div class="col-sm-9">
                         <div class="row justify-content-md-center">
@@ -22,12 +23,18 @@
         </ng-template>
     </p-carousel>
     <div class="col-sm-2">
-        <app-character-sheet-secondary-stats  *ngIf="SecondaryStatComponentEnable" [character]="selectedCharacter"></app-character-sheet-secondary-stats>
+        <app-character-sheet-secondary-stats *ngIf="SecondaryStatComponentEnable" [character]="selectedCharacter">
+        </app-character-sheet-secondary-stats>
     </div>
     <div class="col-sm-2">
-        <app-character-sheet-saving-throws *ngIf="SavingThrowComponentEnable"
-             [character]="selectedCharacter" #characterSavingThrows>
+        <app-character-sheet-saving-throws *ngIf="SavingThrowComponentEnable" [character]="selectedCharacter"
+            #characterSavingThrows>
         </app-character-sheet-saving-throws>
     </div>
-
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-2">
+        <app-character-sheet-skills *ngIf="SkillsComponentEnable" [character]="selectedCharacter">
+        </app-character-sheet-skills>
+    </div>
 </div>

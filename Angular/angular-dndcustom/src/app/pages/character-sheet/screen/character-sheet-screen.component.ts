@@ -13,39 +13,41 @@ import { CharacterSheetSavingThrowsComponent } from '../components/character-she
 })
 export class CharacterSheetScreenComponent implements OnInit {
 
-  constructor(readonly service : CharacterService,
-              readonly serviceApperance : CharacterApperanceService,
-              ) { }
+  constructor(readonly service: CharacterService,
+    readonly serviceApperance: CharacterApperanceService,
+  ) { }
 
-  characters : Character[];
-  charactersApperances : CharacterApperance[];
-  charactersCardData : CharacterCard[];
-  selectedCharacter : Character;
+  characters: Character[];
+  charactersApperances: CharacterApperance[];
+  charactersCardData: CharacterCard[];
+  selectedCharacter: Character;
 
-  SecondaryStatComponentEnable : boolean = false;
-  SavingThrowComponentEnable : boolean = false;
+  SecondaryStatComponentEnable: boolean = false;
+  SavingThrowComponentEnable: boolean = false;
+  SkillsComponentEnable: boolean = false;
 
   @ViewChild('characterSavingThrows') savingThrowComponent: CharacterSheetSavingThrowsComponent;
 
   async ngOnInit(): Promise<void> {
-  this.characters = await this.service.getCharacters();
-  this.charactersApperances = await this.serviceApperance.getCharactersApperance();
-  this.charactersCardData =  await CharacterSheetCalculator.readDataFromService(this.characters, this.charactersApperances);
-  this.selectedCharacter = {ref:0} as Character;
-  this.SecondaryStatComponentEnable = true;
-  this.SavingThrowComponentEnable = true;
+    this.characters = await this.service.getCharacters();
+    this.charactersApperances = await this.serviceApperance.getCharactersApperance();
+    this.charactersCardData = await CharacterSheetCalculator.readDataFromService(this.characters, this.charactersApperances);
+    this.selectedCharacter = { ref: 0 } as Character;
+    this.SecondaryStatComponentEnable = true;
+    this.SavingThrowComponentEnable = true;
+    this.SkillsComponentEnable = true;
   }
 
-  characterClick(clickedCharacter){
+  characterClick(clickedCharacter) {
     this.selectedCharacter = clickedCharacter;
     this.reOrderTheCards(clickedCharacter);
   }
 
-  reOrderTheCards(clickedCharacter){
+  reOrderTheCards(clickedCharacter) {
     this.charactersCardData = this.charactersCardData.filter(i => i.ref != clickedCharacter.ref);
     this.charactersCardData.unshift(clickedCharacter);
   }
 
-  
+
 
 }

@@ -1,40 +1,40 @@
 <div *ngIf="cardDataSource != undefined && cardModifierDataSource != undefined">
     <p-card styleClass="secondaryStatCard firstCard ">
-        <p class="cardStat">Strength</p>
-        <p class="cardStatValues">{{cardDataSource.strength}}</p>
-        <p class="cardStatModifier"><span class="cardStatModifierBorder"><span
+        <p class="secondaryStatCardStat">Strength</p>
+        <p class="secondaryStatCardStatValues">{{cardDataSource.strength}}</p>
+        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder"><span
                     *ngIf="cardModifierDataSource.strength >= 0">+</span>{{cardModifierDataSource.strength}}</span></p>
     </p-card>
     <p-card styleClass="secondaryStatCard ">
-        <p class="cardStat">Dexterity</p>
-        <p class="cardStatValues">{{cardDataSource.dexterity}}</p>
-        <p class="cardStatModifier"><span class="cardStatModifierBorder"><span
+        <p class="secondaryStatCardStat">Dexterity</p>
+        <p class="secondaryStatCardStatValues">{{cardDataSource.dexterity}}</p>
+        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder"><span
                     *ngIf="cardModifierDataSource.dexterity >= 0">+</span>{{cardModifierDataSource.dexterity}}</span></p>
     </p-card>
     <p-card styleClass="secondaryStatCard ">
-        <p class="cardStat">Constitution</p>
-        <p class="cardStatValues">{{cardDataSource.constitution}}</p>
-        <p class="cardStatModifier"><span class="cardStatModifierBorder"><span
+        <p class="secondaryStatCardStat">Constitution</p>
+        <p class="secondaryStatCardStatValues">{{cardDataSource.constitution}}</p>
+        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder"><span
                     *ngIf="cardModifierDataSource.constitution >= 0">+</span>{{cardModifierDataSource.constitution}}</span>
         </p>
     </p-card>
     <p-card styleClass="secondaryStatCard ">
-        <p class="cardStat">Intelligence</p>
-        <p class="cardStatValues">{{cardDataSource.intelligence}}</p>
-        <p class="cardStatModifier"><span class="cardStatModifierBorder"><span
+        <p class="secondaryStatCardStat">Intelligence</p>
+        <p class="secondaryStatCardStatValues">{{cardDataSource.intelligence}}</p>
+        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder"><span
                     *ngIf="cardModifierDataSource.intelligence >= 0">+</span>{{cardModifierDataSource.intelligence}}</span>
         </p>
     </p-card>
     <p-card styleClass="secondaryStatCard ">
-        <p class="cardStat">Wisdom</p>
-        <p class="cardStatValues">{{cardDataSource.wisdom}}</p>
-        <p class="cardStatModifier"><span class="cardStatModifierBorder"><span
+        <p class="secondaryStatCardStat">Wisdom</p>
+        <p class="secondaryStatCardStatValues">{{cardDataSource.wisdom}}</p>
+        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder"><span
                     *ngIf="cardModifierDataSource.wisdom >= 0">+</span>{{cardModifierDataSource.wisdom}}</span></p>
     </p-card>
     <p-card styleClass="secondaryStatCard ">
-        <p class="cardStat">Charisma</p>
-        <p class="cardStatValues">{{cardDataSource.charisma}}</p>
-        <p class="cardStatModifier"><span class="cardStatModifierBorder"><span
+        <p class="secondaryStatCardStat">Charisma</p>
+        <p class="secondaryStatCardStatValues">{{cardDataSource.charisma}}</p>
+        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder"><span
                     *ngIf="cardModifierDataSource.charisma >= 0">+</span>{{cardModifierDataSource.charisma}}</span></p>
     </p-card>
 

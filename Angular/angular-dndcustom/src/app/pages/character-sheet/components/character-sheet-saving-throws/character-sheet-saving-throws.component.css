@@ -1,10 +1,10 @@
-::ng-deep .card{
+::ng-deep .savingThrowCard{
     text-align: center;
     width: 375px;
     margin-left: -70px;
     margin-top: 25px;
 }
-::ng-deep .card:hover{
+::ng-deep .savingThrowCard:hover{
     box-shadow: 10px 10px 5px #aaaaaa;
 }
 ::ng-deep .savingThrowStatsLeft{
