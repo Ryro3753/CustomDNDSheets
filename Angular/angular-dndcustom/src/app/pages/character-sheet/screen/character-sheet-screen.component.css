@@ -14,7 +14,7 @@
 
 ::ng-deep .characterCardsSelected{
     width: 250px;
-    border: 4px solid orangered;
+    border: 4px solid blueviolet;
 }
 ::ng-deep .characterCardsSelected:hover{
     box-shadow: 10px 10px 5px #aaaaaa;

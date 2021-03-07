@@ -1,7 +1,110 @@
 <p-card styleClass="skillsCard" *ngIf="characterSkills != undefined">
     <div class="row skill">
         <i [class]="characterSkillProfiency.acrobatics ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
-        <span class="skillValue">{{characterSkills.acrobatics}}</span>
+        <span class="skillValue"><span *ngIf="characterSkills.acrobatics >= 0">+</span>{{characterSkills.acrobatics}}
+        </span>
         <span class="skillsName">Acrobatics</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.animalHandling ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.animalHandling >= 0">+</span>{{characterSkills.animalHandling}}
+        </span>
+        <span class="skillsName">Animal Handling</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.arcana ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.arcana >= 0">+</span>{{characterSkills.arcana}}
+        </span>
+        <span class="skillsName">Arcana</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.athletics ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.athletics >= 0">+</span>{{characterSkills.athletics}}
+        </span>
+        <span class="skillsName">Athletics</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.deception ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.deception >= 0">+</span>{{characterSkills.deception}}
+        </span>
+        <span class="skillsName">Deception</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.history ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.history >= 0">+</span>{{characterSkills.history}}
+        </span>
+        <span class="skillsName">History</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.insight ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.insight >= 0">+</span>{{characterSkills.insight}}
+        </span>
+        <span class="skillsName">Insight</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.intimidation ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.intimidation >= 0">+</span>{{characterSkills.intimidation}}
+        </span>
+        <span class="skillsName">Intimidation</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.investigation ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.investigation >= 0">+</span>{{characterSkills.investigation}}
+        </span>
+        <span class="skillsName">Investigation</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.medicine ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.medicine >= 0">+</span>{{characterSkills.medicine}}
+        </span>
+        <span class="skillsName">Medicine</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.nature ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.nature >= 0">+</span>{{characterSkills.nature}}
+        </span>
+        <span class="skillsName">Nature</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.perception ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.perception >= 0">+</span>{{characterSkills.perception}}
+        </span>
+        <span class="skillsName">Perception</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.performance ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.performance >= 0">+</span>{{characterSkills.performance}}
+        </span>
+        <span class="skillsName">Performance</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.persuasion ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.persuasion >= 0">+</span>{{characterSkills.persuasion}}
+        </span>
+        <span class="skillsName">Persuasion</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.religion ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.religion >= 0">+</span>{{characterSkills.religion}}
+        </span>
+        <span class="skillsName">Religion</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.sleightOfHand ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.sleightOfHand >= 0">+</span>{{characterSkills.sleightOfHand}}
+        </span>
+        <span class="skillsName">Sleight Of Hand</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.stealth ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.stealth >= 0">+</span>{{characterSkills.stealth}}
+        </span>
+        <span class="skillsName">Stealth</span>
+    </div>
+    <div class="row skill">
+        <i [class]="characterSkillProfiency.survival ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
+        <span class="skillValue"><span *ngIf="characterSkills.survival >= 0">+</span>{{characterSkills.survival}}
+        </span>
+        <span class="skillsName">Survival</span>
     </div>
 </p-card>

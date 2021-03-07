@@ -1,6 +1,9 @@
 ::ng-deep .skillsName {
     border-bottom: grey ;
     border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: blueviolet;
+    width: 150px;
 }
 ::ng-deep .skill{
     margin:10px;
@@ -9,12 +12,21 @@
 
 ::ng-deep .skillValue{
     margin-left: 10px;
+    font-weight: bold;
 }
 ::ng-deep .skillProfiency{
-    margin-top: 10px;
+    margin-top: 6px;
     margin-left: 10px;
 }
 
 ::ng-deep .skillsCard{
+    margin-left:100px;
     margin-top:25px;
+    width: 275px;
+}
+::ng-deep .skillsCard:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+::ng-deep .skillsName{
+    margin-left : 10px;
 }
