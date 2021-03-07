@@ -1,9 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CharacterApperance } from 'src/app/models/character/character-apperance.model';
-import { Character, CharacterCard } from 'src/app/models/Character/Character.model';
-import { CharacterApperanceService } from 'src/app/services/character-services/character-apperance.service';
-import { CharacterService } from 'src/app/services/character-services/character.service';
-import { CharacterSheetCalculator } from '../character-sheet.calculator';
+import { Character } from 'src/app/models/Character/Character.model';
 import { CharacterSheetSavingThrowsComponent } from '../components/character-sheet-saving-throws/character-sheet-saving-throws.component';
 
 @Component({
