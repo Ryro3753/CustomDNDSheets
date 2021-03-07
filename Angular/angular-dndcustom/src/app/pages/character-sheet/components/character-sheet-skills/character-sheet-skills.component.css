@@ -13,6 +13,7 @@
 ::ng-deep .skillValue{
     margin-left: 10px;
     font-weight: bold;
+    width: 30px;
 }
 ::ng-deep .skillProfiency{
     margin-top: 6px;
@@ -22,7 +23,7 @@
 ::ng-deep .skillsCard{
     margin-left:100px;
     margin-top:25px;
-    width: 275px;
+    width: 280px;
 }
 ::ng-deep .skillsCard:hover{
     box-shadow: 10px 10px 5px #aaaaaa;

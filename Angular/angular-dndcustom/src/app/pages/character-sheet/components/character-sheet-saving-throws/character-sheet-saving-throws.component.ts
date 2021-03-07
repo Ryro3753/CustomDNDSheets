@@ -14,8 +14,8 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
   constructor(readonly service: CharacterSavingThrowsService) { }
 
 
-  cardDataSource: CharacterSavingThrows;
-
+  savingThrow: CharacterSavingThrows;
+  level : number;
   @Input() characterProfiency: string;
   characterSavingThrowProfiency: CharacterSavingThrowsProfiency;
   allSavingThrows: CharacterSavingThrows[];
@@ -34,8 +34,10 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
 
   @Input() set character(character: Character) {
     if (character.ref == 0) { return }
-    this.cardDataSource = this.cardDataSourceFilter(character.ref);
+    this.level = character.level;
+    const savingThrow = this.cardDataSourceFilter(character.ref);
     this.characterSavingThrowProfiency = this.characterProfiencyFilter(character.profiencyValues);
+    this.savingThrow = CharacterSheetCalculator.savingThrowProfiencyIncrease(this.characterSavingThrowProfiency,savingThrow,this.level);
   }
 
 

@@ -1,29 +1,28 @@
-<div *ngIf="cardDataSource != undefined">
-    <p-card styleClass="savingThrowCard">
-        <span style="text-align: center;">Saving Throws</span>
+<div *ngIf="savingThrow != undefined">
+    <p-card styleClass="savingThrowCard" header="Saving Throws">
         <div class="row FirstRow">
             <span class="savingThrowStatsLeft">Strength<span><span class="savingThrowStatsLeftValue"><span
-                        *ngIf="cardDataSource.strength >= 0">+</span>{{cardDataSource.strength}}</span></span></span>
+                        *ngIf="savingThrow.strength >= 0">+</span>{{savingThrow.strength}}</span></span></span>
             <i [class]="characterSavingThrowProfiency.strength ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'"></i>
             <i [class]="characterSavingThrowProfiency.dexterity ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'"></i>
             <span class="savingThrowStatsRight"><span class="savingThrowStatsRightValue"><span
-                *ngIf="cardDataSource.strength >= 0">+</span>{{cardDataSource.dexterity}}</span>Dexterity<span></span></span>
+                *ngIf="savingThrow.strength >= 0">+</span>{{savingThrow.dexterity}}</span>Dexterity<span></span></span>
         </div>
         <div class="row SecondRow">
             <span class="savingThrowStatsLeft">Wisdom<span><span class="savingThrowStatsLeftValue"><span
-                        *ngIf="cardDataSource.wisdom >= 0">+</span>{{cardDataSource.wisdom}}</span></span></span>
+                        *ngIf="savingThrow.wisdom >= 0">+</span>{{savingThrow.wisdom}}</span></span></span>
             <i [class]="characterSavingThrowProfiency.wisdom ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'"></i>
             <i [class]="characterSavingThrowProfiency.intelligence ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'" ></i>
             <span class="savingThrowStatsRight"><span class="savingThrowStatsRightValue"><span
-                *ngIf="cardDataSource.intelligence >= 0">+</span>{{cardDataSource.intelligence}}</span>Intelligence<span></span></span>
+                *ngIf="savingThrow.intelligence >= 0">+</span>{{savingThrow.intelligence}}</span>Intelligence<span></span></span>
         </div>
         <div class="row ThirdRow">
             <span class="savingThrowStatsLeft">Charisma<span><span class="savingThrowStatsLeftValue"><span
-                        *ngIf="cardDataSource.charisma >= 0">+</span>{{cardDataSource.charisma}}</span></span></span>
+                        *ngIf="savingThrow.charisma >= 0">+</span>{{savingThrow.charisma}}</span></span></span>
             <i [class]="characterSavingThrowProfiency.charisma ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'" ></i>
             <i [class]="characterSavingThrowProfiency.constitution ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'" ></i>
             <span class="savingThrowStatsRight"><span class="savingThrowStatsRightValue"><span
-                *ngIf="cardDataSource.constitution >= 0">+</span>{{cardDataSource.constitution}}</span>Constitution<span></span></span>
+                *ngIf="savingThrow.constitution >= 0">+</span>{{savingThrow.constitution}}</span>Constitution<span></span></span>
         </div>
     </p-card>
 </div>

@@ -15,6 +15,7 @@ export class CharacterSheetSkillsComponent implements OnInit {
   allSkills : CharacterSkills[];
   characterSkills : CharacterSkills;
   characterSkillProfiency : CharacterSkillsProfiency;
+  level : number;
 
   async ngOnInit(): Promise<void> {
     this.allSkills = await this.service.getCharactersSkills();
@@ -30,7 +31,9 @@ export class CharacterSheetSkillsComponent implements OnInit {
 
   @Input() set character(character: Character) {
     if (character.ref == 0) { return }
-    this.characterSkills = this.skillsFilter(character.ref);
+    this.level = character.level;
+    const skills = this.skillsFilter(character.ref);
     this.characterSkillProfiency = this.skillsProfiencyFilter(character.profiencyValues);
+    this.characterSkills = CharacterSheetCalculator.skillsProfiencyIncrease(this.characterSkillProfiency,skills,this.level);
   }
 }

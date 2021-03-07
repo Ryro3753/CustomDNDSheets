@@ -2,7 +2,7 @@ export interface Character {
     ref : number,
     characterName? : string,
     class? : string,
-    level? : string,
+    level? : number,
     race? : string,
     profiencyValues? : string;
 };
@@ -11,7 +11,7 @@ export interface CharacterCard {
     ref : number,
     characterName : string,
     class : string,
-    level : string,
+    level : number,
     race : string,
     profiencyValues? : string;
     size : string,
