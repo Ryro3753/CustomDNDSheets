@@ -10,6 +10,8 @@ import { CharacterSheetCalculator } from './character-sheet.calculator';
 import { CarouselModule } from 'primeng/carousel';
 import { SkeletonModule } from 'primeng/skeleton';
 import { AvatarModule } from 'primeng/avatar';
+import { ButtonModule } from 'primeng/button';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AvatarModule } from 'primeng/avatar';
     FormsModule,
     CarouselModule,
     SkeletonModule,
-    AvatarModule
+    AvatarModule,
+    ButtonModule,
+    RadioButtonModule
   ],
   providers: [
     CharacterSheetCalculator

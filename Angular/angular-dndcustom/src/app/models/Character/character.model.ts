@@ -4,7 +4,7 @@ export interface Character {
     class? : string,
     level? : string,
     race? : string,
-    profiencyValues : string;
+    profiencyValues? : string;
 };
 
 export interface CharacterCard {
@@ -13,6 +13,7 @@ export interface CharacterCard {
     class : string,
     level : string,
     race : string,
+    profiencyValues? : string;
     size : string,
     eyes : string,
     height : string,

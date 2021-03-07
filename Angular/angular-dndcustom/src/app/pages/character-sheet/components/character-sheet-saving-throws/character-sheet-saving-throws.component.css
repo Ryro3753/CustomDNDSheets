@@ -1,3 +1,12 @@
+::ng-deep .card{
+    text-align: center;
+    width: 375px;
+    margin-left: -70px;
+    margin-top: 25px;
+}
+::ng-deep .card:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
 ::ng-deep .savingThrowStatsLeft{
     float:right;
     border-style: solid;
@@ -36,10 +45,7 @@
     margin-right:2px;
     font-weight: 700;
 }
-::ng-deep .card{
-    text-align: center;
-    width: 375px;
-}
+
 
 ::ng-deep .savingThrowProfiency{
     margin:2px;

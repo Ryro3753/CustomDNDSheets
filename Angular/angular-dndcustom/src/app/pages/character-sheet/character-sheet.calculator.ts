@@ -18,7 +18,7 @@ export  class  CharacterSheetCalculator{
     return modifiers;
   }
 
-  static async savingThrowsProfiencyCalculate(characterProfiency : string) : Promise<CharacterSavingThrowsProfiency>{
+  static savingThrowsProfiencyCalculate(characterProfiency : string) : CharacterSavingThrowsProfiency{
     let profiencies = {
       strength : false,
       dexterity : false,
@@ -51,7 +51,8 @@ export  class  CharacterSheetCalculator{
           hair : apperance[0].hair,
           skin : apperance[0].skin,
           age : apperance[0].age,
-          weight : apperance[0].weight
+          weight : apperance[0].weight,
+          profiencyValues : e.profiencyValues
         } as CharacterCard;
         cards.push(cardData);
       }

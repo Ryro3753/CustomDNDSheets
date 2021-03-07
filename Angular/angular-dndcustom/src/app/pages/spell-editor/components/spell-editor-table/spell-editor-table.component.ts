@@ -25,7 +25,6 @@ export class SpellEditorTableComponent implements OnInit {
     this.iconPath = IconService.getImagesPath(2);
     this.placeOverIconPath = IconService.getPlaceOverIcon(2);
     this.gridDataSource = await this.service.getSpells();
-    console.log(this.gridDataSource);
   }
   async emittedUploadIcon(e) {
     await this.iconService.uploadIcon(e.files[0], this.spellModal.spell.ref, 2);

@@ -11,6 +11,20 @@
     width: 250px;
     border: 4px solid #BFBFBF;
 }
+
+::ng-deep .characterCardsSelected{
+    width: 250px;
+    border: 4px solid orangered;
+}
+::ng-deep .characterCardsSelected:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
 ::ng-deep .characterCards:hover{
     box-shadow: 10px 10px 5px #aaaaaa;
+}
+::ng-deep .cardButtons:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+::ng-deep .characterAvatar:hover{
+    cursor: pointer;
 }

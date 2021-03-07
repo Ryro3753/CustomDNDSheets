@@ -22,7 +22,6 @@ export class AppComponent {
   }
 
   link(e){
-    console.log(e);
   }
 }
 

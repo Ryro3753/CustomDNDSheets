@@ -15,12 +15,12 @@ export class CharacterSheetScreenComponent implements OnInit {
 
   constructor(readonly service : CharacterService,
               readonly serviceApperance : CharacterApperanceService,
-              readonly calculator : CharacterSheetCalculator) { }
+              ) { }
 
   characters : Character[];
   charactersApperances : CharacterApperance[];
   charactersCardData : CharacterCard[];
-  character : Character;
+  selectedCharacter : Character;
 
   SecondaryStatComponentEnable : boolean = false;
   SavingThrowComponentEnable : boolean = false;
@@ -31,14 +31,14 @@ export class CharacterSheetScreenComponent implements OnInit {
   this.characters = await this.service.getCharacters();
   this.charactersApperances = await this.serviceApperance.getCharactersApperance();
   this.charactersCardData =  await CharacterSheetCalculator.readDataFromService(this.characters, this.charactersApperances);
-  this.character = this.characters.filter(i => i.ref == 4)[0];
+  this.selectedCharacter = this.characters.filter(i => i.ref == 4)[0];
   this.SecondaryStatComponentEnable = true;
   this.SavingThrowComponentEnable = true;
 
   }
 
   characterClick(clickedCharacter){
-    console.log(clickedCharacter);
+    this.selectedCharacter = clickedCharacter;
     this.reOrderTheCards(clickedCharacter);
   }
 
