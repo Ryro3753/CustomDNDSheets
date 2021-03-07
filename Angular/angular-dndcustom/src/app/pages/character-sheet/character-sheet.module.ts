@@ -13,13 +13,15 @@ import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { CharacterSheetSkillsComponent } from './components/character-sheet-skills/character-sheet-skills.component';
+import { CharacterSheetSelectionComponent } from './components/character-sheet-selection/character-sheet-selection.component';
 
 @NgModule({
   declarations: [
     CharacterSheetScreenComponent,
     CharacterSheetSecondaryStatsComponent,
     CharacterSheetSavingThrowsComponent,
-    CharacterSheetSkillsComponent],
+    CharacterSheetSkillsComponent,
+    CharacterSheetSelectionComponent],
   imports: [
     RouterModule.forChild([{
       path: '',
