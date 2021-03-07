@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { CharacterApperance } from "src/app/models/character/character-apperance.model";
-import { CharacterSavingThrowsProfiency } from "src/app/models/character/character-saving-throws.model";
+import { CharacterSavingThrows, CharacterSavingThrowsProfiency } from "src/app/models/character/character-saving-throws.model";
 import { CharacterSecondaryStats } from "src/app/models/character/character-secondary-stats.model";
-import { CharacterSkillsProfiency } from "src/app/models/character/character-skills.model";
+import { CharacterSkills, CharacterSkillsProfiency } from "src/app/models/character/character-skills.model";
 import { Character, CharacterCard } from "src/app/models/Character/Character.model";
 
 @Injectable()
@@ -63,7 +63,7 @@ export  class  CharacterSheetCalculator{
       return profiencies
   }
 
-  static async readDataFromService(characters : Character[], apeerances : CharacterApperance[]){
+  static  readDataFromService(characters : Character[], apeerances : CharacterApperance[]){
     let cards = [] as CharacterCard[];
     characters.forEach(e => {
       let apperance = apeerances.filter(i => i.characterRef == e.ref);
@@ -89,4 +89,33 @@ export  class  CharacterSheetCalculator{
     return cards;
   }
 
+  static skillsProfiencyIncrease(profiencies : CharacterSkillsProfiency, skills : CharacterSkills, level : number) : CharacterSkills{
+    let keys = Object.keys(profiencies);
+    let skillsWithProficiency = [] as CharacterSkills;
+    let proficiencyBonus = Math.ceil(1+(level/4));
+    keys.forEach(i => {
+      if(profiencies[i]){
+        skillsWithProficiency[i] = skills[i] + proficiencyBonus;
+      }
+      else {
+        skillsWithProficiency[i] = skills[i];
+      }
+    })
+    return skillsWithProficiency;
+  }
+  
+  static savingThrowProfiencyIncrease(profiencies : CharacterSavingThrowsProfiency, savingThrows : CharacterSavingThrows, level : number) : CharacterSavingThrows{
+    let keys = Object.keys(profiencies);
+    let savingThrowsWithProficiency = [] as CharacterSavingThrows;
+    let proficiencyBonus = Math.ceil(1+(level/4));
+    keys.forEach(i => {
+      if(profiencies[i]){
+        savingThrowsWithProficiency[i] = savingThrows[i] + proficiencyBonus;
+      }
+      else {
+        savingThrowsWithProficiency[i] = savingThrows[i];
+      }
+    })
+    return savingThrowsWithProficiency;
+  }
 }
