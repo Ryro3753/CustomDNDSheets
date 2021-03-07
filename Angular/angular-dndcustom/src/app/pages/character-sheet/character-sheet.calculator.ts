@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { CharacterApperance } from "src/app/models/character/character-apperance.model";
 import { CharacterSavingThrowsProfiency } from "src/app/models/character/character-saving-throws.model";
 import { CharacterSecondaryStats } from "src/app/models/character/character-secondary-stats.model";
+import { CharacterSkillsProfiency } from "src/app/models/character/character-skills.model";
 import { Character, CharacterCard } from "src/app/models/Character/Character.model";
 
 @Injectable()
@@ -27,6 +28,34 @@ export  class  CharacterSheetCalculator{
       wisdom : false,
       intelligence : false
     } as CharacterSavingThrowsProfiency;
+    let keys = Object.keys(profiencies);
+    keys.forEach(i => {
+      profiencies[i] = characterProfiency.includes(i) ? true : false;
+    })
+      return profiencies
+  }
+
+  static skillsProfiencyCalculate(characterProfiency : string) : CharacterSkillsProfiency{
+    let profiencies = {
+      acrobatics : false,
+      animalHandling : false,
+      arcana : false,
+      athletics : false,
+      deception : false,
+      history : false,
+      insight : false,
+      intimidation : false,
+      investigation : false,
+      medicine : false,
+      nature : false,
+      perception : false,
+      performance : false,
+      persuasion : false,
+      religion : false,
+      sleightOfHand : false,
+      stealth : false,
+      survival : false
+    } as CharacterSkillsProfiency;
     let keys = Object.keys(profiencies);
     keys.forEach(i => {
       profiencies[i] = characterProfiency.includes(i) ? true : false;
