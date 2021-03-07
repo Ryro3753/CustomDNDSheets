@@ -11,10 +11,12 @@ import { CarouselModule } from 'primeng/carousel';
 import { SkeletonModule } from 'primeng/skeleton';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
-import {RadioButtonModule} from 'primeng/radiobutton';
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { CharacterSheetSkillsComponent } from './components/character-sheet-skills/character-sheet-skills.component';
 import { CharacterSheetSelectionComponent } from './components/character-sheet-selection/character-sheet-selection.component';
 import { CharacterSheetMainStatsComponent } from './components/character-sheet-main-stats/character-sheet-main-stats.component';
+import { CharacterSheetDetailsComponent } from './components/character-sheet-details/character-sheet-details.component';
+import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { CharacterSheetMainStatsComponent } from './components/character-sheet-m
     CharacterSheetSavingThrowsComponent,
     CharacterSheetSkillsComponent,
     CharacterSheetSelectionComponent,
-    CharacterSheetMainStatsComponent],
+    CharacterSheetMainStatsComponent,
+    CharacterSheetDetailsComponent],
   imports: [
     RouterModule.forChild([{
       path: '',
@@ -37,7 +40,8 @@ import { CharacterSheetMainStatsComponent } from './components/character-sheet-m
     SkeletonModule,
     AvatarModule,
     ButtonModule,
-    RadioButtonModule
+    RadioButtonModule,
+    TabViewModule
   ],
   providers: [
     CharacterSheetCalculator
