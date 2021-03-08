@@ -17,6 +17,7 @@ export class CharacterSheetScreenComponent implements OnInit {
   SavingThrowComponentEnable: boolean = false;
   SkillsComponentEnable: boolean = false;
   MainStatsComponentEnable: boolean = false;
+  DetailsComponentEnable: boolean = false;
 
 
   async ngOnInit(): Promise<void> {

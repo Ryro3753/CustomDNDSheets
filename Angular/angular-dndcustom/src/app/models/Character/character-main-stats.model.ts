@@ -1,13 +1,13 @@
 export interface CharacterMainStats {
-    Ref : number,
-    CharacterRef : number,
-    Speed : number,
-    Armor : number,
-    Initiative : number,
-    Profiency : number,
-    Inspiration : boolean,
-    Health : number,
-    MaxHealth : number,
-    Experience : number
+    ref : number,
+    characterRef : number,
+    speed : number,
+    armor : number,
+    initiative : number,
+    profiency : number,
+    inspiration : boolean,
+    health : number,
+    maxHealth : number,
+    experience : number
 };
 
