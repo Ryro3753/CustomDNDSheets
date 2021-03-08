@@ -11,7 +11,7 @@
                 </app-character-sheet-saving-throws>
             </div>
             <div class="col-sm-7">
-                <app-character-sheet-main-stats *ngIf="MainStatsComponentEnable"></app-character-sheet-main-stats>
+                <app-character-sheet-main-stats *ngIf="MainStatsComponentEnable" [character]="selectedCharacter"></app-character-sheet-main-stats>
             </div>
         </div>
         <div class="row">

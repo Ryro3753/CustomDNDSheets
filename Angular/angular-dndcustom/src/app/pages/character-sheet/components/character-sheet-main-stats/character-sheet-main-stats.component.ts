@@ -14,6 +14,7 @@ export class CharacterSheetMainStatsComponent implements OnInit {
 
   allMainStats : CharacterMainStats[];
   mainStat : CharacterMainStats;
+  colorClass : string = "";
 
   async ngOnInit(): Promise<void> {
     this.allMainStats = await this.service.getCharactersMainStats();
@@ -27,6 +28,7 @@ export class CharacterSheetMainStatsComponent implements OnInit {
   @Input() set character(character: Character) {
     if (character.ref == 0) { return }
     this.mainStat = this.mainStatFilter(character.ref);
+    this.colorClass = "color"+character.class.toLowerCase();
   }
 
 }

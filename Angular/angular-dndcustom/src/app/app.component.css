@@ -1,5 +1,5 @@
 ::ng-deep .colorfighter{
-    border-color: goldenrod;
+    border-color: burlywood;
 }
 ::ng-deep .colorwizard{
     border-color: lightskyblue;
@@ -25,11 +25,11 @@
 ::ng-deep .colorrogue{
     border-color: rgb(68, 68, 68);
 }
-::ng-deep .colorsorceres{
+::ng-deep .colorsorcerers{
     border-color: red
 }
 ::ng-deep .colorpaladin{
-    border-color: gold
+    border-color: goldenrod;
 }
 ::ng-deep .colordruid{
     border-color: green

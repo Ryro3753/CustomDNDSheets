@@ -1,5 +1,5 @@
 <div *ngIf="savingThrow != undefined">
-    <p-card styleClass="savingThrowCard" header="Saving Throws">
+    <p-card styleClass="savingThrowCard {{colorClass}}" header="Saving Throws">
         <div class="row FirstRow">
             <span class="savingThrowStatsLeft {{colorClass}}">Strength<span><span class="savingThrowStatsLeftValue {{colorClass}}"><span
                         *ngIf="savingThrow.strength >= 0">+</span>{{savingThrow.strength}}</span></span></span>

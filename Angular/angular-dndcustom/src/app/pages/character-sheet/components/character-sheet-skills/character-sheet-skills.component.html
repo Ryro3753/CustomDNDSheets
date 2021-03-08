@@ -1,4 +1,4 @@
-<p-card styleClass="skillsCard" *ngIf="characterSkills != undefined">
+<p-card styleClass="skillsCard {{colorClass}}" *ngIf="characterSkills != undefined">
     <div class="row skill">
         <i [class]="characterSkillProfiency.acrobatics ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
         <span class="skillValue"><span *ngIf="characterSkills.acrobatics >= 0">+</span>{{characterSkills.acrobatics}}

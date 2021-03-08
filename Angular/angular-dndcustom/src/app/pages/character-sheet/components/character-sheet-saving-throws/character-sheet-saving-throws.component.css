@@ -4,6 +4,7 @@
     margin-left: -70px;
     margin-top: 25px;
     height: 265px;
+    border-style: solid;
 }
 ::ng-deep .savingThrowCard:hover{
     box-shadow: 10px 10px 5px #aaaaaa;
