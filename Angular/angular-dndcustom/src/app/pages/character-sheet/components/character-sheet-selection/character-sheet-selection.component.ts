@@ -23,6 +23,7 @@ export class CharacterSheetSelectionComponent implements OnInit {
   charactersCardData: CharacterCard[];
   selectedCharacter: Character;
   ImagePath : string;
+  colorClass : string = "";
   
   @Output() CharacterClick : EventEmitter<any> = new EventEmitter<any>();
   @ViewChild('CharacterCarousel') carousel: Carousel;
@@ -39,6 +40,7 @@ export class CharacterSheetSelectionComponent implements OnInit {
     this.reOrderTheCards(clickedCharacter);
     this.CharacterClick.emit(clickedCharacter);
     this.carousel.step(0,0);
+    this.colorClass = "color"+ clickedCharacter.class.toLowerCase();
   }
 
   

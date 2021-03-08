@@ -19,6 +19,7 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
   @Input() characterProfiency: string;
   characterSavingThrowProfiency: CharacterSavingThrowsProfiency;
   allSavingThrows: CharacterSavingThrows[];
+  colorClass : string = "";
 
   async ngOnInit(): Promise<void> {
     this.allSavingThrows = await this.service.getCharactersSavingThrows();
@@ -38,6 +39,7 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
     const savingThrow = this.cardDataSourceFilter(character.ref);
     this.characterSavingThrowProfiency = this.characterProfiencyFilter(character.profiencyValues);
     this.savingThrow = CharacterSheetCalculator.savingThrowProfiencyIncrease(this.characterSavingThrowProfiency,savingThrow,this.level);
+    this.colorClass = "color"+character.class.toLowerCase();
   }
 
 

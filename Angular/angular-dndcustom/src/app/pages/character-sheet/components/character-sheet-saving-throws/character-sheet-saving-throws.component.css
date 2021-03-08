@@ -11,7 +11,6 @@
 ::ng-deep .savingThrowStatsLeft{
     float:right;
     border-style: solid;
-    border-color: blueviolet;
     border-radius: 40%;
     margin: 10px;
     margin-right: 3px;
@@ -22,7 +21,6 @@
 ::ng-deep .savingThrowStatsLeftValue{
     float:right;
     border-left-style: solid;
-    border-color: blueviolet;
     border-radius: 70%;
     padding:2px;
     margin-left:2px;
@@ -31,7 +29,6 @@
 
 ::ng-deep .savingThrowStatsRight{
     border-style: solid;
-    border-color: blueviolet;
     border-radius: 40%;
     margin: 10px;
     margin-left: 5px;
@@ -43,7 +40,6 @@
 ::ng-deep .savingThrowStatsRightValue{
     float:left;
     border-right-style: solid;
-    border-color: blueviolet;
     border-radius: 70%;
     padding:2px;
     margin-right:2px;
@@ -55,3 +51,4 @@
     margin:2px;
     margin-top: 20px;
 }
+

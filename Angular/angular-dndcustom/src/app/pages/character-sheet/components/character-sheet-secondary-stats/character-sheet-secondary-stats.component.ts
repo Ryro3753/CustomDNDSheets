@@ -17,6 +17,9 @@ export class CharacterSheetSecondaryStatsComponent implements OnInit {
   cardDataSource : CharacterSecondaryStats;
   allStats : CharacterSecondaryStats[];
   cardModifierDataSource : CharacterSecondaryStats;
+  colorClass : string = "";
+
+
   async ngOnInit(): Promise<void> {
     this.allStats = await this.service.getCharactersSecondaryStats();
   }
@@ -32,5 +35,6 @@ export class CharacterSheetSecondaryStatsComponent implements OnInit {
     if (character.ref == 0) { return }
     this.cardDataSource = this.characterDataSourceFilter(character.ref);
     this.cardModifierDataSource = this.characterModifierFilter(character.ref);
-  }
+    this.colorClass = "color" + character.class.toLowerCase();
+}
 }

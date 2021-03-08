@@ -12,20 +12,21 @@ import { CharacterSheetCalculator } from '../../character-sheet.calculator';
 export class CharacterSheetSkillsComponent implements OnInit {
 
   constructor(readonly service: CharacterSkillsService) { }
-  allSkills : CharacterSkills[];
-  characterSkills : CharacterSkills;
-  characterSkillProfiency : CharacterSkillsProfiency;
-  level : number;
+  allSkills: CharacterSkills[];
+  characterSkills: CharacterSkills;
+  characterSkillProfiency: CharacterSkillsProfiency;
+  level: number;
+  colorClass : string = "";
 
   async ngOnInit(): Promise<void> {
     this.allSkills = await this.service.getCharactersSkills();
   }
 
-  skillsFilter(characterRef : number) : CharacterSkills {
+  skillsFilter(characterRef: number): CharacterSkills {
     return this.allSkills.filter(i => i.characterRef == characterRef)[0];
   }
 
-  skillsProfiencyFilter(characterProfiency : string) : CharacterSkillsProfiency{
+  skillsProfiencyFilter(characterProfiency: string): CharacterSkillsProfiency {
     return CharacterSheetCalculator.skillsProfiencyCalculate(characterProfiency);
   }
 
@@ -34,6 +35,7 @@ export class CharacterSheetSkillsComponent implements OnInit {
     this.level = character.level;
     const skills = this.skillsFilter(character.ref);
     this.characterSkillProfiency = this.skillsProfiencyFilter(character.profiencyValues);
-    this.characterSkills = CharacterSheetCalculator.skillsProfiencyIncrease(this.characterSkillProfiency,skills,this.level);
+    this.characterSkills = CharacterSheetCalculator.skillsProfiencyIncrease(this.characterSkillProfiency, skills, this.level);
+    this.colorClass = "color" + character.class.toLowerCase();
   }
 }
