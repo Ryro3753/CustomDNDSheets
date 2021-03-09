@@ -15,6 +15,7 @@ export class CharacterSheetMainStatsComponent implements OnInit {
   allMainStats : CharacterMainStats[];
   mainStat : CharacterMainStats;
   colorClass : string = "";
+  currentHealthEdit : boolean = false;
 
   async ngOnInit(): Promise<void> {
     this.allMainStats = await this.service.getCharactersMainStats();
@@ -31,4 +32,10 @@ export class CharacterSheetMainStatsComponent implements OnInit {
     this.colorClass = "color"+character.class.toLowerCase();
   }
 
+  editCurrentHealth(){
+    this.currentHealthEdit = true;
+  }
+  editCurrentHealthClose(){
+    this.currentHealthEdit = false;
+  }
 }

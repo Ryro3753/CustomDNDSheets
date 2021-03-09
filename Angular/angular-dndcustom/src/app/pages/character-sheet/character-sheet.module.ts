@@ -17,6 +17,7 @@ import { CharacterSheetSelectionComponent } from './components/character-sheet-s
 import { CharacterSheetMainStatsComponent } from './components/character-sheet-main-stats/character-sheet-main-stats.component';
 import { CharacterSheetDetailsComponent } from './components/character-sheet-details/character-sheet-details.component';
 import { TabViewModule } from 'primeng/tabview';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { TabViewModule } from 'primeng/tabview';
     AvatarModule,
     ButtonModule,
     RadioButtonModule,
-    TabViewModule
+    TabViewModule,
+    InputTextModule
   ],
   providers: [
     CharacterSheetCalculator

@@ -9,5 +9,6 @@ export interface CharacterMainStats {
     health : number,
     maxHealth : number,
     experience : number
+    tempHealth : number
 };
 

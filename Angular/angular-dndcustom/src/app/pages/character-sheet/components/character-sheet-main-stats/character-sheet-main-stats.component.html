@@ -1,4 +1,9 @@
 <p-card *ngIf="mainStat != undefined"  styleClass="mainStatsCard {{colorClass}}">
     <div class="row">
+        <p-card styleClass="HealthCard">
+                <label *ngIf="!currentHealthEdit"  (dblclick)="editCurrentHealth()">{{mainStat.health}}</label>
+                <input class="healthInput" type="text" (focusout)="editCurrentHealthClose()" [(ngModel)]="mainStat.health" *ngIf="currentHealthEdit" pInputText>
+                
+        </p-card>
     </div>
 </p-card>
