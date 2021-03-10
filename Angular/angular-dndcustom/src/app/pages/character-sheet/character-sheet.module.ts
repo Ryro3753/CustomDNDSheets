@@ -19,6 +19,7 @@ import { CharacterSheetDetailsComponent } from './components/character-sheet-det
 import { TabViewModule } from 'primeng/tabview';
 import { InputTextModule } from 'primeng/inputtext';
 
+
 @NgModule({
   declarations: [
     CharacterSheetScreenComponent,
@@ -43,7 +44,7 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule,
     RadioButtonModule,
     TabViewModule,
-    InputTextModule
+    InputTextModule,
   ],
   providers: [
     CharacterSheetCalculator

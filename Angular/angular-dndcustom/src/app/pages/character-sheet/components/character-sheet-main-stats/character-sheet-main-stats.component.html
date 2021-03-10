@@ -1,9 +1,22 @@
-<p-card *ngIf="mainStat != undefined"  styleClass="mainStatsCard {{colorClass}}">
+<p-card *ngIf="mainStat != undefined" styleClass="mainStatsCard {{colorClass}}">
     <div class="row">
-        <p-card styleClass="HealthCard">
-                <label *ngIf="!currentHealthEdit"  (dblclick)="editCurrentHealth()">{{mainStat.health}}</label>
-                <input class="healthInput" type="text" (focusout)="editCurrentHealthClose()" [(ngModel)]="mainStat.health" *ngIf="currentHealthEdit" pInputText>
-                
+        <p-card styleClass="HealthCard" header="Health" subheader=" Current | Max (Temp)">
+            <div class="row" style="margin-left:5px">
+                <label *ngIf="!currentHealthEdit" class="healthLabel"
+                    (click)="editCurrentHealth()">{{mainStat.health}}</label>
+                <input #healthInput id="healthInput" class="healthInput" type="number" autofocus
+                    (blur)="editCurrentHealthClose($event)" (focusout)="editCurrentHealthClose($event)" maxlength="3"
+                    [(ngModel)]="mainStat.health" *ngIf="currentHealthEdit" pInputText>
+                    <span id="healthSlash">|</span>
+                    <label id="maxHealth" class="healthLabel">{{mainStat.maxHealth}}</label>
+                <span class="healthLabel" *ngIf="healthParentheses">(</span>
+                <label *ngIf="!tempHealthEdit" class="healthLabel"
+                    (click)="editTempHealth()">{{mainStat.tempHealth}}</label>
+                <input #tempHealthInput id="tempHealthInput" class="healthInput" type="number" autofocus
+                    (blur)="editTempHealthClose($event)" (focusout)="editTempHealthClose($event)" maxlength="3"
+                    [(ngModel)]="mainStat.tempHealth" *ngIf="tempHealthEdit" pInputText>
+                <span class="healthLabel" *ngIf="healthParentheses">)</span>
+            </div>
         </p-card>
     </div>
 </p-card>

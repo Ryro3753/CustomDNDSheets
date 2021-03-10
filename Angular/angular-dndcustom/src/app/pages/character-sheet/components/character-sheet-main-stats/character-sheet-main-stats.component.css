@@ -6,13 +6,34 @@
     border-style: solid;
 }
 
-::ng-deep .t{
-    border-color: burlywood;
-}
+
 ::ng-deep .mainStatsCard:hover{
     box-shadow: 10px 10px 5px #aaaaaa;
 }    
 
 ::ng-deep .healthInput{
-    width: 80px;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    bottom: 10px;
+}
+
+::ng-deep .HealthCard{
+    width: 220px;
+    text-align: center;
+    border-style: hidden;
+}
+
+::ng-deep .healthLabel{
+    font-size: 1.3vw;
+}
+
+::ng-deep #healthSlash{
+    margin-left:10px;
+    margin-right:10px;
+    font-size: 1.3vw;
+}
+
+::ng-deep #maxHealth{
+    margin-right:10px;
 }
