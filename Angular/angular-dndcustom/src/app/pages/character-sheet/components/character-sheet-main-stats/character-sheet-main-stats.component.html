@@ -1,7 +1,13 @@
 <p-card *ngIf="mainStat != undefined" styleClass="mainStatsCard {{colorClass}}">
     <div class="row">
-        <p-card styleClass="HealthCard" header="Health" subheader=" Current | Max (Temp)">
-            <div class="row" style="margin-left:5px">
+        <div class="HealthCard">
+            <div class="row healthHeader justify-content-md-center">
+                <span>Health</span>
+            </div>
+            <div class="row justify-content-md-center">
+                <span>Current | Max (Temp)</span>
+            </div>
+            <div class="row justify-content-md-center" >
                 <label *ngIf="!currentHealthEdit" class="healthLabel"
                     (click)="editCurrentHealth()">{{mainStat.health}}</label>
                 <input #healthInput id="healthInput" class="healthInput" type="number" autofocus
@@ -17,6 +23,6 @@
                     [(ngModel)]="mainStat.tempHealth" *ngIf="tempHealthEdit" pInputText>
                 <span class="healthLabel" *ngIf="healthParentheses">)</span>
             </div>
-        </p-card>
+    </div>
     </div>
 </p-card>
