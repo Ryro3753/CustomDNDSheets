@@ -57,3 +57,16 @@
 ::ng-deep .speedValue{
     font-size:1.3vw;
 }
+::ng-deep .ArmorCard{
+    width: 100px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
+::ng-deep .armorHeader{
+    font-weight: bold;
+    font-size:1.3vw;
+}
+::ng-deep .armorValue{
+    font-size:1.3vw;
+}
