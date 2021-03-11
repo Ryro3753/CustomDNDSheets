@@ -7,14 +7,14 @@
             <div class="row justify-content-md-center">
                 <span>Current | Max (Temp)</span>
             </div>
-            <div class="row justify-content-md-center" >
+            <div class="row justify-content-md-center">
                 <label *ngIf="!currentHealthEdit" class="healthLabel"
                     (click)="editCurrentHealth()">{{mainStat.health}}</label>
                 <input #healthInput id="healthInput" class="healthInput" type="number" autofocus
                     (blur)="editCurrentHealthClose($event)" (focusout)="editCurrentHealthClose($event)" maxlength="3"
                     [(ngModel)]="mainStat.health" *ngIf="currentHealthEdit" pInputText>
-                    <span id="healthSlash">|</span>
-                    <label id="maxHealth" class="healthLabel">{{mainStat.maxHealth}}</label>
+                <span id="healthSlash">|</span>
+                <label id="maxHealth" class="healthLabel">{{mainStat.maxHealth}}</label>
                 <span class="healthLabel" *ngIf="healthParentheses">(</span>
                 <label *ngIf="!tempHealthEdit" class="healthLabel"
                     (click)="editTempHealth()">{{mainStat.tempHealth}}</label>
@@ -23,6 +23,16 @@
                     [(ngModel)]="mainStat.tempHealth" *ngIf="tempHealthEdit" pInputText>
                 <span class="healthLabel" *ngIf="healthParentheses">)</span>
             </div>
+        </div>
     </div>
+    <div class="row">
+        <div class="SpeedCard">
+            <div class="row speedHeader justify-content-md-center">
+                <span>Speed</span>
+            </div>
+            <div class="row speedValue justify-content-md-center">
+                <span>{{mainStat.speed}}</span>
+            </div>
+        </div>
     </div>
 </p-card>

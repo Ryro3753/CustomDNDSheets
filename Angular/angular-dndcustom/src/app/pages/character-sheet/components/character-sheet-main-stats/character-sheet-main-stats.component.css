@@ -21,7 +21,6 @@
 ::ng-deep .HealthCard{
     width: 190px;
     text-align: center;
-    border-style: hidden;
     border-style: solid;
     border-width: 1px;
 }
@@ -42,5 +41,19 @@
 
 ::ng-deep .healthHeader{
     font-weight: bold;
+    font-size:1.3vw;
+}
+
+::ng-deep .SpeedCard{
+    width: 100px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
+::ng-deep .speedHeader{
+    font-weight: bold;
+    font-size:1.3vw;
+}
+::ng-deep .speedValue{
     font-size:1.3vw;
 }
