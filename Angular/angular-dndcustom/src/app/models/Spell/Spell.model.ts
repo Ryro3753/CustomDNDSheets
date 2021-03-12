@@ -1,15 +1,20 @@
 export interface Spell {
     ref : number,
     spellName : string,
-    actionTime : string,
-    range : number,
-    level : number,
-    school : string,
-    duration : string,
-    components : string,
     description : string,
-    hitBase : string,
+    higherLevel : string,
+    level : number,
+    castingTime : string,
+    range : number,
+    area : number,
+    components : string,
+    duration : string,
+    school : string,
+    attackSave : string,
     damageBase : string,
+    damageType : string,
+    concentration : boolean,
+    ritual : boolean,
     hasIcon: number
 };
 

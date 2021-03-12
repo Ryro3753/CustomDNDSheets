@@ -32,19 +32,21 @@ namespace API.Services
                 var spell = new Spell
                 {
                     SpellName = model.SpellName,
-                    ActionTime = model.ActionTime,
+                    HigherLevel = model.HigherLevel,
+                    CastingTime = model.CastingTime,
                     School = model.School,
                     Components = model.Components,
                     DamageBase = model.DamageBase,
                     Description = model.Description,
                     Duration = model.Duration,
-                    HitBase = model.HitBase,
                     Level = model.Level,
                     Range = model.Range,
                     HasIcon = model.HasIcon,
                     Area = model.Area,
                     Concentration = model.Concentration,
-                    DamageType = model.DamageType
+                    DamageType = model.DamageType,
+                    AttackSave = model.AttackSave,
+                    Ritual = model.Ritual
                 };
                 await _context.Spell.AddAsync(spell);
                 await _context.SaveChangesAsync();
@@ -54,19 +56,21 @@ namespace API.Services
             {
                 var existingSpell = _context.Spell.FirstOrDefault(i => i.Ref == model.Ref);
                 existingSpell.SpellName = model.SpellName;
-                existingSpell.ActionTime = model.ActionTime;
+                existingSpell.HigherLevel = model.HigherLevel;
+                existingSpell.CastingTime = model.CastingTime;
                 existingSpell.School = model.School;
                 existingSpell.Components = model.Components;
                 existingSpell.DamageBase = model.DamageBase;
                 existingSpell.Description = model.Description;
                 existingSpell.Duration = model.Duration;
-                existingSpell.HitBase = model.HitBase;
                 existingSpell.Level = model.Level;
                 existingSpell.Range = model.Range;
                 existingSpell.HasIcon = model.HasIcon;
                 existingSpell.Area = model.Area;
                 existingSpell.Concentration = model.Concentration;
                 existingSpell.DamageType = model.DamageType;
+                existingSpell.AttackSave = model.AttackSave;
+                existingSpell.Ritual = model.Ritual;
                 await _context.SaveChangesAsync();
                 return existingSpell.Ref;
 

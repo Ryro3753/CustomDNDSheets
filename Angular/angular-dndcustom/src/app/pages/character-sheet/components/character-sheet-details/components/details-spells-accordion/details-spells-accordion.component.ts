@@ -26,9 +26,10 @@ export class DetailsSpellsAccordionComponent implements OnInit {
   }
 
   @Input() set character(character: Character) {
-    if (character.ref == 0) { return }
+    if (character == undefined || character.ref == 0) { return }
     this.characterSpellFilter(character.ref);
   }
+  
 
   characterSpellFilter(characterRef : number){
     this.characterSpells = this.allCharacterSpells.filter(i => i.characterRef == characterRef);
