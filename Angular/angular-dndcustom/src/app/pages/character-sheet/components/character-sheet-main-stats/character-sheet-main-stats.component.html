@@ -1,6 +1,6 @@
-<p-card *ngIf="mainStat != undefined" styleClass="mainStatsCard {{colorClass}}">
-    <div class="row">
-        <div class="HealthCard">
+<div *ngIf="mainStat != undefined" class="mainStatsCard ">
+    <div class="row justify-content-md-center">
+        <div class="HealthCard {{colorClass}}">
             <div class="row healthHeader justify-content-md-center">
                 <span>Health</span>
             </div>
@@ -25,8 +25,8 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="SpeedCard">
+    <div class="row d-flex justify-content-between" style="margin-bottom: 5px;">
+        <div class="SpeedCard {{colorClass}}">
             <div class="row speedHeader justify-content-md-center">
                 <span>Speed</span>
             </div>
@@ -34,7 +34,7 @@
                 <span>{{mainStat.speed}}</span>
             </div>
         </div>
-        <div class="ArmorCard">
+        <div class="ArmorCard {{colorClass}}">
             <div class="row armorHeader justify-content-md-center">
                 <span>AC</span>
             </div>
@@ -42,7 +42,7 @@
                 <span>{{mainStat.armor}}</span>
             </div>
         </div>
-        <div class="InitiativeCard">
+        <div class="InitiativeCard {{colorClass}}">
             <div class="row initiativeHeader justify-content-md-center">
                 <span>Initiative</span>
             </div>
@@ -50,7 +50,9 @@
                 <span><span *ngIf="mainStat.initiative >= 0">+</span>{{mainStat.initiative}}</span>
             </div>
         </div>
-        <div class="ProficiencyCard">
+    </div>
+    <div class="row d-flex justify-content-sm-around">
+        <div class="ProficiencyCard {{colorClass}}">
             <div class="row proficiencyHeader justify-content-md-center">
                 <span>Proficiency</span>
             </div>
@@ -58,8 +60,9 @@
                 <span>+{{mainStat.proficiency}}</span>
             </div>
         </div>
-        <div class="InspirationCard" (click)="inspirationClick()">
-            <img [src]="mainStat.inspiration ? 'https://localhost:44330/Images/MiscImages/BurningHeart.png' : 'https://localhost:44330/Images/MiscImages/Heart.png'" width="64" height="64">
+        <div class="InspirationCard {{colorClass}}" (click)="inspirationClick()">
+            <img [src]="mainStat.inspiration ? 'https://localhost:44330/Images/MiscImages/BurningHeart.png' : 'https://localhost:44330/Images/MiscImages/Heart.png'"
+                width="64" height="64">
         </div>
     </div>
-</p-card>
+</div>

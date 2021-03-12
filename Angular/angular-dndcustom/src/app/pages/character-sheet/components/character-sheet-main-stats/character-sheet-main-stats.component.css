@@ -1,13 +1,12 @@
 ::ng-deep .mainStatsCard{
     margin-top: 25px;
     margin-left:50px;
-    width: 400px;
+    width: 300px;
     height: 265px;
-    border-style: solid;
 }
 
 
-::ng-deep .mainStatsCard:hover{
+::ng-deep .HealthCard:hover{
     box-shadow: 10px 10px 5px #aaaaaa;
 }    
 
@@ -22,7 +21,7 @@
     width: 190px;
     text-align: center;
     border-style: solid;
-    
+    margin-bottom: 5px;
 }
 
 ::ng-deep .healthLabel{
@@ -48,8 +47,11 @@
     width: 100px;
     text-align: center;
     border-style: solid;
-    
+    margin-right: 5px;
 }
+::ng-deep .SpeedCard:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}    
 ::ng-deep .speedHeader{
     font-weight: bold;
     font-size:1.3vw;
@@ -61,8 +63,11 @@
     width: 100px;
     text-align: center;
     border-style: solid;
-    
+    margin-right: 5px;
 }
+::ng-deep .ArmorCard:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}   
 ::ng-deep .armorHeader{
     font-weight: bold;
     font-size:1.3vw;
@@ -74,8 +79,10 @@
     width: 120px;
     text-align: center;
     border-style: solid;
-    
 }
+::ng-deep .InitiativeCard:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}   
 ::ng-deep .initiativeHeader{
     font-weight: bold;
     font-size:1.3vw;
@@ -87,8 +94,10 @@
     width: 140px;
     text-align: center;
     border-style: solid;
-    
 }
+::ng-deep .ProficiencyCard:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}   
 ::ng-deep .proficiencyHeader{
     font-weight: bold;
     font-size:1.3vw;
@@ -104,3 +113,6 @@
     min-width: 64;
     min-height: 64;
 }
+::ng-deep .InspirationCard:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}   
