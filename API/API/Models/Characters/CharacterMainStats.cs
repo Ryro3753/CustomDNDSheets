@@ -17,7 +17,7 @@ namespace API.Models
         public int Speed { get; set; }
         public int Armor { get; set; }
         public int Initiative { get; set; }
-        public int Profiency { get; set; }
+        public int Proficiency { get; set; }
         public bool Inspiration { get; set; }
         public int Health { get; set; }
         public int MaxHealth { get; set; }

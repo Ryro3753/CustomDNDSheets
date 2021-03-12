@@ -47,6 +47,7 @@ export class CharacterSheetMainStatsComponent implements OnInit {
   }
   editCurrentHealthClose(){
     this.currentHealthEdit = false;
+    this.service.insertOrUpdateCharacterMainStats(this.mainStat);
   }
   editTempHealth(){
     this.tempHealthEdit = true;
@@ -58,5 +59,19 @@ export class CharacterSheetMainStatsComponent implements OnInit {
   editTempHealthClose(){
     this.tempHealthEdit = false;
     this.healthParentheses = true;
+    this.service.insertOrUpdateCharacterMainStats(this.mainStat);
+
   }
+  inspirationClick(){
+    if(this.mainStat.inspiration){
+      this.mainStat.inspiration = false;
+    }
+    else {
+      this.mainStat.inspiration = true;
+    }
+    this.service.insertOrUpdateCharacterMainStats(this.mainStat);
+
+  }
+
+
 }

@@ -22,7 +22,7 @@
     width: 190px;
     text-align: center;
     border-style: solid;
-    border-width: 1px;
+    
 }
 
 ::ng-deep .healthLabel{
@@ -48,7 +48,7 @@
     width: 100px;
     text-align: center;
     border-style: solid;
-    border-width: 1px;
+    
 }
 ::ng-deep .speedHeader{
     font-weight: bold;
@@ -61,7 +61,7 @@
     width: 100px;
     text-align: center;
     border-style: solid;
-    border-width: 1px;
+    
 }
 ::ng-deep .armorHeader{
     font-weight: bold;
@@ -71,10 +71,10 @@
     font-size:1.3vw;
 }
 ::ng-deep .InitiativeCard{
-    width: 100px;
+    width: 120px;
     text-align: center;
     border-style: solid;
-    border-width: 1px;
+    
 }
 ::ng-deep .initiativeHeader{
     font-weight: bold;
@@ -82,4 +82,25 @@
 }
 ::ng-deep .initiativeValue{
     font-size:1.3vw;
+}
+::ng-deep .ProficiencyCard{
+    width: 140px;
+    text-align: center;
+    border-style: solid;
+    
+}
+::ng-deep .proficiencyHeader{
+    font-weight: bold;
+    font-size:1.3vw;
+}
+::ng-deep .proficiencyValue{
+    font-size:1.3vw;
+}
+::ng-deep .InspirationCard{
+    border-style: solid;
+    
+    width: 64;
+    height: 64;
+    min-width: 64;
+    min-height: 64;
 }

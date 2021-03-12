@@ -4,7 +4,7 @@ export interface CharacterMainStats {
     speed : number,
     armor : number,
     initiative : number,
-    profiency : number,
+    proficiency : number,
     inspiration : boolean,
     health : number,
     maxHealth : number,

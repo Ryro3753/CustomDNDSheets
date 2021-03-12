@@ -47,8 +47,19 @@
                 <span>Initiative</span>
             </div>
             <div class="row initiativeValue justify-content-md-center">
-                <span>+{{mainStat.initiative}}</span>
+                <span><span *ngIf="mainStat.initiative >= 0">+</span>{{mainStat.initiative}}</span>
             </div>
+        </div>
+        <div class="ProficiencyCard">
+            <div class="row proficiencyHeader justify-content-md-center">
+                <span>Proficiency</span>
+            </div>
+            <div class="row proficiencyValue justify-content-md-center">
+                <span>+{{mainStat.proficiency}}</span>
+            </div>
+        </div>
+        <div class="InspirationCard" (click)="inspirationClick()">
+            <img [src]="mainStat.inspiration ? 'https://localhost:44330/Images/MiscImages/BurningHeart.png' : 'https://localhost:44330/Images/MiscImages/Heart.png'" width="64" height="64">
         </div>
     </div>
 </p-card>
