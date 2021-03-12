@@ -1,7 +1,7 @@
 export interface CharacterSpells {
-    Ref : number,
-    CharacterRef : number,
-    SpellRef : number,
-    Hit : number,
-    Damage : number
+    ref : number,
+    characterRef : number,
+    spellRef : number,
+    hit : number,
+    damage : number
 };
