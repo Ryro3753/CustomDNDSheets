@@ -20,6 +20,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { InputTextModule } from 'primeng/inputtext';
 import { DetailsSpellsAccordionComponent } from './components/character-sheet-details/components/details-spells-accordion/details-spells-accordion.component';
 import { AccordionModule } from 'primeng/accordion';
+import { DetailsBackgroundAccordionComponent } from './components/character-sheet-details/components/details-background-accordion/details-background-accordion.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { AccordionModule } from 'primeng/accordion';
     CharacterSheetSelectionComponent,
     CharacterSheetMainStatsComponent,
     CharacterSheetDetailsComponent,
-    DetailsSpellsAccordionComponent],
+    DetailsSpellsAccordionComponent,
+    DetailsBackgroundAccordionComponent],
   imports: [
     RouterModule.forChild([{
       path: '',
