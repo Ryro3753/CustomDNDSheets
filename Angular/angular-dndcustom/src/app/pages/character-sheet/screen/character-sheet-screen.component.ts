@@ -31,6 +31,7 @@ export class CharacterSheetScreenComponent implements OnInit {
     this.SavingThrowComponentEnable = true;
     this.SkillsComponentEnable = true;
     this.MainStatsComponentEnable = true;
+    this.DetailsComponentEnable = true;
 }
 
   emittedCharacterClicked(e) {

@@ -18,6 +18,8 @@ import { CharacterSheetMainStatsComponent } from './components/character-sheet-m
 import { CharacterSheetDetailsComponent } from './components/character-sheet-details/character-sheet-details.component';
 import { TabViewModule } from 'primeng/tabview';
 import { InputTextModule } from 'primeng/inputtext';
+import { DetailsSpellsAccordionComponent } from './components/character-sheet-details/components/details-spells-accordion/details-spells-accordion.component';
+import { AccordionModule } from 'primeng/accordion';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { InputTextModule } from 'primeng/inputtext';
     CharacterSheetSkillsComponent,
     CharacterSheetSelectionComponent,
     CharacterSheetMainStatsComponent,
-    CharacterSheetDetailsComponent],
+    CharacterSheetDetailsComponent,
+    DetailsSpellsAccordionComponent],
   imports: [
     RouterModule.forChild([{
       path: '',
@@ -45,6 +48,7 @@ import { InputTextModule } from 'primeng/inputtext';
     RadioButtonModule,
     TabViewModule,
     InputTextModule,
+    AccordionModule
   ],
   providers: [
     CharacterSheetCalculator
