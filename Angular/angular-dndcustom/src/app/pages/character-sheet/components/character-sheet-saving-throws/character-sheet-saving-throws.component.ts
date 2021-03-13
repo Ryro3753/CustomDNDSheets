@@ -15,13 +15,12 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
 
 
   savingThrow: CharacterSavingThrows;
-  level : number;
+  level: number;
   @Input() characterProfiency: string;
   characterSavingThrowProfiency: CharacterSavingThrowsProfiency;
   allSavingThrows: CharacterSavingThrows[];
-  colorClass : string = "";
-  @Output() InformationClicked : EventEmitter<any> = new EventEmitter<any>();
-
+  colorClass: string = "";
+  @Output() InformationClicked: EventEmitter<any> = new EventEmitter<any>();
 
 
   async ngOnInit(): Promise<void> {
@@ -41,11 +40,11 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
     this.level = character.level;
     const savingThrow = this.cardDataSourceFilter(character.ref);
     this.characterSavingThrowProfiency = this.characterProfiencyFilter(character.profiencyValues);
-    this.savingThrow = CharacterSheetCalculator.savingThrowProfiencyIncrease(this.characterSavingThrowProfiency,savingThrow,this.level);
-    this.colorClass = "color"+character.class.toLowerCase();
+    this.savingThrow = CharacterSheetCalculator.savingThrowProfiencyIncrease(this.characterSavingThrowProfiency, savingThrow, this.level);
+    this.colorClass = "color" + character.class.toLowerCase();
   }
 
-  InformationClick(e){
+  InformationClick(e) {
     console.log(e);
   }
 

@@ -37,7 +37,8 @@ import { CharacterSheetSkillsLineComponent } from './components/character-sheet-
     DetailsSpellsAccordionComponent,
     DetailsBackgroundAccordionComponent,
     CharacterSheetSidebarComponent,
-    CharacterSheetSkillsLineComponent],
+    CharacterSheetSkillsLineComponent,
+    ],
   imports: [
     RouterModule.forChild([{
       path: '',
