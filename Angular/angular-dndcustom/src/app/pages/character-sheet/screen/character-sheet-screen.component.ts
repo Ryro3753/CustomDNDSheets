@@ -19,6 +19,7 @@ export class CharacterSheetScreenComponent implements OnInit {
   MainStatsComponentEnable: boolean = false;
   DetailsComponentEnable: boolean = false;
 
+  displayBarSide: boolean;
 
   async ngOnInit(): Promise<void> {
     this.selectedCharacter = { ref: 0 } as Character;
@@ -36,8 +37,12 @@ export class CharacterSheetScreenComponent implements OnInit {
 
   emittedCharacterClicked(e) {
     this.selectedCharacter = e;
+    this.displayBarSide = true;
   }
 
+  onHideClicked(){
+    this.displayBarSide = false;
+  }
 
 
 }

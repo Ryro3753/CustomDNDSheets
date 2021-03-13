@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-character-sheet-sidebar',
@@ -9,7 +9,14 @@ export class CharacterSheetSidebarComponent implements OnInit {
 
   constructor() { }
 
+  @Input() displayBarSide : boolean = false;
+  @Output() OnHideClicked : EventEmitter<any> = new EventEmitter<any>();
+
   ngOnInit(): void {
   }
 
+  sideBarHide(){
+    this.displayBarSide = false;
+    this.OnHideClicked.emit();
+  }
 }
