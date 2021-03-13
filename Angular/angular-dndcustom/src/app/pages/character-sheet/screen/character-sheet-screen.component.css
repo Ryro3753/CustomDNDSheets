@@ -1,0 +1,36 @@
+::ng-deep .colorfighter{
+    border-color: burlywood;
+}
+::ng-deep .colorwizard{
+    border-color: lightskyblue;
+}
+::ng-deep .colorcleric{
+    border-color: rgb(226, 226, 166);
+}
+::ng-deep .colorwarlock{
+    border-color: blueviolet;
+}
+::ng-deep .colorbard{
+    border-color: palevioletred;
+}
+::ng-deep .colorbarbarian{
+    border-color: darkred;
+}
+::ng-deep .colorranger{
+    border-color: darkseagreen;
+}
+::ng-deep .colormonk{
+    border-color: teal;
+}
+::ng-deep .colorrogue{
+    border-color: rgb(68, 68, 68);
+}
+::ng-deep .colorsorcerers{
+    border-color: red
+}
+::ng-deep .colorpaladin{
+    border-color: goldenrod;
+}
+::ng-deep .colordruid{
+    border-color: green
+}

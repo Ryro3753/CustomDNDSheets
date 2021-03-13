@@ -1,4 +1,4 @@
-<p-tabView *ngIf="characterDetail != undefined">
+<p-tabView id="detail-background" *ngIf="characterDetail != undefined" class="{{colorClass}}">
     <p-tabPanel header="PersonalityTraits" headerStyleClass="detailBackground">
         {{characterDetail.personalityTraits}}
     </p-tabPanel>

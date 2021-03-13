@@ -1,3 +1,15 @@
 ::ng-deep .detailBackground{
     font-size: 12px;
 }
+
+::ng-deep #detail-background .p-component, .p-component *,
+::ng-deep #detail .p-tabview .p-tabview-nav li,
+::ng-deep #detail-background .p-tabview .p-tabview-nav,
+::ng-deep #detail-background .p-tabview .p-tabview-nav li .p-tabview-nav-link
+{
+    border-color: inherit;
+}
+
+::ng-deep #detail-background .p-tabview .p-tabview-nav li .p-tabview-nav-link:hover {
+    box-shadow: 2px 2px 8px 0px rgba(50, 50, 50, 0.75);
+}

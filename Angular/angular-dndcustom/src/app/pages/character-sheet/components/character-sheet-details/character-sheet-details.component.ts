@@ -20,6 +20,7 @@ export class CharacterSheetDetailsComponent implements OnInit {
     this.colorClass = "color" + character.class.toLowerCase();
     this.selectedCharacter = character;
     if(this.hidden){this.hidden = false};
+    
   }
   
 }

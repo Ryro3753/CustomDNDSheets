@@ -14,6 +14,7 @@ export class DetailsBackgroundAccordionComponent implements OnInit {
 
   allDetails : CharacterDescriptionDetails[];
   characterDetail : CharacterDescriptionDetails;
+  colorClass : string;
 
   async ngOnInit(): Promise<void> {
     this.allDetails = await this.service.getCharactersDescriptionDetails();
@@ -27,6 +28,7 @@ export class DetailsBackgroundAccordionComponent implements OnInit {
   @Input() set character(character: Character) {
     if (character == undefined || character.ref == 0) { return }
     this.CharacterDetailFilter(character.ref);
+    this.colorClass = "color"+character.class.toLowerCase();
   }
 
 }

@@ -3,3 +3,11 @@
     width: 650px;
     height: 400px;
 }
+
+::ng-deep #detail .p-component, .p-component *,
+::ng-deep #detail .p-tabview .p-tabview-nav li,
+::ng-deep #detail .p-tabview .p-tabview-nav,
+::ng-deep #detail .p-tabview .p-tabview-nav li .p-tabview-nav-link
+{
+    border-color: inherit;
+}
