@@ -1,7 +1,8 @@
 <div *ngIf="savingThrow != undefined">
-    <p-card styleClass="savingThrowCard {{colorClass}}" header="Saving Throws">
+    <p-card styleClass="savingThrowCard {{colorClass}}" header="Saving Throws" >
         <div class="row FirstRow">
-            <span class="savingThrowStatsLeft {{colorClass}}">Strength<span><span
+            <span class="savingThrowStatsLeft {{colorClass}}"
+                (click)="openSideBar('StrengthSavingThrow')">Strength<span><span
                         class="savingThrowStatsLeftValue {{colorClass}}"><span
                             *ngIf="savingThrow.strength >= 0">+</span>{{savingThrow.strength}}</span></span></span>
             <i
@@ -10,10 +11,12 @@
                 [class]="characterSavingThrowProfiency.dexterity ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'"></i>
             <span class="savingThrowStatsRight {{colorClass}}"><span
                     class="savingThrowStatsRightValue {{colorClass}}"><span
-                        *ngIf="savingThrow.dexterity >= 0">+</span>{{savingThrow.dexterity}}</span>Dexterity<span></span></span>
+                        *ngIf="savingThrow.dexterity >= 0">+</span>{{savingThrow.dexterity}}</span><span
+                    (click)="openSideBar('DexteritySavingThrow')">Dexterity</span></span>
         </div>
         <div class="row SecondRow">
-            <span class="savingThrowStatsLeft {{colorClass}}">Wisdom<span><span
+            <span class="savingThrowStatsLeft {{colorClass}}"
+                (click)="openSideBar('WisdomSavingThrow')">Wisdom<span><span
                         class="savingThrowStatsLeftValue {{colorClass}}"><span
                             *ngIf="savingThrow.wisdom >= 0">+</span>{{savingThrow.wisdom}}</span></span></span>
             <i
@@ -22,10 +25,12 @@
                 [class]="characterSavingThrowProfiency.intelligence ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'"></i>
             <span class="savingThrowStatsRight {{colorClass}}"><span
                     class="savingThrowStatsRightValue {{colorClass}}"><span
-                        *ngIf="savingThrow.intelligence >= 0">+</span>{{savingThrow.intelligence}}</span>Intelligence<span></span></span>
+                        *ngIf="savingThrow.intelligence >= 0">+</span>{{savingThrow.intelligence}}</span><span
+                    (click)="openSideBar('IntelligenceSavingThrow')">Intelligence</span></span>
         </div>
         <div class="row ThirdRow">
-            <span class="savingThrowStatsLeft {{colorClass}}">Charisma<span><span
+            <span class="savingThrowStatsLeft {{colorClass}}"
+                (click)="openSideBar('CharismaSavingThrow')">Charisma<span><span
                         class="savingThrowStatsLeftValue {{colorClass}}"><span
                             *ngIf="savingThrow.charisma >= 0">+</span>{{savingThrow.charisma}}</span></span></span>
             <i
@@ -34,7 +39,8 @@
                 [class]="characterSavingThrowProfiency.constitution ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'"></i>
             <span class="savingThrowStatsRight {{colorClass}}"><span
                     class="savingThrowStatsRightValue {{colorClass}}"><span
-                        *ngIf="savingThrow.constitution >= 0">+</span>{{savingThrow.constitution}}</span>Constitution<span></span></span>
+                        *ngIf="savingThrow.constitution >= 0">+</span>{{savingThrow.constitution}}</span><span
+                    (click)="openSideBar('ConstitutionSavingThrow')">Constitution</span></span>
         </div>
     </p-card>
 </div>

@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SideBarEvent } from 'src/app/events/side-bar.event';
 import { CharacterSavingThrows, CharacterSavingThrowsProfiency } from 'src/app/models/character/character-saving-throws.model';
 import { Character } from 'src/app/models/Character/Character.model';
 import { CharacterSavingThrowsService } from 'src/app/services/character-services/character-saving-throws.service';
+import { MessageBusService } from 'src/app/services/common-services/messagebus.service';
 import { CharacterSheetCalculator } from '../../character-sheet.calculator';
 
 @Component({
@@ -11,7 +13,8 @@ import { CharacterSheetCalculator } from '../../character-sheet.calculator';
 })
 export class CharacterSheetSavingThrowsComponent implements OnInit {
 
-  constructor(readonly service: CharacterSavingThrowsService) { }
+  constructor(readonly service: CharacterSavingThrowsService,
+              readonly bus : MessageBusService) { }
 
 
   savingThrow: CharacterSavingThrows;
@@ -46,6 +49,10 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
 
   InformationClick(e) {
     console.log(e);
+  }
+
+  openSideBar(e){
+    this.bus.publish(new SideBarEvent(e));
   }
 
 }

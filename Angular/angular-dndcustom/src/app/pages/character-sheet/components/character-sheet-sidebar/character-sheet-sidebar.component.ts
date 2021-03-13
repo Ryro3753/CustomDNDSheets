@@ -11,7 +11,8 @@ import { MessageBusService } from 'src/app/services/common-services/messagebus.s
 export class CharacterSheetSidebarComponent implements OnInit, OnDestroy {
   text: string;
   subscriptions: SubscriptionLike[] = [];
-  constructor(readonly bus : MessageBusService) {
+  constructor(readonly bus : MessageBusService,
+              ) {
     this.subscriptions.push(this.bus.of(SideBarEvent).subscribe(this.sideBarEvent.bind(this)));
    }
   
@@ -23,18 +24,15 @@ export class CharacterSheetSidebarComponent implements OnInit, OnDestroy {
   sideBarEvent(sideBarEvent: SideBarEvent) {
     this.displayBarSide = true;
     this.text = sideBarEvent.key;
-    console.log('b')
   }
 
   @Input() displayBarSide : boolean = false;
-  @Output() OnHideClicked : EventEmitter<any> = new EventEmitter<any>();
 
   ngOnInit(): void {
   }
 
   sideBarHide(){
     this.displayBarSide = false;
-    this.OnHideClicked.emit();
   }
 
 
