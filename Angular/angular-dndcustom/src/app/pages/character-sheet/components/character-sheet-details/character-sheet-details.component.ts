@@ -9,6 +9,7 @@ import { Character } from 'src/app/models/Character/Character.model';
 export class CharacterSheetDetailsComponent implements OnInit {
   colorClass: string;
   selectedCharacter : Character;
+  hidden : boolean = true;
   constructor() { }
 
   ngOnInit(): void {
@@ -18,6 +19,7 @@ export class CharacterSheetDetailsComponent implements OnInit {
     if (character.ref == 0) { return }
     this.colorClass = "color" + character.class.toLowerCase();
     this.selectedCharacter = character;
+    if(this.hidden){this.hidden = false};
   }
   
 }

@@ -1,26 +1,26 @@
-<p-accordion *ngIf="characterDetail != undefined" [multiple]="true">
-    <p-accordionTab header="PersonalityTraits">
+<p-tabView *ngIf="characterDetail != undefined">
+    <p-tabPanel header="PersonalityTraits" headerStyleClass="detailBackground">
         {{characterDetail.personalityTraits}}
-    </p-accordionTab>
-    <p-accordionTab header="Flaws">
+    </p-tabPanel>
+    <p-tabPanel header="Flaws" headerStyleClass="detailBackground">
         {{characterDetail.flaws}}
-    </p-accordionTab>
-    <p-accordionTab header="Ideals">
+    </p-tabPanel>
+    <p-tabPanel header="Ideals" headerStyleClass="detailBackground">
         {{characterDetail.ideals}}
-    </p-accordionTab>
-    <p-accordionTab header="Bonds">
+    </p-tabPanel>
+    <p-tabPanel header="Bonds" headerStyleClass="detailBackground">
         {{characterDetail.bonds}}
-    </p-accordionTab>
-    <p-accordionTab header="Allies">
+    </p-tabPanel>
+    <p-tabPanel header="Allies" headerStyleClass="detailBackground">
         {{characterDetail.allies}}
-    </p-accordionTab>
-    <p-accordionTab header="Alignment">
+    </p-tabPanel>
+    <p-tabPanel header="Alignment" headerStyleClass="detailBackground">
         {{characterDetail.alignment}}
-    </p-accordionTab>
-    <p-accordionTab header="Faith">
+    </p-tabPanel>
+    <p-tabPanel header="Faith" headerStyleClass="detailBackground">
         {{characterDetail.faith}}
-    </p-accordionTab>
-    <p-accordionTab header="Backstory">
+    </p-tabPanel>
+    <p-tabPanel header="Backstory" headerStyleClass="detailBackground">
         {{characterDetail.backstory}}
-    </p-accordionTab>
-</p-accordion>
+    </p-tabPanel>
+</p-tabView>
