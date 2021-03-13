@@ -23,6 +23,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { DetailsBackgroundAccordionComponent } from './components/character-sheet-details/components/details-background-accordion/details-background-accordion.component';
 import { SidebarModule } from 'primeng/sidebar';
 import { CharacterSheetSidebarComponent } from './components/character-sheet-sidebar/character-sheet-sidebar.component';
+import { CharacterSheetSkillsLineComponent } from './components/character-sheet-skills/components/character-sheet-skills-line/character-sheet-skills-line.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CharacterSheetSidebarComponent } from './components/character-sheet-sid
     CharacterSheetDetailsComponent,
     DetailsSpellsAccordionComponent,
     DetailsBackgroundAccordionComponent,
-    CharacterSheetSidebarComponent],
+    CharacterSheetSidebarComponent,
+    CharacterSheetSkillsLineComponent],
   imports: [
     RouterModule.forChild([{
       path: '',

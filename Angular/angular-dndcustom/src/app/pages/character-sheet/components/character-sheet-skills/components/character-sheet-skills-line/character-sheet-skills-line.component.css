@@ -1,0 +1,22 @@
+::ng-deep .skillsName {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: 150px;
+}
+::ng-deep .skill{
+    margin:10px;
+    margin-right: 0px;
+}
+
+::ng-deep .skillValue{
+    margin-left: 10px;
+    font-weight: bold;
+    width: 30px;
+}
+::ng-deep .skillProfiency{
+    margin-top: 6px;
+    margin-left: 10px;
+}
+::ng-deep .skillsName{
+    margin-left : 10px;
+}

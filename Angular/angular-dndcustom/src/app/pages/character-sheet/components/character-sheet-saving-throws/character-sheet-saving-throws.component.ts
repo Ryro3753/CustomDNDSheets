@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CharacterSavingThrows, CharacterSavingThrowsProfiency } from 'src/app/models/character/character-saving-throws.model';
 import { Character } from 'src/app/models/Character/Character.model';
 import { CharacterSavingThrowsService } from 'src/app/services/character-services/character-saving-throws.service';
@@ -20,6 +20,9 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
   characterSavingThrowProfiency: CharacterSavingThrowsProfiency;
   allSavingThrows: CharacterSavingThrows[];
   colorClass : string = "";
+  @Output() InformationClicked : EventEmitter<any> = new EventEmitter<any>();
+
+
 
   async ngOnInit(): Promise<void> {
     this.allSavingThrows = await this.service.getCharactersSavingThrows();
@@ -42,6 +45,8 @@ export class CharacterSheetSavingThrowsComponent implements OnInit {
     this.colorClass = "color"+character.class.toLowerCase();
   }
 
-
+  InformationClick(e){
+    console.log(e);
+  }
 
 }

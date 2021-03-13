@@ -9,7 +9,7 @@
                 *ngIf="savingThrow.strength >= 0">+</span>{{savingThrow.dexterity}}</span>Dexterity<span></span></span>
         </div>
         <div class="row SecondRow">
-            <span class="savingThrowStatsLeft {{colorClass}}">Wisdom<span><span class="savingThrowStatsLeftValue {{colorClass}}"><span
+            <span (click)="InformationClick($any)" class="savingThrowStatsLeft {{colorClass}}">Wisdom<span><span class="savingThrowStatsLeftValue {{colorClass}}"><span
                         *ngIf="savingThrow.wisdom >= 0">+</span>{{savingThrow.wisdom}}</span></span></span>
             <i [class]="characterSavingThrowProfiency.wisdom ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'"></i>
             <i [class]="characterSavingThrowProfiency.intelligence ? 'pi pi-circle-on savingThrowProfiency' :'pi pi-circle-off savingThrowProfiency'" ></i>

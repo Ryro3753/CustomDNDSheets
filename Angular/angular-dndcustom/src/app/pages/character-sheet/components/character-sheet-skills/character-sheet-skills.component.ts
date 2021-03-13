@@ -17,9 +17,11 @@ export class CharacterSheetSkillsComponent implements OnInit {
   characterSkillProfiency: CharacterSkillsProfiency;
   level: number;
   colorClass : string = "";
+  keys : string[];
 
   async ngOnInit(): Promise<void> {
     this.allSkills = await this.service.getCharactersSkills();
+    this.keys = CharacterSheetCalculator.skillsProficiency();
   }
 
   skillsFilter(characterRef: number): CharacterSkills {
@@ -28,6 +30,10 @@ export class CharacterSheetSkillsComponent implements OnInit {
 
   skillsProfiencyFilter(characterProfiency: string): CharacterSkillsProfiency {
     return CharacterSheetCalculator.skillsProfiencyCalculate(characterProfiency);
+  }
+
+  useCamelCaseToSentence(name : string){
+    return CharacterSheetCalculator.camelCaseToSentence(name);
   }
 
   @Input() set character(character: Character) {

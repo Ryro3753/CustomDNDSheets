@@ -35,7 +35,15 @@ export  class  CharacterSheetCalculator{
       return profiencies
   }
 
-  static skillsProfiencyCalculate(characterProfiency : string) : CharacterSkillsProfiency{
+  //ToDo: Future string service will be implemented and this will be transfer to that service. I took this code from 
+  //https://stackoverflow.com/questions/7225407/convert-camelcasetext-to-sentence-case-text
+  static camelCaseToSentence(camelCase : string) {
+    let result = camelCase.replace( /([A-Z])/g, " $1" );
+    let finalResult = result.charAt(0).toUpperCase() + result.slice(1);
+    return finalResult
+  }
+
+  static skillsProficiency() : string[]{
     let profiencies = {
       acrobatics : false,
       animalHandling : false,
@@ -56,7 +64,12 @@ export  class  CharacterSheetCalculator{
       stealth : false,
       survival : false
     } as CharacterSkillsProfiency;
-    let keys = Object.keys(profiencies);
+    return Object.keys(profiencies);
+  }
+
+  static skillsProfiencyCalculate(characterProfiency : string) : CharacterSkillsProfiency{
+    const keys = this.skillsProficiency();
+    let profiencies = {} as CharacterSkillsProfiency;
     keys.forEach(i => {
       profiencies[i] = characterProfiency.includes(i) ? true : false;
     })
