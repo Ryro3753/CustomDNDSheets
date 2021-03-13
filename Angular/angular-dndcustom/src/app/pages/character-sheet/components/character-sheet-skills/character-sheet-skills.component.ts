@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CharacterSkills, CharacterSkillsProfiency } from 'src/app/models/character/character-skills.model';
 import { Character } from 'src/app/models/Character/Character.model';
 import { CharacterSkillsService } from 'src/app/services/character-services/character-skills.service';
@@ -18,6 +18,8 @@ export class CharacterSheetSkillsComponent implements OnInit {
   level: number;
   colorClass : string = "";
   keys : string[];
+  
+  @Output() ContextClicked : EventEmitter<string> = new EventEmitter<string>();
 
   async ngOnInit(): Promise<void> {
     this.allSkills = await this.service.getCharactersSkills();
@@ -34,6 +36,10 @@ export class CharacterSheetSkillsComponent implements OnInit {
 
   useCamelCaseToSentence(name : string){
     return CharacterSheetCalculator.camelCaseToSentence(name);
+  }
+
+  contextClicked(item){
+    this.ContextClicked.emit(item);
   }
 
   @Input() set character(character: Character) {
