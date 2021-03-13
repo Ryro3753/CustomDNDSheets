@@ -21,7 +21,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DetailsSpellsAccordionComponent } from './components/character-sheet-details/components/details-spells-accordion/details-spells-accordion.component';
 import { AccordionModule } from 'primeng/accordion';
 import { DetailsBackgroundAccordionComponent } from './components/character-sheet-details/components/details-background-accordion/details-background-accordion.component';
-
+import { SidebarModule } from 'primeng/sidebar';
+import { CharacterSheetSidebarComponent } from './components/character-sheet-sidebar/character-sheet-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DetailsBackgroundAccordionComponent } from './components/character-shee
     CharacterSheetMainStatsComponent,
     CharacterSheetDetailsComponent,
     DetailsSpellsAccordionComponent,
-    DetailsBackgroundAccordionComponent],
+    DetailsBackgroundAccordionComponent,
+    CharacterSheetSidebarComponent],
   imports: [
     RouterModule.forChild([{
       path: '',
@@ -50,7 +52,8 @@ import { DetailsBackgroundAccordionComponent } from './components/character-shee
     RadioButtonModule,
     TabViewModule,
     InputTextModule,
-    AccordionModule
+    AccordionModule,
+    SidebarModule
   ],
   providers: [
     CharacterSheetCalculator
