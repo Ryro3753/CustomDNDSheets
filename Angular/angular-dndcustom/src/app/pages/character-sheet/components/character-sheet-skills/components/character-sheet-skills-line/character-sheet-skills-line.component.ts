@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SideBarEvent } from 'src/app/events/side-bar.event';
+import { MessageBusService } from 'src/app/services/common-services/messagebus.service';
 
 @Component({
   selector: 'app-character-sheet-skills-line',
@@ -7,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CharacterSheetSkillsLineComponent implements OnInit {
 
-  constructor() { }
+  constructor(readonly bus : MessageBusService) { }
 
   @Input() Profiency : boolean;
   @Input() Value : number;
@@ -15,6 +17,10 @@ export class CharacterSheetSkillsLineComponent implements OnInit {
   @Input() ColorClass : string;
 
   ngOnInit(): void {
+  }
+
+  openSideBar(){
+    this.bus.publish(new SideBarEvent(this.Name));
   }
 
 }

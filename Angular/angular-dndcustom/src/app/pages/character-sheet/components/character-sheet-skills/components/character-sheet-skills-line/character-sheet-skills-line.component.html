@@ -2,5 +2,5 @@
     <i [class]="Profiency ? 'pi pi-circle-on skillProfiency' :'pi pi-circle-off skillProfiency'"></i>
     <span class="skillValue"><span *ngIf="Value >= 0">+</span>{{Value}}
     </span>
-    <span class="skillsName {{ColorClass}}">{{Name}}</span>
+    <span (click)="openSideBar()" class="skillsName {{ColorClass}}">{{Name}}</span>
 </div>

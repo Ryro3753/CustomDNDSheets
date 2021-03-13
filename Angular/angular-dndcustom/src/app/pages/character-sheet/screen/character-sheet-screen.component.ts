@@ -37,7 +37,6 @@ export class CharacterSheetScreenComponent implements OnInit {
 
   emittedCharacterClicked(e) {
     this.selectedCharacter = e;
-    this.displayBarSide = true;
   }
 
   onHideClicked(){
