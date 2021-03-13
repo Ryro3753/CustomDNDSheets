@@ -1,26 +1,26 @@
-<p-accordion [multiple]="true">
+<p-accordion *ngIf="characterDetail != undefined" [multiple]="true">
     <p-accordionTab header="PersonalityTraits">
-        Content 1
+        {{characterDetail.personalityTraits}}
     </p-accordionTab>
     <p-accordionTab header="Flaws">
-        Content 1
+        {{characterDetail.flaws}}
     </p-accordionTab>
     <p-accordionTab header="Ideals">
-        Content 1
+        {{characterDetail.ideals}}
     </p-accordionTab>
     <p-accordionTab header="Bonds">
-        Content 1
+        {{characterDetail.bonds}}
     </p-accordionTab>
     <p-accordionTab header="Allies">
-        Content 1
+        {{characterDetail.allies}}
     </p-accordionTab>
     <p-accordionTab header="Alignment">
-        Content 1
+        {{characterDetail.alignment}}
     </p-accordionTab>
     <p-accordionTab header="Faith">
-        Content 1
+        {{characterDetail.faith}}
     </p-accordionTab>
     <p-accordionTab header="Backstory">
-        Content 1
+        {{characterDetail.backstory}}
     </p-accordionTab>
 </p-accordion>

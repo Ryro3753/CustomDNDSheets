@@ -1,14 +1,14 @@
 export interface CharacterDescriptionDetails {
-    Ref : number,
-    CharacterRef : number,
-    PersonalityTraits : string,
-    Ideals : string,
-    Bonds : string,
-    Flaws : string,
-    Allies : string,
-    Backstory : string,
-    Alignment : string,
-    Faith : string
+    ref : number,
+    characterRef : number,
+    personalityTraits : string,
+    ideals : string,
+    bonds : string,
+    flaws : string,
+    allies : string,
+    backstory : string,
+    alignment : string,
+    faith : string
 };
 
 
