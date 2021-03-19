@@ -35,7 +35,7 @@ import { CharacterSheetSecondaryStatsCardComponent } from './components/characte
     CharacterSheetSelectionComponent,
     CharacterSheetMainStatsComponent,
     CharacterSheetDetailsComponent,
-    DetailsSpellsAccordionComponent,
+    DetailsSpellsAccordionComponent ,
     DetailsBackgroundAccordionComponent,
     CharacterSheetSidebarComponent,
     CharacterSheetSkillsLineComponent,
