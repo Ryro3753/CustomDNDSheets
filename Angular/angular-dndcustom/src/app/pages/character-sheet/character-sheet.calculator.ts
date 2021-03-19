@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { CharacterApperance } from "src/app/models/character/character-apperance.model";
 import { CharacterSavingThrows, CharacterSavingThrowsProfiency } from "src/app/models/character/character-saving-throws.model";
-import { CharacterSecondaryStats } from "src/app/models/character/character-secondary-stats.model";
+import { CharacterSecondaryStats, CharacterSecondaryStatsValues } from "src/app/models/character/character-secondary-stats.model";
 import { CharacterSkills, CharacterSkillsProfiency } from "src/app/models/character/character-skills.model";
 import { Character, CharacterCard } from "src/app/models/Character/Character.model";
 
@@ -33,6 +33,17 @@ export  class  CharacterSheetCalculator{
       profiencies[i] = characterProfiency.includes(i) ? true : false;
     })
       return profiencies
+  }
+
+  static secondaryStatsValues(secondaryStats : CharacterSecondaryStats) : CharacterSecondaryStatsValues{
+    return {
+      strength : secondaryStats.strength,
+      dexterity : secondaryStats.dexterity,
+      constitution : secondaryStats.constitution,
+      intelligence : secondaryStats.intelligence,
+      wisdom : secondaryStats.wisdom,
+      charisma : secondaryStats.charisma
+    } as CharacterSecondaryStatsValues
   }
 
   //ToDo: Future string service will be implemented and this will be transfer to that service. I took this code from 

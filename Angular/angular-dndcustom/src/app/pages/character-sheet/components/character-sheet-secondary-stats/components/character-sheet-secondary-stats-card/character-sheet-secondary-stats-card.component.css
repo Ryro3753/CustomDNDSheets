@@ -1,0 +1,32 @@
+::ng-deep .secondaryStatCard{
+    width: 120px;
+    height: 100px;
+    margin-bottom: 25px;
+    border-style: solid;
+}
+::ng-deep .secondaryStatCard:hover{
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+::ng-deep .secondaryStatCardStatValues{
+    text-align: center;
+    position: relative;
+    bottom:40px;
+}
+::ng-deep .secondaryStatCardStatModifier{
+    text-align: center;
+    position: relative;
+    bottom:50px;
+}
+::ng-deep .secondaryStatCardStat{
+    text-align: center;
+    position: relative;
+    bottom:25px;
+    font-weight: 500;
+}
+::ng-deep .secondaryStatCardStatModifierBorder{
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-radius: 50%;
+}

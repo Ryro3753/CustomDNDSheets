@@ -24,6 +24,7 @@ import { DetailsBackgroundAccordionComponent } from './components/character-shee
 import { SidebarModule } from 'primeng/sidebar';
 import { CharacterSheetSidebarComponent } from './components/character-sheet-sidebar/character-sheet-sidebar.component';
 import { CharacterSheetSkillsLineComponent } from './components/character-sheet-skills/components/character-sheet-skills-line/character-sheet-skills-line.component';
+import { CharacterSheetSecondaryStatsCardComponent } from './components/character-sheet-secondary-stats/components/character-sheet-secondary-stats-card/character-sheet-secondary-stats-card.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CharacterSheetSkillsLineComponent } from './components/character-sheet-
     DetailsBackgroundAccordionComponent,
     CharacterSheetSidebarComponent,
     CharacterSheetSkillsLineComponent,
+    CharacterSheetSecondaryStatsCardComponent,
     ],
   imports: [
     RouterModule.forChild([{

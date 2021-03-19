@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { CharacterSecondaryStats } from 'src/app/models/character/character-secondary-stats.model';
+import { CharacterSecondaryStats, CharacterSecondaryStatsValues } from 'src/app/models/character/character-secondary-stats.model';
 import { Character } from 'src/app/models/Character/Character.model';
 import { CharacterSecondaryStatsService } from 'src/app/services/character-services/character-secondary-stats.service';
 import { CharacterSheetCalculator } from '../../character-sheet.calculator';
@@ -15,9 +15,11 @@ export class CharacterSheetSecondaryStatsComponent implements OnInit {
               ) { }
 
   cardDataSource : CharacterSecondaryStats;
+  secondaryStat : CharacterSecondaryStatsValues;
   allStats : CharacterSecondaryStats[];
   cardModifierDataSource : CharacterSecondaryStats;
   colorClass : string = "";
+  keys: string[];
 
 
   async ngOnInit(): Promise<void> {
@@ -28,6 +30,10 @@ export class CharacterSheetSecondaryStatsComponent implements OnInit {
     return this.allStats.filter(i => i.characterRef == characterRef)[0];
   }
 
+  useCamelCaseToSentence(name : string){
+    return CharacterSheetCalculator.camelCaseToSentence(name);
+  }
+
   characterModifierFilter(characterRef : number): CharacterSecondaryStats{
     return CharacterSheetCalculator.secondaryStatModifierCalculate(this.cardDataSource);
   }
@@ -36,5 +42,7 @@ export class CharacterSheetSecondaryStatsComponent implements OnInit {
     this.cardDataSource = this.characterDataSourceFilter(character.ref);
     this.cardModifierDataSource = this.characterModifierFilter(character.ref);
     this.colorClass = "color" + character.class.toLowerCase();
+    this.secondaryStat = CharacterSheetCalculator.secondaryStatsValues(this.cardDataSource);
+    this.keys = Object.keys(this.secondaryStat);
 }
 }

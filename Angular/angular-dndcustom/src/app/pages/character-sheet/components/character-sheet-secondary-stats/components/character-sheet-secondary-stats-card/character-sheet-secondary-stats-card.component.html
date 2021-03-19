@@ -1,0 +1,7 @@
+<p-card styleClass="secondaryStatCard {{ColorClass}}">
+    <p class="secondaryStatCardStat">{{Name}}</p>
+    <p class="secondaryStatCardStatValues">{{Value}}</p>
+    <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder {{ColorClass}}"><span
+                *ngIf="Modifier >= 0">+</span>{{Modifier}}</span>
+    </p>
+</p-card>

@@ -23,6 +23,7 @@ namespace API.Data
         public DbSet<CharacterSpells> CharacterSpells { get; set; }
         public DbSet<Equipment> Equipment { get; set; }
         public DbSet<Spell> Spell { get; set; }
+        public DbSet<WorksHow> WorksHow { get; set; }
         public DNDDbContext(DbContextOptions<DNDDbContext> options) : base(options)
         {
         }

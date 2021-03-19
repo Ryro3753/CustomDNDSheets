@@ -1,41 +1,7 @@
-<div *ngIf="cardDataSource != undefined && cardModifierDataSource != undefined">
-    <p-card styleClass="secondaryStatCard firstCard {{colorClass}}">
-        <p class="secondaryStatCardStat">Strength</p>
-        <p class="secondaryStatCardStatValues">{{cardDataSource.strength}}</p>
-        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder {{colorClass}}"><span
-                    *ngIf="cardModifierDataSource.strength >= 0">+</span>{{cardModifierDataSource.strength}}</span></p>
-    </p-card>
-    <p-card styleClass="secondaryStatCard {{colorClass}}">
-        <p class="secondaryStatCardStat">Dexterity</p>
-        <p class="secondaryStatCardStatValues">{{cardDataSource.dexterity}}</p>
-        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder {{colorClass}}"><span
-                    *ngIf="cardModifierDataSource.dexterity >= 0">+</span>{{cardModifierDataSource.dexterity}}</span></p>
-    </p-card>
-    <p-card styleClass="secondaryStatCard {{colorClass}}">
-        <p class="secondaryStatCardStat">Constitution</p>
-        <p class="secondaryStatCardStatValues">{{cardDataSource.constitution}}</p>
-        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder {{colorClass}}"><span
-                    *ngIf="cardModifierDataSource.constitution >= 0">+</span>{{cardModifierDataSource.constitution}}</span>
-        </p>
-    </p-card>
-    <p-card styleClass="secondaryStatCard {{colorClass}}">
-        <p class="secondaryStatCardStat">Intelligence</p>
-        <p class="secondaryStatCardStatValues">{{cardDataSource.intelligence}}</p>
-        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder {{colorClass}}"><span
-                    *ngIf="cardModifierDataSource.intelligence >= 0">+</span>{{cardModifierDataSource.intelligence}}</span>
-        </p>
-    </p-card>
-    <p-card styleClass="secondaryStatCard {{colorClass}}">
-        <p class="secondaryStatCardStat">Wisdom</p>
-        <p class="secondaryStatCardStatValues">{{cardDataSource.wisdom}}</p>
-        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder {{colorClass}}"><span
-                    *ngIf="cardModifierDataSource.wisdom >= 0">+</span>{{cardModifierDataSource.wisdom}}</span></p>
-    </p-card>
-    <p-card styleClass="secondaryStatCard {{colorClass}}">
-        <p class="secondaryStatCardStat">Charisma</p>
-        <p class="secondaryStatCardStatValues">{{cardDataSource.charisma}}</p>
-        <p class="secondaryStatCardStatModifier"><span class="secondaryStatCardStatModifierBorder {{colorClass}}"><span
-                    *ngIf="cardModifierDataSource.charisma >= 0">+</span>{{cardModifierDataSource.charisma}}</span></p>
-    </p-card>
+<div *ngIf="cardDataSource != undefined && cardModifierDataSource != undefined" class="secondaryStats">
+    <div *ngFor="let item of keys">
+        <app-character-sheet-secondary-stats-card [ColorClass]="colorClass" [Value]="cardDataSource[item]"
+            [Name]="useCamelCaseToSentence(item)" [Modifier]="cardModifierDataSource[item]"></app-character-sheet-secondary-stats-card>
+    </div>
 
 </div>
