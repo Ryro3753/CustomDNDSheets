@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'CharacterSheets',
     loadChildren: () => import('./pages/character-sheet/character-sheet.module').then(m => m.CharacterSheetModule)
   },
+  {
+    path: 'CharacterBuilder',
+    loadChildren: () => import('./pages/character-builder/character-builder.module').then(m => m.CharacterBuilderModule)
+  },
 ];
 
 @NgModule({

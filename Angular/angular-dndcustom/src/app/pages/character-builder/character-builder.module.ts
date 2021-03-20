@@ -20,4 +20,4 @@ import { CharacterBuilderScreenComponent } from './screen/character-builder-scre
   providers: [
   ],
 })
-export class CharacterSheetModule { }
+export class CharacterBuilderModule { }
