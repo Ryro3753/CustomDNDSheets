@@ -25,6 +25,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { CharacterSheetSidebarComponent } from './components/character-sheet-sidebar/character-sheet-sidebar.component';
 import { CharacterSheetSkillsLineComponent } from './components/character-sheet-skills/components/character-sheet-skills-line/character-sheet-skills-line.component';
 import { CharacterSheetSecondaryStatsCardComponent } from './components/character-sheet-secondary-stats/components/character-sheet-secondary-stats-card/character-sheet-secondary-stats-card.component';
+import { CharacterBuilderService } from 'src/app/services/common-services/character-builder.service';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import { CharacterSheetSecondaryStatsCardComponent } from './components/characte
     SidebarModule
   ],
   providers: [
-    CharacterSheetCalculator
+    CharacterSheetCalculator,
   ],
 })
 export class CharacterSheetModule { }

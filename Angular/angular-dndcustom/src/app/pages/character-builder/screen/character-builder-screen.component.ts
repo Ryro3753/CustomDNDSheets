@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CharacterBuilderService } from 'src/app/services/common-services/character-builder.service';
 
 @Component({
   selector: 'app-character-builder-screen',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterBuilderScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(readonly serviceBuilder : CharacterBuilderService) { }
 
   ngOnInit(): void {
+    console.log(this.serviceBuilder.selectedCharacterRef);
   }
 
 }

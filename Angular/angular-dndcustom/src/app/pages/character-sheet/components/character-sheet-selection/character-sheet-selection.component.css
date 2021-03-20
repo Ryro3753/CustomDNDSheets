@@ -29,3 +29,9 @@
 ::ng-deep .characterAvatar:hover{
     cursor: pointer;
 }
+::ng-deep .builderButton{
+    font-size: 1.4rem;
+}
+::ng-deep .builderButton:hover{
+    cursor: pointer;
+}

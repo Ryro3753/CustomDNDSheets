@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import {MenubarModule} from 'primeng/menubar';
+import { CharacterBuilderService } from './services/common-services/character-builder.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {MenubarModule} from 'primeng/menubar';
     MenubarModule
   ],
   providers: [
+    CharacterBuilderService
   ],
   bootstrap: [AppComponent]
 })

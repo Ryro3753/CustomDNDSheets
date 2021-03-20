@@ -18,6 +18,9 @@
                 </div>
                 <div class="row">{{character.age}} years old, has {{character.eyes}} eyes with {{character.hair}} hair.
                     {{character.height}} tall and weighs {{character.weight}}. Has {{character.skin}} skin </div>
+                <div class= "row justify-content-md-end">
+                    <i class="pi pi-id-card builderButton" (click)="builderClick(character)" title="build this character"></i>
+                </div>
             </p-card>
         </ng-template>
     </p-carousel>

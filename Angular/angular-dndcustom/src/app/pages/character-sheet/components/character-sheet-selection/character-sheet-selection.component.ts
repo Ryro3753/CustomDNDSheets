@@ -1,9 +1,11 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Carousel } from 'primeng/carousel';
 import { CharacterApperance } from 'src/app/models/character/character-apperance.model';
 import { Character, CharacterCard } from 'src/app/models/Character/Character.model';
 import { CharacterApperanceService } from 'src/app/services/character-services/character-apperance.service';
 import { CharacterService } from 'src/app/services/character-services/character.service';
+import { CharacterBuilderService } from 'src/app/services/common-services/character-builder.service';
 import { IconService } from 'src/app/services/common-services/icon.service';
 import { CharacterSheetCalculator } from '../../character-sheet.calculator';
 
@@ -16,6 +18,8 @@ export class CharacterSheetSelectionComponent implements OnInit {
 
   constructor(readonly service: CharacterService,
     readonly serviceApperance: CharacterApperanceService,
+    readonly serviceBuilder: CharacterBuilderService,
+    private router: Router
   ) { }
 
   characters: Character[];
@@ -42,7 +46,10 @@ export class CharacterSheetSelectionComponent implements OnInit {
     this.carousel.step(0,0);
     this.colorClass = "color"+ clickedCharacter.class.toLowerCase();
   }
-
+  builderClick(character){
+    this.serviceBuilder.selectedCharacterRef = character.ref;
+    this.router.navigateByUrl('/CharacterBuilder');
+  }
   
   reOrderTheCards(clickedCharacter) {
     this.charactersCardData = this.charactersCardData.filter(i => i.ref != clickedCharacter.ref);
