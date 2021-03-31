@@ -9,7 +9,7 @@ There is no docker support right now, I'll have it dockerize and make it one con
 
 ## How to start
 You can start both manuelly unfortunatly, I'll dockerize this in future.
-ng serve for Agnular, dotnet start for backend side.
+ng serve for Agnular, dotnet run for backend side.
 
 ## Pictures
 ![image](https://user-images.githubusercontent.com/22103483/113097554-c3a52480-91ff-11eb-9459-1ff9672dfd3f.png)
